@@ -1,0 +1,21 @@
+# Judge and scoring configuration for Spanish (es).
+#
+# This language is "planned" in languages.yaml, not "active" — this
+# file exists so the folder structure is ready the moment someone
+# picks a judge for it, but it is deliberately incomplete until then.
+
+language_code: es
+
+judge:
+  provider: null
+  model: null
+
+scoring_method: flat   # default until a real evaluation picks something better
+
+rubric_extension: null
+
+notes: >
+  No judge selected yet. This language should stay "planned" in
+  languages.yaml, and excluded from optimization runs, until a real
+  judge selection process (the same kind used for yue and cmn) has
+  actually validated one.

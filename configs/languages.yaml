@@ -1,0 +1,32 @@
+# Language registry — the single source of truth for which languages
+# this pipeline currently supports.
+#
+# To add a new language: add an entry here, add its judge config under
+# configs/judges/, and create its data folder under data/. Nothing in
+# gepa/ needs to be edited — the pipeline discovers languages from this
+# file at runtime.
+#
+# status: active   -> judge validated, ready to run in the optimization loop
+# status: planned   -> scaffolded, not yet validated, excluded from runs
+
+languages:
+  - code: yue
+    name: Cantonese
+    direction: en_yue
+    judge_config: configs/judges/yue.yaml
+    data_dir: data/yue
+    status: active
+
+  - code: cmn
+    name: Mandarin
+    direction: en_cmn
+    judge_config: configs/judges/cmn.yaml
+    data_dir: data/cmn
+    status: active
+
+  - code: es
+    name: Spanish
+    direction: en_es
+    judge_config: configs/judges/es.yaml
+    data_dir: data/es
+    status: planned

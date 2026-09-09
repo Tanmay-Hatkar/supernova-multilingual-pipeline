@@ -1,0 +1,23 @@
+# Judge and scoring configuration for Cantonese (yue).
+#
+# This is a per-language config on purpose: different languages have
+# needed different judge models in practice, so the judge is never a
+# single global setting in this architecture.
+
+language_code: yue
+
+judge:
+  provider: example-provider   # placeholder — wire to your real client abstraction
+  model: example-judge-model   # placeholder — the specific validated model goes here
+
+scoring_method: severity_weighted   # options: flat | severity_weighted
+
+# Optional: path to extra rubric text specific to this language (e.g.
+# checks for contamination from a closely related language, register,
+# script consistency). Kept as a separate file, not inline, so rubric
+# text can grow without bloating this config.
+rubric_extension: rubrics/yue.md
+
+notes: >
+  Placeholder config. In the real pipeline, this file's values come
+  from a human-validated judge selection process, not a default guess.

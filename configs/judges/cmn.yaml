@@ -1,0 +1,15 @@
+# Judge and scoring configuration for Mandarin (cmn).
+# See yue.yaml for the field-by-field explanation.
+
+language_code: cmn
+
+judge:
+  provider: example-provider
+  model: example-judge-model
+
+scoring_method: severity_weighted
+
+rubric_extension: null   # no language-specific rubric addition needed for this one
+
+notes: >
+  Placeholder config. Swap in the real validated judge and model here.

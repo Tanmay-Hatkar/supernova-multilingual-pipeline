@@ -1,0 +1,5 @@
+# Auto-requests a reviewer on every PR touching any file.
+# Add more specific paths above this line if different people should
+# own different parts of the pipeline (e.g. one owner for configs/,
+# another for gepa/).
+* @Tanmay-Hatkar
