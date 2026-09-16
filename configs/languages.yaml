@@ -15,7 +15,9 @@ languages:
     direction: en_yue
     judge_config: configs/judges/yue.yaml
     data_dir: data/yue
-    status: active
+    status: planned   # scaffolded only: placeholder data, never run, models
+                       # never probed. Flip to active once data/yue/ holds real
+                       # examples and the judge has been validated.
 
   - code: cmn
     name: Mandarin
@@ -29,4 +31,6 @@ languages:
     direction: en_es
     judge_config: configs/judges/es.yaml
     data_dir: data/es
-    status: planned
+    status: active   # wired up and runnable as of the first live smoke test;
+                      # judge is a starter config, not yet human-validated
+                      # (see configs/judges/es.yaml notes)

@@ -1,23 +1,34 @@
 # Judge and scoring configuration for Cantonese (yue).
 #
-# This is a per-language config on purpose: different languages have
-# needed different judge models in practice, so the judge is never a
-# single global setting in this architecture.
+# SCAFFOLDED, NOT RUN. This language has placeholder data only and has
+# never been executed. It is marked `planned` in languages.yaml so runs
+# and reliability probes skip it. The config exists so the folder shape
+# is ready, not to imply this language is wired up.
+#
+# Before flipping this to active: add real data to data/yue/, pick and
+# probe actual models (python reliability.py), and validate the judge
+# (python validate_judge.py --language yue).
 
 language_code: yue
+language_name: Cantonese
+
+task_model:
+  provider: groq
+  model: openai/gpt-oss-20b   # placeholder, not yet probed for this language
 
 judge:
-  provider: example-provider   # placeholder — wire to your real client abstraction
-  model: example-judge-model   # placeholder — the specific validated model goes here
+  provider: groq
+  model: qwen/qwen3.8-27b   # placeholder; different family than the task model
+  runs_per_example: 3
+  # Cantonese is the case that most warrants a language-specific rubric —
+  # checks for Mandarin grammar wearing Cantonese script, particle
+  # correctness, register. Point this at a rubric file when written.
+  rubric_extension: null
 
-scoring_method: severity_weighted   # options: flat | severity_weighted
+scoring_method: flat
 
-# Optional: path to extra rubric text specific to this language (e.g.
-# checks for contamination from a closely related language, register,
-# script consistency). Kept as a separate file, not inline, so rubric
-# text can grow without bloating this config.
-rubric_extension: rubrics/yue.md
+companion_metric: chrf++
 
 notes: >
-  Placeholder config. In the real pipeline, this file's values come
-  from a human-validated judge selection process, not a default guess.
+  Placeholder configuration for a scaffolded, unrun language. Nothing
+  here has been probed or validated.

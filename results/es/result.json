@@ -1,0 +1,9 @@
+{
+  "language_code": "es",
+  "language_name": "Spanish",
+  "baseline_avg_score": 0.6,
+  "optimized_avg_score": 0.5863636363636364,
+  "improvement": -0.013636363636363558,
+  "n_train": 2,
+  "n_val": 2
+}

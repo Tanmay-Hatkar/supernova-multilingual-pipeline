@@ -1,15 +1,36 @@
 # Judge and scoring configuration for Mandarin (cmn).
-# See yue.yaml for the field-by-field explanation.
+#
+# Starter configuration — judge not yet validated against human labels
+# (run: python validate_judge.py --language cmn).
 
 language_code: cmn
+language_name: Mandarin
 
+task_model:
+  provider: groq
+  model: openai/gpt-oss-20b
+
+# Single judge. The pipeline also accepts a multi-judge form, where
+# several judges score every example and the median is taken:
+#
+#   judges:
+#     - {provider: groq, model: qwen/qwen3.8-27b, runs_per_example: 3}
+#     - {provider: groq, model: openai/gpt-oss-120b, runs_per_example: 3}
+#
+# Median rather than mean, so one judge failing badly on an example
+# can't drag the verdict with it. Kept to a single judge here because
+# every added judge multiplies API calls against a rate-limited tier —
+# worth enabling deliberately, not by default.
 judge:
-  provider: example-provider
-  model: example-judge-model
+  provider: groq
+  model: qwen/qwen3.8-27b
+  runs_per_example: 3
+  rubric_extension: null
 
-scoring_method: severity_weighted
+scoring_method: flat
 
-rubric_extension: null   # no language-specific rubric addition needed for this one
+companion_metric: chrf++
 
 notes: >
-  Placeholder config. Swap in the real validated judge and model here.
+  Task model and judge are from different families on purpose. Judge is
+  unvalidated until validate_judge.py reports a pass.

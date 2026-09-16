@@ -1,0 +1,20 @@
+[
+  {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "max_tokens_tested": 900,
+    "viable": true,
+    "reason": "accepted a real request at the configured token budget",
+    "limit_requests_per_min": "1000",
+    "limit_tokens_per_min": "8000"
+  },
+  {
+    "provider": "groq",
+    "model": "qwen/qwen3.8-27b",
+    "max_tokens_tested": 900,
+    "viable": true,
+    "reason": "accepted a real request at the configured token budget",
+    "limit_requests_per_min": "1000",
+    "limit_tokens_per_min": "8000"
+  }
+]

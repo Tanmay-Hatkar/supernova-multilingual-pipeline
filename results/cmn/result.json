@@ -1,0 +1,9 @@
+{
+  "language_code": "cmn",
+  "language_name": "Mandarin",
+  "baseline_avg_score": 0.990909090909091,
+  "optimized_avg_score": 0.990909090909091,
+  "improvement": 0.0,
+  "n_train": 2,
+  "n_val": 2
+}

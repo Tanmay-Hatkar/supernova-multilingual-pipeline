@@ -1,2 +1,8 @@
 pyyaml>=6.0
 pytest>=8.0.0
+dspy>=3.0.0
+groq>=0.11.0
+python-dotenv>=1.0.0
+json_repair>=0.30.0
+sacrebleu>=2.4.0
+requests>=2.31.0

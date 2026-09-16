@@ -1,21 +1,33 @@
 # Judge and scoring configuration for Spanish (es).
 #
-# This language is "planned" in languages.yaml, not "active" — this
-# file exists so the folder structure is ready the moment someone
-# picks a judge for it, but it is deliberately incomplete until then.
+# Starter configuration — the judge here has not yet been validated
+# against human labels (run: python validate_judge.py --language es).
+# Treat results as a mechanics check, not a quality verdict.
 
 language_code: es
+language_name: Spanish
 
+task_model:
+  provider: groq
+  model: openai/gpt-oss-20b
+
+# A different model family than the task model, on purpose: a model
+# should not be the one grading its own family's output. This was
+# briefly compromised while working around a token-budget conflict;
+# lowering MAX_OUTPUT_TOKENS below the provider's per-minute ceiling
+# resolved that conflict and let the separation be restored.
 judge:
-  provider: null
-  model: null
+  provider: groq
+  model: qwen/qwen3.8-27b
+  runs_per_example: 3
+  rubric_extension: null
 
-scoring_method: flat   # default until a real evaluation picks something better
+scoring_method: flat   # severity weighting is the better approach, but it
+                        # needs a validated judge to tune against first
 
-rubric_extension: null
+companion_metric: chrf++
 
 notes: >
-  No judge selected yet. This language should stay "planned" in
-  languages.yaml, and excluded from optimization runs, until a real
-  judge selection process (the same kind used for yue and cmn) has
-  actually validated one.
+  Task model and judge are deliberately from different families. Judge
+  is unvalidated until validate_judge.py reports a pass against
+  human-labeled calibration examples.

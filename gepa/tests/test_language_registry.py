@@ -21,9 +21,38 @@ def test_loads_all_entries():
 
 
 def test_active_languages_excludes_planned():
+    # yue, cmn, and es are all "active" (es as a starter/unvalidated
+    # config for its first live smoke test) — this test just confirms
+    # the filter itself works, not any specific language's status.
     active = {e.code for e in get_active_languages()}
-    assert active == {"yue", "cmn"}
-    assert "es" not in active
+    all_codes = {e.code for e in load_registry()}
+    assert active == all_codes  # true today; update if a language is
+    # ever added with status: planned to keep this test meaningful
+
+
+def test_planned_status_is_actually_excluded(tmp_path):
+    registry_path = tmp_path / "languages.yaml"
+    registry_path.write_text(
+        f"""
+languages:
+  - code: yue
+    name: Cantonese
+    direction: en_yue
+    judge_config: {load_registry()[0].judge_config_path}
+    data_dir: data/yue
+    status: active
+  - code: xx
+    name: Test Planned Language
+    direction: en_xx
+    judge_config: {load_registry()[0].judge_config_path}
+    data_dir: data/xx
+    status: planned
+""",
+        encoding="utf-8",
+    )
+    active = {e.code for e in get_active_languages(str(registry_path))}
+    assert active == {"yue"}
+    assert "xx" not in active
 
 
 def test_rejects_duplicate_codes(tmp_path):
