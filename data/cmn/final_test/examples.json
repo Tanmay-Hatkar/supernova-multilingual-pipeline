@@ -1,42 +1,296 @@
 [
   {
-    "source": "For example, there was no institutional forum at which substantive rules on the responsibility of international organizations could be addressed.",
-    "reference": "例如，没有一个可以探讨关于国际组织责任的实质性规则的机构论坛。"
+    "source": "In many jurisdictions in which there is a registration system, this notice is provided by subjecting judgement security rights to the registration system.",
+    "reference": "在许多实行登记制度的法域内，这种通知是通过将判决产生的担保权纳入登记系统而提供的。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "Table A3.1.1 Hazard statement codes for physical hazards",
-    "reference": "表 A3.1.1 物理危险的危险说明代码"
+    "source": "The United Kingdom suggested that if a comprehensive approach were ultimately followed it would be more correct to state that the provisions of Part II may only be invoked in conjunction with the substantive rights contained in Part III.",
+    "reference": "联合王国建议，如果最终还是决定采用综合办法，较正确的做法是规定第二部分的条款只能连同第三部分所载实体权利一起援引。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "He drew particular attention to the second, third, fourth, sixth and ninth preambular paragraphs, and to paragraphs 2, 3, 4, 9 and 10.",
-    "reference": "他特别提请注意序言部分第二、三、四、六和九段以及执行部分第2、3、4、9和10段。"
+    "source": "We strongly support the continued constructive work to develop, in as precise detail as possible, these arrangements.",
+    "reference": "我们坚决支持持续不断的建设性工作，以尽可能准确详细地作出这些安排。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "“This Day of Solidarity is a day of mourning and a day of grief.",
-    "reference": "“声援日是悼念日，是悲痛日。"
+    "source": "Happy birthday! Well, the staff, please.",
+    "reference": "蛋糕很精美 十分感谢",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "What do you do one day when you realise you can't succeed?",
-    "reference": "'一旦某天意识到无法成功你会怎么做?"
+    "source": "That's what you said before you threw me in a cell.",
+    "reference": "我现在没事了 你把我扔进牢房时也是这么说的",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "10 St. Thomas Source, 20 July 2002.",
-    "reference": "10 《圣托马斯岛资料来源》，2002年7月20日。"
+    "source": "- Acts of violence in the home;",
+    "reference": "- 法律和政治地位；",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "- But you couldn't help looking. Why?",
-    "reference": "- 但是你不能停止寻找，为什么?"
+    "source": "Not since the inception of its mandate in 1968 has the Committee ever confronted such anger and misery among the Palestinian people and other Arabs in occupied territories and disrespect for their basic human rights and fundamental freedoms.",
+    "reference": "大概自1968年委员会开始执行其任务以来，委员会从未遇到被占领土内的巴勒斯坦人和其他阿拉伯人如此愤怒和悲惨过，以及其基本人权和基本自由如此不受尊重。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "The success of any reconstruction programme depends on getting funds.",
-    "reference": "任何重建方案的成功取决于获得资金。"
+    "source": "For the development of subregional activities in the area of trade capacity-building and private sector development, discussions were held with CARICOM in early 2007.",
+    "reference": "42. 为开展贸易能力建设和私营部门发展领域的分区域活动，2007年初与加勒比共同体举行了讨论。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "I'm even better than I think I am.",
-    "reference": "那我可比自己想的厉害多了 I'm even better than I think I am."
+    "source": "- And she tripped, and she fell into that. - And I fell into the puddle...",
+    "reference": "- 我摔倒那个水坑里了...",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "For the 2004 election, they nominated 5 women among 18 candidates.",
-    "reference": "在2004年的选举中，在18名候选人中提名了5名妇女。"
+    "source": "In the area under Kinshasa's control, the Minister for Foreign Affairs has said they will attack without regard for the limitations set by the United Nations Organization mission in the Democratic Republic of the Congo (MONUC) and other “clock-watchers”, while inflammatory statements are being made to continue with the war.",
+    "reference": "在金沙萨控制的地区，外交部长说，无论联合国组织驻刚果民主共和国观察团和其他“看钟下班的人”设下什么限制，他们都将发起攻击，同时，不断有人说要把战争继续下去。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The Democratic Republic of the Congo secured Naples terms relief involving a 67 per cent debt service reduction in present value terms pending achievement of the HIPC decision point.",
+    "reference": "刚果民主共和国已经确保获得根据那不勒斯条件的减免，即待其达到重债穷国倡议决定点后获得67%的偿债减免。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Cesario, do not do this on my watch!",
+    "reference": "西萨里奥，不这样做 我的手表！",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Thank you, Schiffer.",
+    "reference": "谢谢你 什弗拉",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I mean, are you really happy?",
+    "reference": "我是说，你真的快乐吗？",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Caramazov, take him in.",
+    "reference": "卡拉马佐夫，带他进去。 Caramazov, take him in.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Management tools being developed by the registered partnerships included compilations of best practices, case studies and development of sustainability indicators.",
+    "reference": "已登记的伙伴关系正在拟订的管理工具包括最佳做法汇编、案例研究和持续承受能力指标的制定。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I mean, she's a writer, too.",
+    "reference": "- 我的意思是 她也是作家",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The rate of scheduled reductions is approximately 20% per year on average.",
+    "reference": "所计划的淘汰速率约为平均每年20％。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Yes, I know. I got your e-mails. But...",
+    "reference": "对 我收到你的通告了",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "In 1999 there had been 164 parties from 44 countries listed in default on 188 International Cotton Association arbitration awards, totalling $60.8 million.",
+    "reference": "1999年，有来自44个国家的164个当事方在188项国际棉花协会仲裁裁决中违约，总计达6 080万美元。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "UNIFEM shares the views of Ms. King and fully supports her work to mainstream gender in peace support operations.",
+    "reference": "妇发基金赞同金女士的观点，并充分支持她为使两性问题在和平支助行动中进入主流所做的工作。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "2.5.3.2.4 In the amendment concerning the title of the paragraph, replace \"in packages\" with \"in packagings\".",
+    "reference": "2.5.3.2.4 此处的修改不适用于中文本。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "(chuckles): Sometimes I think he had the right idea.",
+    "reference": "有时我觉的他主意挺对的",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "It is also committed towards the prevention of violence through education and media.",
+    "reference": "该股提供社会工作干预措施，并致力于通过教育和宣传防止暴力。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "And if I were you, I'd button your shirt. DARBY:",
+    "reference": "如果我是你 我就把衬衣系上扣",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Utility channels don't have enough elbow room for men and money.",
+    "reference": "维修通道也塞不下那么多 Utility channels don't have enough elbow room 人和现金 for men and money.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "You'd think you'd be singing Leonard Cohen's \"Hallelujah\" out in the majesty of the ocean, not songs about heroin addiction in New York City.",
+    "reference": "在这壮观的大洋里，你可能以为这时应该唱伦纳德科恩的“哈里路亚”， 在这壮观的大洋里，你可能以为这时应该唱伦纳德科恩的“哈里路亚”， 而不是在纽约染上毒瘾这样的歌。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Through continued ongoing contacts with legal offices throughout the United Nations system, the Office will seek to ensure that legal advice within the system is provided in a coordinated manner.",
+    "reference": "通过与整个联合国系统的各法律事务厅的持续联系，该办公室还设法确保以协调方式提供本系统内的法律咨询意见。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "This is what friends do.",
+    "reference": "这是朋友做的。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I came here for you to make me feel better,",
+    "reference": "我来这找你 是想让我好过点的",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "There are clear and very large financial implications for all of the above.",
+    "reference": "40. 上述所有一切显然都涉及到非常重大的财政问题。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The UNOPS Offices of Finance and Organizational Effectiveness are working on this objective, as a matter of priority, as part of the broader initiative to re-evaluate internal processes and update accordingly.",
+    "reference": "29. 作为重新评价内部程序和进行相应更新这一整体工作的一个优先事项，项目厅财务办公室和组织效能办公室正在努力实现这一目标。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Alright, everybody, drop your guns.",
+    "reference": "好了,每个人都放下自己的武器",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Article 7 of the Convention is designed to ensure full compliance with the Convention.",
+    "reference": "《公约》第7条目的在于确保充分遵守《公约》。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Uh, well, you know, to be honest, even given their remarkable progress, they could probably use a little more time.",
+    "reference": "嗯 说真的 即便他们进步很大",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Reading \"catcher in the rye.\" That was a good book.",
+    "reference": "读\"麦田里的守望者\"。 这是一本好书。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "All right, Irene, come on.",
+    "reference": "没人比麦凯恩更明白",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Mr. Al-Khal (Qatar) (spoke in Arabic): On behalf of the delegation of the State of Qatar, I have the pleasure to extend to you, Mr. Chairman, our sincere congratulations on your assumption of the chairmanship of the First Committee.",
+    "reference": "卡尔先生（卡塔尔）（以阿拉伯语发言）：主席先生，我高兴地以卡塔尔国代表团的名义表示我们由衷祝贺你担任第一委员会主席。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "That's not just for my sake.",
+    "reference": "这也不是光光为了我自己。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "So we stored ourselves. Do you have any family? A son.",
+    "reference": "你能理解我有多么受宠若惊吗",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I miss you, Katie-chan.",
+    "reference": "我很想你 Katie",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "(e) Revenue derived from staff assessment not otherwise disposed of by specific resolution of the General Assembly shall be credited to the Tax Equalization Fund established by General Assembly resolution 973 A (X).",
+    "reference": "(e) 工作人员薪金税收入，如未经大会明确决议另作处理，应拨入大会第973A(X)号决议所设的衡平征税基金。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Mr. Sattar orally revised the last preambular paragraph and operative paragraph 1.",
+    "reference": "41.　萨塔尔先生口头修订了序言部分最后一段及执行部分第1段。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The recent debates on international assistance were also useful in seeking synergic cooperation among States and relevant international organizations aimed at fostering compliance with non-proliferation standards of the above resolutions.",
+    "reference": "最近进行的关于国际援助的辩论，对寻求各国和有关国际组织之间旨在促进遵守上述决议的不扩散标准的协同合作也是有益的。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "(c) Strengthening the reforms: with special emphasis on the justice and security programme; the programme to improve the living conditions of national freedom fighters; the peacebuilding and national reconciliation programme; and the reform implementation capacity-building programme.",
+    "reference": "(c) 加强改革：特别强调司法和安全方案；改善国家自由战士生活条件的方案；建设和平和民族和解方案；建设实行改革的能力方案。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "- What do you mean? - When you cut them.",
+    "reference": "你这是在说什么?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Eradication of poverty and other development issues: implementation of the first United Nations Decade for the Eradication of Poverty (1997-2006)",
+    "reference": "消除贫穷及其他发展问题：联合国第一个 消除贫穷十年(1997-2006)的执行情况",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Don't forget a minor punishment is 72 flogs, a major one is 36",
+    "reference": "不要忘了 我小刑罚七十二，大刑罚三十六",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Rosie's been more efficient than I anticipated. I know where we could rustle up a car.",
+    "reference": "我知道一个地方能租车",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   }
 ]

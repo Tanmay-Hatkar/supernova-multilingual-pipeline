@@ -1,42 +1,296 @@
 [
   {
-    "source": "The Special Committee decided to accede to those requests.",
-    "reference": "特别委员会决定接受这些请求。"
+    "source": "Well, if the buck stops here... the buck stops here.",
+    "reference": "-发生地点距... -抱歉 上一个谋杀案仅差5哩",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "These areas continue to be in a state of humanitarian emergency.",
-    "reference": "这些地区仍然处在人道主义紧急状态之中。"
+    "source": "But it'll be the end of your political ambitions, wouldn't it?",
+    "reference": "舌头打结了，说不出话来。 然后... ...",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "Implementation of and progress made on decisions taken at the sixth regular session of the Commission",
-    "reference": "3. 委员会第六届常会所作决定的执行和进展情况"
+    "source": "Question of the Malagasy islands of Glorieuses, Juan de Nova, Europa and Bassas da India (decision 60/503 A of 20 September 2005).",
+    "reference": "38. 马达加斯加格洛里厄斯群岛、新胡安岛、欧罗巴岛和印度巴萨斯岛问题（2005年9月20日第60/503 A号决定）。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "(Man) It helps if you let your lover show you by guiding your hand how best she likes to be stimulated.",
-    "reference": "让伴侣引导你的手 去刺激她最喜欢的地方是很有效的"
+    "source": "Legislation should pave the way for the electronic media to diversify and extend the many different types of artistic expression, expanding the content and enhancing cultural values accessible to societies.",
+    "reference": "立法应当为电子媒体扩大艺术表现形式并使之多样化、丰富内容和提高社会可以接受的文化价值开辟道路。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "They can contribute to creating a climate conducive to trust and confidence, whether they are taken unilaterally, bilaterally or multilaterally.",
-    "reference": "无论它们是以单方面、双边或多边形式采取的措施，它们都有助于创造一种有利于信心和信任的气候。"
+    "source": "The proposal is outlined in document ISBA/14/LTC/2.",
+    "reference": "ISBA/14/LTC/2号文件简要介绍了该提议。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "And then if she's into it, we can have like... a meeting.",
-    "reference": "若她意愿,还可安排见面..."
+    "source": "Bosnia and Herzegovina, the Czech Republic, Ecuador, Ethiopia, Equatorial Guinea, Greece, Malta, Nigeria, Peru and The former Yugoslav Republic of Macedonia subsequently joined the sponsors.",
+    "reference": "波斯尼亚和黑塞哥维那、捷克共和国、厄瓜多尔、埃塞俄比亚、赤道几内亚、希腊、马耳他、尼日利亚、秘鲁和前南斯拉夫的马其顿共和国随后加入提案国。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "Within Haiti, the appointment of a new Prime Minister could offer a fresh opportunity to move forward.",
-    "reference": "85. 新总理的任命可以为海地提供一个向前迈进的新机会。"
+    "source": "The success of the public sector cannot be judged or measured in the same way as that of the private sector.",
+    "reference": "不能用判断和衡量私营部门的方法来判断和衡量公营部门的成就。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "The Conference agreed to establish a credentials committee to examine the credentials of Conference representatives.",
-    "reference": "化管大会同意成立一个全权证书事项委员会来审查与会代表的全权证书。"
+    "source": "It is presided over by a professional judge of the ordinary courts, who is bound by the law on the status of the judiciary and whose career and conduct are overseen by the Supreme Council of the Judiciary, a constitutional body presided over by the Head of State.",
+    "reference": "法庭的庭长是一位受到《司法法》约束的普通法院的职业法官；庭长的工作和行为接受最高司法委员会(国家元首领导的一个宪法机构)的监督。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "It's none of my business if he's gay or not",
-    "reference": "琌ぃ琌gay闽иぐ或ㄆ摆"
+    "source": "The Council considered questions concerning the activities of the GUUAM Information Office in Kyiv.",
+    "reference": "理事会审议了关于本集团在基辅的信息处的工作。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "12 Ibid., sect. I; see also A/CONF.164/37.",
-    "reference": "12 同上，第一节；又见A/Conf.164/37。"
+    "source": "Hello, Thomas. You'd better come and hear this.",
+    "reference": "嘿， 托马斯 你最好过来听听这个。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "It should be emphasized that the countries of the subregion have an important role to play in the quest for peace in Iraq.",
+    "reference": "应该强调，该次区域各国在寻求伊拉克的和平方面可以起重要作用。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "So... Let's take a look.",
+    "reference": "来 让我们看看",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "You might very well think that. I couldn't possibly comment.",
+    "reference": "你怎么想是你的事 我不会对此发表任何看法",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Ms. Schöpp-Schilling said that she wished to associate herself with the positive comments by other members of the Committee on the implementation of the Convention in Jamaica. She regretted, however, that there was no definition of the term “discrimination against women” in Jamaican legislation.",
+    "reference": "28. Schőpp-Schilling女士说，她同意委员会其他成员对牙买加执行《公约》的积极评论，但是，她感到遗憾的是，牙买加法律中没有关于“歧视妇女”的定义。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The Committee urges the State party to increase the coverage of the social security system, especially for self-employed workers and women.",
+    "reference": "44. 委员会促请缔约国扩大社会保险制度的覆盖面，尤其为自谋职业的工人和妇女提供保险。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The Special Rapporteur transmitted information concerning the alleged use of rape and sexual violence by police and intelligence officers in order to extract information from women in detention. The Special Rapporteur also transmitted information on the practice of forced portering, whereby military forces arbitrarily detain women for the purpose of forcing them to undertake manual labour.",
+    "reference": "81. 特别报告员转发的关于警察和情报人员为了向被拘留的妇女逼供而使用强奸和性暴力手段的材料，特别报告员还转发了关于强征劳役做法的材料，其表现为，武装部队任意扣押妇女，强迫她们从事体力劳作。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Contrary to popular impressions, in recent years, since the lost decades of the 1980s and 1990s, the continent has been making progress.",
+    "reference": "与人们的印象相反，自1980年代和1990年代这两个迷茫的十年以来，非洲大陆近年来一直取得进展。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "As the focal point for Target target 11, UN-Habitat uses the term “slum upgrading” to describe a range of actions necessary for improving the lives of slum dwellers.",
+    "reference": "作为目标11 的协调中心，人居署利用“改善贫民窟状况”的提法说明为改善贫民窟居民生活的需要采取的一系列行动。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Moreover, once they are approved, deployment can sometimes takes months.",
+    "reference": "此外，一旦这些行动获得批准，部署有时可能用几个月的时间。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Total unpaid assessed contributions as at 30 June 2002 amounting to $48.7 million reflect a decrease of $71.4 million.",
+    "reference": "截至2002年6月30日，未缴摊款总额为4 870万美元,减少了7 140万美元。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The Force is mandated to help the Security Council achieve an overall objective, namely, to maintain international peace and security.",
+    "reference": "2. 该部队的任务是帮助安全理事会实现一个总体目标，即维护国际和平与安全。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Achieving their expeditious entry into force and global implementation is a major task for IMO in order to advance the fight against international terrorism, and their implementation is referenced in more than one planned output in the Organization's High-Level Action Plan.",
+    "reference": "议定书尽快生效并得到普遍执行，是海事组织在推动打击国际恐怖主义方面的重大任务，海事组织《高级行动计划》几个计划产出都提到了这两项议定书的执行工作。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "It appears that the majority of delegations can",
+    "reference": "大多数代表团似乎都能赞成五大使建议。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "In particular, it provides that, every effort should be made to speed up the implementation of planned gender equality measures.",
+    "reference": "尤其是，评估规定，要尽一切力量加速已经制定的两性平等措施的实施。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The Committee endorsed the request of the Working Group that it meet one week prior to the sessions of the Committee.",
+    "reference": "438. 委员会批准工作组的要求，即小组将在委员会届会之前召开一星期的会议。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "India was actually an island floating in this vast ocean that we call Tethys, and it was moving northwards for about 130 million years.",
+    "reference": "印度只是漂浮在 辽阔古地中海 的一个岛屿 之後的1亿3千万年 ，它不断的向北漂移",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "the Legislative Council which must be held at least every 12 months.",
+    "reference": "总督负责召集立法会议届会，这些会议必须至少每12个月举行一次。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Take my heart and please don't break it",
+    "reference": "Take my heart and please don't break it",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "What do you want? Have I done something wrong?",
+    "reference": "我犯了法?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The members of CEB had noted with satisfaction that those recommendations had the full support of all the members of the Panel, including the Chairman of ICSC, whose experience and knowledge of the functioning of the Commission had been extremely helpful.",
+    "reference": "65. 行政首长协调会成员满意地注意到那些建议获得小组所有成员，包括公务员制度委员会主席的全力支持；公务员制度委员会主席对委员会运作情况的经验和知识有极大的帮助。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Hey, sir! Two more please!",
+    "reference": "嗨，服務員，再來兩杯",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "A cluster bomb left by the Israeli enemy exploded in Al-Soultaniye, resulting in the wounding of Hussein Qadduh (aged 18 years) on the chest and head.",
+    "reference": "以色列敌军留下的一枚集束炸弹在Al-Soultaniye爆炸，造成侯赛因•卡杜赫（Hussein Qadduh）（18岁）胸部和头部受伤。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "With 2 million Iraqi refugees in neighbouring countries and 1.9 million displaced inside Iraq, UNAMI absolutely cannot address this issue alone.",
+    "reference": "在伊拉克邻国有200万伊拉克难民，而伊拉克境内有190万流离失所者；联伊援助团单靠自身的力量是无法处理这一问题的。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Thingies, what do you call them?",
+    "reference": "对，很对不起！ 你应该对不起！",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "When I was doing these experiments, in my mind, I was helping science.",
+    "reference": "当我在做实验的时候 我觉得 我是在为科学做贡献",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "It's not about preferences, this new generation is so different.",
+    "reference": "与其说是喜欢 不想在我这一代结束",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "• The Court exercises its jurisdiction over persons on the crime of aggression (articles 1, 5 and 25 of the Statute);",
+    "reference": "• 法院就侵略罪对个人行使管辖权(《规约》第一、五和二十五条);",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "For some States a submission should be made by 16 November 2004.",
+    "reference": "对于有些国家，划界案应在2004年11月16日之前提出。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Dissemination of information about the Fund",
+    "reference": "5. 宣传有关基金的情况",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "When you come out to Kazakhstan, you can-a stay at my house.",
+    "reference": "你到哈薩克斯坦 你可以住我家",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "And here's the bus ticket you bought for me.",
+    "reference": "还有 有次你帮我付的公车票钱",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I bet you didn't think about her for a second.",
+    "reference": "我打赌你肯定一点都没为帕吉着想",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Deeply committed to being a part of the solution to this crisis, Indonesia is sending an 850-strong mechanized infantry battalion to form part of the United Nations Interim Force in Lebanon (UNIFIL), as mandated by Security Council resolution 1701 (2006).",
+    "reference": "由于印度尼西亚坚定地致力于参与解决这场危机，我们派出了一个由850人组成的机械化步兵营，以此作为安全理事会第1701（2006）号决议授权的联合国驻黎巴嫩临时部队（联黎部队）的组成部分。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "You look like a dog in heat?",
+    "reference": "你看起来就像条燥热的狗",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "If she gets back, right... tell her to fucking wait here till I get back.",
+    "reference": "- 好。 如果她回来... 告诉她给我在这儿等着",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The total number of multi-year pledges received in 2007 was 69.",
+    "reference": "2007年作出多年期认捐的国家有69个。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Mr. Gómez-Robledo Verduzco, Ms. Hampson, Mr. van Hoof, Mr. Kartashkin, Mr. Ogurtsov, Mr. Park, Ms. Warzazi, Mr. Yimer and Ms. Zerrougui subsequently joined the sponsors.",
+    "reference": "阿方索·马丁内斯先生、戈麦斯－罗夫莱多·贝杜斯科先生、汉普森女士、范霍夫先生、卡尔塔什金先生、奥古尔佐夫先生、朴双龙先生、瓦尔扎齐女士、伊默尔先生和泽鲁居伊女士之后加入为提案人。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I would also like to express our satisfaction and welcome Ambassador Tim Caughley in his new capacity as Deputy Secretary-General of the Conference.",
+    "reference": "我并谨向蒂姆·考勒大使新近担任裁谈会副秘书长表示高兴和欢迎。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Also in February 2007, she had chaired the sixth session of the Inter-Agency Network on Women and Gender Equality, which had brought together senior gender focal points from all United Nations entities.",
+    "reference": "2007年2月，她还主持了机构间妇女和两性平等网络第六届会议，该网络将联合国各个实体的高级性别问题协调中心汇聚在一起。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   }
 ]

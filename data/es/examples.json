@@ -1,82 +1,596 @@
 [
   {
-    "source": "If your country produced ODS for this purpose, please enter the amount so produced in column 6 on Data Form 3.”",
-    "reference": "Si su país produjo SAO para estos usos, sírvase anotar en la columna 6 del formulario de datos 3 la cantidad correspondiente”."
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "reference": "Tienes que mejorar las cosas, no puedes simplemente hablar y desear Io mejor.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "♪ juvie the great man, who else could it be but I?",
-    "reference": "# Juvie el gran hombre, ¿quién podría ser sino yo?"
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "reference": "Estaba con ella anteriormente, pero... Quizás tuvo suerte con otro.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "The home planet is running out.",
-    "reference": "El planeta madre se está agotando."
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "reference": "Él estaba haciendo arreglos por el lado de la carretera y un camión lo golpeó y no se detuvo.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Oon't girls ever kill their mothers?",
-    "reference": "Las chicas no matan a sus madres? ."
+    "source": "The rights in question are all human rights, the various categories thereof being indivisible and inter-related, each having its own legitimacy: non-discriminatory treatment; fundamental human rights; civil and political rights; economic, social and cultural rights.",
+    "reference": "Los derechos que se contemplan son todos los derechos humanos, cuyas diversas categorías son in­divisibles e interdependientes y tienen legitimidad propia: un trato no discriminatorio; los derechos fundamentales de la persona; los derechos civiles y políticos; los derechos económicos, sociales y culturales.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Humanitarian, recovery and development activities",
-    "reference": "Actividades humanitarias, de recuperación y de desarrollo"
+    "source": "The solution should meet the aspirations of the majority of Kosovars and, at the same time, include adequate minority protection and guarantees.",
+    "reference": "Para su solución se deben tener en cuenta las aspiraciones de la mayoría de los kosovares y, al mismo tiempo, incluir medidas adecuadas de protección y de garantía para las minorías.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "You'll have to address any questions to my commanding officer.",
-    "reference": "Tendrá que dirigirle cualquier pregunta a mi comandante."
+    "source": "You ever known that guy to fix something up that don't work?",
+    "reference": "¿Alguna vez supiste que este tipo haya arreglado algo que no funciona?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "And we were approaching four o'clock, our cut-off time -- there was about a minute left -- and despair just settled over the room.",
-    "reference": "Eran cerca de las 4, que era cuando terminaba el juego, y solo nos quedaba un minuto. La desesperación reinaba entre nosotros,"
+    "source": "Oh, Charlie, don't try to be clever again.",
+    "reference": "- para cerrar el trato. - Charlie, no empieces.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Spandaryan reached Turukhansk on the eve of the war, a year later than Stalin. “ ‘What peace and quiet here!’ “ he was wont to remark sarcastically.",
-    "reference": "Spandaryan llegó a Turujansk en vísperas de la guerra, un año después que Stalin. \"¡Qué sosiego y qué paz hay aquí! -solía observar con ironía-."
+    "source": "The entry into force of the progressive regime established by the Act has made it necessary to build and equip open prisons, known as \"Casas de Paso\", which accommodate prisoners granted semi-release: this means that they work during the day but return to the prisons at night to sleep and that they are able to visit their families at weekends.",
+    "reference": "Con la vigencia del sistema progresivo establecido en la Ley, ha sido necesario la construcción y equipamiento de Centros Abiertos, denominados \"Casas de Paso\", en los cuales se alberga a los internos ubicados en fase de semilibertad, lo que significa que durante el día trabajan, por la noche llegarán a dormir a estos centros y los fines de semana visitan a su familia.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "He spent half his life searching for the Uthat.",
-    "reference": "Se pasó media vida buscando el Uthat."
+    "source": "Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with this Directive by 31 December 2010 at the latest.",
+    "reference": "Los Estados miembros pondrán en vigor las disposiciones legales, reglamentarias y administrativas necesarias para dar cumplimiento a lo establecido en la presente Directiva a más tardar el 31 de diciembre de 2010.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "One day we shall journey to Thorn Valley just as Nicodemus wanted... but not now.",
-    "reference": "Algún día viajaremos al valle de las espinas como quería Nicodemus.. Pero no ahora."
+    "source": "At the 3rd and 4th meetings, on 30 November 2006, the Council discussed its methods of work and agenda, including its rules of procedure.",
+    "reference": "En la tercera y la cuarta sesiones, el 30 de noviembre de 2006, el Consejo examinó sus métodos de trabajo y el programa, incluido su reglamento.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Careful, or your foolishness will come to overshadow your usefulness.",
-    "reference": "Cuidado, tu estupidez está empezando a eclipsar tu utilidad."
+    "source": "You can find the best price on Assorted Black Agate Dangle Style Earrings,We will match any competitor's price for the same quality of Assorted Black Agate Dangle Style Earrings!!!",
+    "reference": "podemos suministrar el mejor precio en el collar de la pendientes de piedras preciosas, que coincidirá con el precio de cualquier competidor para la misma calidad de pendientes de piedras preciosas!",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "- Where's Thumper's reserve chute?",
-    "reference": "- ¿Dónde está la reserva de Tambor?"
+    "source": "I would like to add also that, in this general framework, we must make the best possible use of the Council of Europe convention on cybercrime throughout the Internet.",
+    "reference": "También desearía añadir que, en este marco general, debemos hacer el mejor uso posible del convenio del Consejo de Europa sobre el cibercrimen a través de Internet.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "The results of the project are clear.",
-    "reference": "Los resultados del proyecto son evidentes."
+    "source": "I was out like I told you, man.",
+    "reference": "Salí como te dije, tío.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "- He has walked on the blood leaving tracks everywhere. For us these are important clues.",
-    "reference": "- Ha caminado sobre la sangre y ha dejado unas huellas enormes, que para nosotros son preciosas."
+    "source": "Do you plan to fight with only your bare hands?",
+    "reference": "¿Piensas luchar sólo con las manos?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "So, Colleen, you look really nice.",
-    "reference": "Colleen, luces muy linda."
+    "source": "You didn't have to meet me.",
+    "reference": "No tenía que esperarme.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "She didn't tell me where the police thought you were.",
-    "reference": "No me dijo dónde la policía cree que estás."
+    "source": "You can't catch up with her body, but, with Cerebro's help, I can catch up with her mind.",
+    "reference": "No puedes alcanzar su cuerpo, pero con la ayuda de Cerebro, podré alcanzar su mente.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "So this evening you'll pray with me",
-    "reference": "Así que esta noche tú rezarás conmigo."
+    "source": "Please clearly write your name at the top left.",
+    "reference": "Les ruego que escriban con claridad su nombre en la parte alta, a la izquierda.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Estimated requirements pertain to the operating costs of a fleet of five rotary-wing aircraft, comprising two military and three commercially contracted helicopters, and one fixed-wing aircraft contracted for twice-weekly round-trip flights between Dili and Darwin and emergency aero-medical evacuation.",
+    "reference": "Las necesidades estimadas corresponden a los gastos de funcionamiento de un parque de cinco helicópteros, dos de ellos militares y tres contratados comercialmente, y un avión contratado para la realización de dos viajes semanales de ida y vuelta entre Dili y Darwin y para la evacuación aeromédica de emergencia.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "We visited the Oil Museum and learned about the origin of this important hydrocarbon.",
+    "reference": "En las salas del Museo Regional Rada Tilly aprendimos sobre la vida de los primeros habitantes de la Patagonia. Además, conocimos la réplica de la Cueva de los Felinos.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "This was a decrease from the 1891 census with 54.4% speaking Welsh out of a population of 1.5 million.",
+    "reference": "Esto representaba un descenso respecto al censo de 1891 con un 54.4% de hablantes de galés de una población total de 1.5 millones.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I remember when I first learnt about this, being blown away by its sheer elegance and simplicity.",
+    "reference": "Recuerdo la primera vez que aprendí esto, ser llevado por su elegancia y simplicidad.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I'll keep everyone in the canteen.",
+    "reference": "Mantendré a todos en el comedor.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Lithium miniature batteries can be used for a wide range of operating temperatures, from about -20 degrees C to 55 degrees C.",
+    "reference": "Las pilas miniatura de litio se pueden utilizar en un rango de temperaturas de funcionamiento muy amplio, de unos -20 ºC a 55 ºC.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
     "source": "The Commission also had an informal technical presentation on the Guarani Aquifer System Project on 4 May 2005.",
-    "reference": "Asimismo, la Comisión celebró el 4 de mayo de 2005 una reunión oficiosa de carácter técnico en la que se le informó acerca del Proyecto Sistema Acuífero Guaraní."
+    "reference": "Asimismo, la Comisión celebró el 4 de mayo de 2005 una reunión oficiosa de carácter técnico en la que se le informó acerca del Proyecto Sistema Acuífero Guaraní.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Ask your doctor or pharmacist if you have any questions.",
-    "reference": "Pregúntele a su médico o a su farmacéutico si tiene alguna duda."
+    "source": "92 figure achieved the previous year by all the retail outlets situated within a Member State.",
+    "reference": "92 puntos de venta situados en el territorio de un Estado miembro.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "on behalf of the GUE/NGL Group. - (NL) Thank you, Mr President, Commissioner and rapporteur.",
-    "reference": "en nombre del Grupo GUE/NGL. - (NL) Gracias, señor Presidente, señor Comisario, y también quiero dar gracias al ponente."
+    "source": "I would also like to say that, as a general principle - and this is also proposed by the Commission - there must be provision for a procedure of discharge for those independent organizations which are funded exclusively by Commission funds, as is proposed for the two formerly independent organizations, one of which is the well-known CEDEFOP.",
+    "reference": "Tengo que decir que, como principio general, deberá estar previsto - lo propone también la Comisión - el proceso de la gestión para los organismos autónomos que son financiados exclusivamente por los recursos de la Comisión, tal como está previsto para los dos antiguos organismos autónomos, uno de los cuales es el conocido CEDEFOP.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Please, don't ask me to.",
+    "reference": "No me pidas que lo haga, por favor.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I'm having trouble with my straps.",
+    "reference": "¿Cuál es tu película favorita?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "You hit a dead end, you start from the beginning.",
+    "reference": "Si llegas a un callejón sin salida, empiezas desde el principio.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "And we were just sitting there, and we were singing this very beautiful song. And people started to sit with us and started to learn the song.",
+    "reference": "Y ahí estábamos, cantando aquella canción tan bonita... y la gente se sentaba y se aprendía la canción.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The details and topics of these events will be announced once they are further clarified.",
+    "reference": "Los detalles y temas de estos actos se anunciarán cuando se conozcan con más precisión.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "No arrest warrant was presented and the human rights defender remains in custody. Hicham Mansouri was previously beaten by two men in what appeared to be a professional attack on 24 September 2014. The assault appears to have been related to Hicham Mansouri's human rights work, as it took place within minutes of his meeting with Mr Mâti Monjib, a fellow human rights defender and colleague.",
+    "reference": "Anteriormente, el 24 de septiembre de 2014, el defensor fue golpeado por dos hombres en lo que pareció ser un ataque profesional que estaría relacionado con la tarea por los derechos humanos de Hicham Mansouri ya que tuvo lugar a minutos de su encuentro con el Sr. Mâti Monjib, colega defensor de derechos humanos.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Amazingly, I survived my terrible fall from the high cliff.",
+    "reference": "Afortunadamente sobreviví a la caída que tuve de la montaña.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "there was no ventilation, and sometimes the toilets overflowed, and it was opposite a fruit market, so it was probably a mixture of disinfectant, rotten fruit, and sweat all rolled into one.",
+    "reference": "No había ventilación y a veces se inundaba el baño y estaba frente al mercado de frutas. - Así que era una mezcla de desinfectante, fruta podrida y sudor todo en uno.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "It pleases me greatly that once again you value my knowledge.",
+    "reference": "Me agrada enormemente que vuelvas a apreciar mi conocimiento.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "He gets to me sometimes.",
+    "reference": "A veces no aguanto.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Colombia is seeking PSSA status for the island on the basis of its ecological importance for the conservation of species unique to the region, and to the world, and on the basis of ecological, socio-economic, cultural and scientific criteria set out in the annex to the submission.",
+    "reference": "Colombia solicita estatuto de zona especialmente sensible para la isla sobre la base de su importancia ecológica para la conservación de especies únicas en la región y en el mundo y sobre la base de los criterios ecológicos, socioeconómicos, culturales y científicos establecidos en el anexo a su exposición.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Stand where you are and be quiet.",
+    "reference": "Quédense donde están y guarden silencio.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Didn't Barney tell you?",
+    "reference": "¿No te lo dijo Barney?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The home planet is running out.",
+    "reference": "El planeta madre se está agotando.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Periodic reports should be no more than 70 pages long and generally should focus on the period between the consideration of the previous report and the current report, using the concluding comments on the previous report as their starting point and highlighting new developments.",
+    "reference": "Los informes periódicos no deberán tener más de 70 páginas y deberán centrarse en el período comprendido entre el examen del informe anterior y el informe actual, utilizando las observaciones finales sobre el informe anterior como punto de partida y destacando los nuevos acontecimientos.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "So why not graduate to a lost summer?",
+    "reference": "Así que, ¿por qué no tener un loco verano?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The way I feel when I've gone too long without putting someone on my table.",
+    "reference": "La manera en que me siento cuando he pasado mucho tiempo sin poner a nadie en mi mesa.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I finally followed your advice and tried to work things out with my dad.",
+    "reference": "Por fin seguí tu consejo, y traté de solucionar las cosas con mi padre.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "And it shall come to pass in that day, that a great tumult from the LORD shall be among them; and they shall lay hold every one on the hand of his neighbor, and his hand shall rise up against the hand of his neighbor.",
+    "reference": "Y acontecerá en aquel día que habrá en ellos gran quebrantamiento de Jehová; porque trabará cada uno de la mano de su compañero, y su mano echará contra la mano de su compañero.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Housing legislation A whole body of legislation regulates the provision of housing, home ownership and the renting of premises for habitation.",
+    "reference": "Existe todo un conjunto de normas que regulan el suministro de vivienda, la propiedad del hogar y el arrendamiento de inmuebles para habitación.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The Commission was satisfied that the Greek authorities were now acting in accordance with the undertakings given and that the aid, which was part of a revised restructuring plan extended until 2002, was compatible with the competition rules.",
+    "reference": "La Comisión consideró que ya se respetaban todos los compromisos asumidos por las autoridades griegas y que la ayuda, que se inserta en un plan de reestructuración revisado y prorrogado hasta 2002, era compatible con las normas de la competencia.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Well, he's still recovering from his last interrogation, so if you're here to brutalize him again, I won't be party to it.",
+    "reference": "Bueno, él aún se está recuperando de su último interrogatorio así que si están aquí para tratarlo brutalmente de vuelta, no participaré.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "This alternative education system, managed jointly by local communities and district authorities, provides students an opportunity to enter the formal school system, and has thus enabled Karamojong children to receive a formal education.",
+    "reference": "El sistema es administrado en conjunto entre las comunidades locales y las autoridades del distrito, y se reconoce la posibilidad de que los estudiantes puedan pedir traslado al sistema de educación formal. De hecho, el sistema de educación alternativo ha fomentado la escolarización formal de los niños y niñas karimjong.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "And you want to rub my nose in the fact that my contributions are being overlooked again?",
+    "reference": "¿Así que quieres pasarme por las narices el hecho de que mis contribuciones están siendo desatendidas otra vez?",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "How are such matters as the theft of the White House in 2000 and 2004, via voter fraud, arranged? Diebold, with a paperless trail, was developed long before, and states were forced to implement this electronic voting by statute, under the gist of helping the disabled to vote.",
+    "reference": "Cómo se organiza asuntos tales como el robo de la Casa Blanca en el 2000 y el 2004 a través del fraude electoral ? Diebold , sin dejar registros escritos , fue desarrollada mucho antes , y los estados fueron obligados a implementar este sistema de voto electrónico , bajo la fachada de ayudar a votar a los impedidos",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "- Hit by Cupid's arrow?",
+    "reference": "- ¿Te ha cazado Cupido?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Only loop quantum gravity calculates the entropy of black holes.",
+    "reference": "Sólo la gravedad cuántica de bucles calcula la entropía de los agujeros negros.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "In this connection the Civilian Police Adviser is establishing a system of consultation with Member States with the aim of developing on-call lists of civilian police officers, similar to that being established for military officers.",
+    "reference": "A ese respecto, el Asesor de Policía Civil está creando un sistema para entablar consultas con los Estados Miembros con objeto de crear listas de reserva de oficiales de policías civil, similar al que se está estableciendo en relación con los oficiales militares.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The urgency of the matter has been amply demonstrated.",
+    "reference": "La urgencia ya no necesita demostrarse.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I've counted them in and I've counted them out.",
+    "reference": "Los he visto entrar y salir.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The market in Forio is daily, 7am - 1pm. (near the post office)",
+    "reference": "El mercado en Forio es diaria, 7am - 1pm. (Cerca de la oficina de correos)",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Given that in an open economy monetary authorities have less control in managing monetary aggregates, administrative measures, such as capital account restrictions, need not be excluded a priori as a possible measure to enhance the impact of policies on domestic monetary aggregates and reduce uncertainties regarding their future trends.",
+    "reference": "Puesto que en una economía abierta las autoridades monetarias tienen menos capacidad de control de los agregados monetarios, no debe excluirse a priori la adopción de medidas administrativas, como las restricciones de la cuenta de capital, para mejorar el efecto de las políticas en los agregados monetarios nacionales y reducir la incertidumbre en cuanto a sus tendencias futuras.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Noting with satisfaction the conclusions of the United Nations advisory missions dispatched by the Secretary-General to the affected countries of the subregion to study the most appropriate way of halting the illicit circulation of small arms and collecting them,",
+    "reference": "Observando con satisfacción las conclusiones de las misiones consultivas de las Naciones Unidas que el Secretario General ha enviado a los países afectados de la subregión para determinar el modo más apropiado de detener la circulación ilícita de armas pequeñas y de recogerlas,",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "And what about this registered sex offender?",
+    "reference": "¿Y qué hay del delincuente sexual registrado?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "General effects on UNRWA operations in the Gaza Strip",
+    "reference": "Repercusión general en las operaciones del OOPS en la Franja de Gaza",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Support was expressed, in general, for paragraph 1 of article 3.",
+    "reference": "En general se expresó apoyo por el párrafo 1 del artículo 3.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "It's just the beast took up most of my brain.",
+    "reference": "Es sólo que lo de la bestia se ocupó de la mayoría de mi cerebro.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Stuck between a rasta man with a pirate radio station upstairs, and a Yardle drug dealer downstairs.",
+    "reference": "Entre un rasta con una estación de radio pirata, en el piso de arriba... y un traficante jamaiquino en el piso de abajo.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The things changed abruptly one night",
+    "reference": "Las cosas cambiaron bruscamente una noche",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Melanie, if you don't mind me saying, I think you handled that terribly.",
+    "reference": "Melanie, si no te importa decirme, creo que lo manejaste terriblemente.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Say... let's have a look at the new boy.",
+    "reference": "Veamos al nuevo chico.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Viet World Kitchen provides a useful guide to understand Vietnamese restaurant menus",
+    "reference": "Viet World Kitchen brinda una útil guía para entender Vel menú de un restarurante vietnamita.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "So I had a great time last night. - Yeah, me too. But I forgot to give you something very important.",
+    "reference": "Pues anoche lo pasé muy bien.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Omni-comprehensive tariff (FIT mechanism hereinafter) applies to plants with installed capacity of less than 200 kW for wind farms and less than 1 MW for other types of renewables.",
+    "reference": "Las tarifas globales (en lo sucesivo, «mecanismo FIT») se aplican a las instalaciones cuya potencia instalada es inferior a 200kW, en el caso de los parques eólicos, y a 1 MW en los demás tipos de fuentes renovables.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "-What are you doin' to me?",
+    "reference": "-que es lo que me quiere hacer? No! No!",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The TN team was in Río de Janeiro doing a report on the work that Echegaray, and a group of about 10 family members, was developing in Brazil.",
+    "reference": "El equipo de TN se encontraba en Río de Janeiro realizando un informe sobre la actividad que estaba desarrollando en Brasil el titular de la AFIP y un grupo de familiares de al menos 10 personas.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Why does man not closer to the horns? -He 's scared?",
+    "reference": "El matador tiene que acercarse Io más posible a los cuernos así demuestra su valor.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The current situation must make us more sensitive to the importance of sincere dialogue and good faith, to the need of opening not only our ears but also our hearts to others.",
+    "reference": "La situación presente nos debe hacer más sensibles a la importancia del diálogo sincero y de buena fe, a la necesidad de abrir no sólo nuestros oídos, sino también nuestro corazón, a los otros.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Together with PRODAR, support is provided to agroindustry as a production sector that enables farmers to add value to their production, increases incomes and creates jobs.",
+    "reference": "Junto con PRODAR, se está respaldando la agroindustria, como sector de producción, que permite que los agricultores agreguen valor a su producción, aumenten sus ingresos y se creen oportunidades de empleo.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The Chinese Communist party was forced against its will to join the bourgeois Kuomintang party and submit to its military discipline.",
+    "reference": "El partido comunista chino se vió obligado, contra su voluntad, a formar en las filas burguesas del Kuomintang y a someterse a su disciplina militar.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "No, I just want to nestle into your bosom, cos I feel stupid.",
+    "reference": "No, solo quiero acurrucarme en tu pecho, porque me siento estúpido.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "- That's why we're here, ma'am, to ask about your old job.",
+    "reference": "-Por eso estamos aquí, para preguntarle de su anterior trabajo.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Come on, Charlie, call, raise or fold.",
+    "reference": "Tienes que decidir, Charlie.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "They may also be expressed as weight by weight (mg./kg-1).",
+    "reference": "Pueden expresarse también en peso por peso (mg.kg-1).",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "It will just be you, Turati and myself... and a couple of officials to make sure that everything is legal.",
+    "reference": "Sólo seremos tú, Turati, yo y dos oficiales para asegurarse de que todo sea legal.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "To be honest, I'm worried about Mommy and Daddy.",
+    "reference": "Para ser franca, me preocupan mamá y papá.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "That’s because ROSINA, a sensor made up of two mass spectrometers and a pressure sensor, found far too much of the element deuterium in the material being emitted from Chury. “The comet has a level of deuterium more than three times higher than what’s found on Earth,” says ROSINA principal investigator Kathrin Altwegg of the University of Bern.",
+    "reference": "O por lo menos tenemos buenas razones para creer que así fue”, afirma Kathrin Altwegg, especialista en Química Cósmica de la Universidad de Berna y principal investigadora de la Agencia Espacial Europea (ESA) en el experimento Rosina. Rosina es el instrumento científico más pesado a bordo de la sonda Rosetta: un conjunto de dos espectrómetros de masa y un sensor de presión que analizan la materia y los gases que se evaporan del cometa en el espacio.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "In thousands of years nothing like this had ever happened.",
+    "reference": "El que \"la abrumadora mayoría de los lectores estén incorporados a una u otra organización\" es una cosa excelente, que nunca había ocurrido en miles de años.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The task of implementing resolution 1612 (2005) remains pending and should be approached in a coordinated fashion, by States, the United Nations system and civil society alike.",
+    "reference": "La tarea de poner en práctica la resolución 1612 (2005) está aún pendiente y debe ser abordada de manera conjunta, tanto por los Estados como por el sistema de las Naciones Unidas y la sociedad civil.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Money is rounder than the sun and the moon.",
+    "reference": "El dinero es más redondo que el sol y la luna.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "- A lady from Missouri - Myrtle Young.",
+    "reference": "- Para una chica de Missouri.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "You know, I should finish getting ready.",
+    "reference": "Tengo que terminar de arreglarme.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Um, isn't it bad luck for the bride to see the groom in his wedding suit?",
+    "reference": "¿No es mala suerte que la novia vea el novio en su traje de boda?",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "[in Maori] When the call is made that the stones are ready, the fire is down, and the food is ready, then the real work begins!",
+    "reference": "Cuando avisan que las piedras están listas, que el fuego y la comida están listos, entonces comienza el trabajo de verdad.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Careful, or your foolishness will come to overshadow your usefulness.",
+    "reference": "Cuidado, tu estupidez está empezando a eclipsar tu utilidad.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "44 The Palestinian National Information Center (PNIC) reported that, between 29 September 2000 and 31 May 2003, the occupying forces uprooted hundreds of thousands of olive, citrus and other fruit trees, cited in Ziegler, loc.",
+    "reference": "44 El Centro Nacional de Información Palestino (PNIC) informó que, entre el 29 de septiembre de 2000 y el 31 de mayo de 2003, las fuerzas de ocupación arrancaron cientos de miles de olivos, árboles de cítricos y otros árboles frutales, citado en Ziegler, loc.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "As long as he keeps bringing in funding, he's not going anywhere.",
+    "reference": "Mientras siga trayendo la financiación, no se va a ninguna parte.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "There's possible evidence that Brian withheld the life jacket from him.",
+    "reference": "Hay una posible evidencia de que Brian retuvo su salvavidas.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I would like, in particular, to highlight the desirability of enhanced international cooperation between competition law enforcement authorities.",
+    "reference": "Concretamente, me gustaría destacar la conveniencia de una cooperación internacional cada vez más amplia entre las autoridades encargadas de aplicar el derecho de competencia.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "He's one of your people.",
+    "reference": "Es uno de los tuyos.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Any more of this and I'm going to have to make a complaint about you.",
+    "reference": "Algo más de esto, y voy a tener que hacer una queja sobre Uds.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "38 Cayman Islands Government, ECLAC/UNDP report, 10 January 2005, www.gov.ky, The Economist Intelligence Unit, September 2004, www.eiu.com.",
+    "reference": "Gobierno de las Islas Caimán, informe de la CEPAL y el PNUD, 10 de enero de 2005, www.gov.ky, The Economist Intelligence Unit, septiembre de 2004, www.eiu.com.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I'm going to authorize the military operation in Sangala as planned.",
+    "reference": "Voy a utilizar la operación militar en Sangala como se planeó.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   }
 ]

@@ -1,42 +1,296 @@
 [
   {
-    "source": "Girls reported sexual harassment or incidents of rape.",
-    "reference": "女孩举报了性骚扰或强奸事件。"
+    "source": "So do several geniuses that I could mention.",
+    "reference": "許多天才人物都是這樣",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "The majority of victims have been innocent and defenceless women and children.",
-    "reference": "受害者的大多数是无辜和手无寸铁的妇女与儿童。"
+    "source": "The calculation to arrive at the level of reserve follows the same basis as that of the regular reserve.",
+    "reference": "这笔准备金数额的计算方法沿用计算经常准备金时所用的同一基准。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "Posts funded under the Regular Budget are presented in Table II.8.",
-    "reference": "c) 难民署+伙伴捐款-"
+    "source": "Also, following its approval, the Section e-mails a draft version of the agreement, as it has found that this reduces the overall time required for signature and return of the hard copy.",
+    "reference": "此外，该科会在批准后电邮长期协定草案，因为认为这样做可以减少签署和交还硬拷贝的整个时间。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The General Assembly adopted the draft resolution recommended by the Sixth Committee in paragraph 11 of its report (A/61/457) (resolution 61/40).",
+    "reference": "大会通过第六委员会在其报告（A/61/457）第11段中建议的决议草案（第61/40号决议）。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
     "source": "And what your husband said... if Columbus had done it, we'd all be Indians.",
-    "reference": "你丈夫说的... 要是哥伦布没发现美洲，我们现在就都是印第安人了"
+    "reference": "你丈夫说的... 要是哥伦布没发现美洲，我们现在就都是印第安人了",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "Dissemination of information about the Fund",
-    "reference": "5. 宣传有关基金的情况"
+    "source": "Donors have since expressed interest in providing bilateral support for over 80 per cent of the individual projects that are considered critical to the success of the administrative handover.",
+    "reference": "捐助者自那时以来曾表示愿意为80%被认为是成功移交行政工作十分关键的个别项目提供双边支助。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "The networks use primarily household survey data.",
-    "reference": "这些网络主要利用家庭调查数据。"
+    "source": "In 1996, recognizing the multi-purpose capacity of schools and the future potential of providing New Brunswick citizens with affordable access to the information highway, the Department of Education in partnership with Industry Canada and New Brunswick Tel created Connect New Brunswick Branché and the New Brunswick Community Access Network.",
+    "reference": "1996年，因为认识到学校的多功能性以及今后为新不伦瑞克公民提供可负担得起的访问信息高速公路的潜力，教育部与加拿大工业部以及新不伦瑞克电信合作，建立了新不伦瑞克连机处和新不伦瑞克社区访问网络。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "How about we scare the shit out of them?",
-    "reference": "我们用光环来绑架大脑的杏仁体"
+    "source": "It was stated that registration could undermine retention-of-title transactions that were based on concepts shared by a number of European countries and reflected in European Union legislation.",
+    "reference": "据指出，保留所有权交易是基于一些欧洲国家所共同遵循并反映在欧洲联盟法规中的理论，而登记要求则有可能损害这种交易。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "Information on voluntary quantitative commitments for Kazakhstan for the period of 2008-2012.",
-    "reference": "6. 关于2008-2012年哈萨克斯坦自愿数量承诺的信息。"
+    "source": "You cannot have anything in my locker. l take it all back.",
+    "reference": "储物柜里的东西不会给你的啦",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "What would the Senate do with me, an inexperienced legislator who lacks self-deception, which is essential when seeking to guide others?",
-    "reference": "参议院怎能接纳 一位毫无经验的成员... 一位不能自欺欺人... 没能力指导他人的成员？"
+    "source": "Group of 77 (on environment and sustainable development issues)",
+    "reference": "77国集团(环境与可持续发展问题)",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   },
   {
-    "source": "The non-political and non-religious organization has activities in 23 countries in North America, the Caribbean, South America, Europe and Australia.",
-    "reference": "非政治性和非宗教的本组织在北美、加勒比、南美、欧洲国家以及澳大利亚等23个国家开展活动。"
+    "source": "The expert may also serve as an expert witness for the Office of the Prosecutor.",
+    "reference": "该专家还可以担任检察官办公室的专家证人。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Are the perpetrator(s) known to the victim?",
+    "reference": "受害者是否认识侵权者？",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "You are, by far, the most normal person at the FBI, so, you're really the only person in the world",
+    "reference": "是你 而且你也是局里最正常的一个人 You are, by far, the most normal person at the FBI, so, 所以你是这个世上唯一一个 you're really the only person in the world",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "It will need to invest a lot more if the Sudan is finally to shake off the vestiges of war and achieve comprehensive peace and development.",
+    "reference": "但是，若要苏丹摆脱战争遗害，实现全面和平与发展，国际社会就需要大幅度增加投入。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "On 7 May, when a journalist asked White House spokesman Ari Fleischer: “Is there any proof of this or is this an assumption by the United States?” Fleischer replied: “No, it's not an assumption.",
+    "reference": "5月7日，一名记者问白宫发言人阿里·弗莱舍：“有没有任何证据证明这一点，还是说这是美国的假设？” 弗莱舍回答：“这不是假设。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "So Stiles is acting scared. So?",
+    "reference": "Stiles表现得挺害怕 怎样?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "At the 12th meeting, on 21 September 2007, in accordance with part I, section C, paragraph 7, of the annex of Council resolution 5/1 of 18 June 2006, the Council agreed on a timetable for the consideration of the 192 Member States of the United Nations under the universal periodic review mechanism during its first cycle.",
+    "reference": "173. 在2007年9月21日第12次会议上，根据理事会2006年6月18日第5/1号决议附件第一部分C节第7段，理事会商定了根据普遍定期审议机制对192个联合国会员国进行第一轮审议的时间表。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "There were also cases of excessive use of force and/or unusual means of restraint used by officers during the expulsion of foreign nationals from Sweden.",
+    "reference": "而且还出现过官员在将外国国民赶出瑞典当中过度使用武力和(或)不正常的强制手段的情况。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "No. You are not weaseling out of this this time, you...",
+    "reference": "这次你别想逃避 你",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The Committee will now take a decision on draft resolution A/C.1/57/L.36.",
+    "reference": "委员会现在将对决议草案A/C.1/57/L.36作出决定。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Eight new individuals and six new entities have been placed on the Committee's List since 25 May 2004.",
+    "reference": "自2004年5月25日以来，又有8名个人和6个实体列入委员会清单。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The reforms that have been undertaken and implemented in recent years have already done much to strengthen and revitalize the Organization.",
+    "reference": "近几年里进行的改革在加强本组织和恢复其活力方面发挥了很大作用。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "To his wife and sniveling brats.",
+    "reference": "家里有老婆， 孩子还流着鼻涕。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I'm-I'm a journalist, myself.",
+    "reference": "我是 - -我是记者",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "And at that moment, the dog transformed into the Buddha of love and kindness.",
+    "reference": "那一刻 狗幻化成 爱与善的佛",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Add glamour to the foggy night",
+    "reference": "給霧夜添上濃裝",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The second Planning Officer (P-3) would focus on implementation tracking and evaluation, including performance reporting on the results-based-budgeting frameworks, consolidation of periodic reports on the mission implementation plan and on milestones, benchmarks and timelines for the gradual drawdown of the Mission.",
+    "reference": "另一个规划干事（P-3）将重点关注执行情况跟踪和评价，包括关于成果预算编制框架的执行情况报告、合并关于特派团执行计划的定期报告以及关于特派团里程碑、基准和逐渐缩编时间表。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Sing a song, Mr. Villiers, sing a song",
+    "reference": "唱首歌，维里叶先生，唱首歌",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The circus is as a drug. If enter in your blood, it is arrested.",
+    "reference": "情况非常不好让你流血",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "She stayed at the Catholic orphanage.",
+    "reference": "从那个时候开始 她就自己在教堂的孤儿院 自己一个人生活",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "An important benefit of memorandums of understanding and service level agreements is that they can consolidate and make cooperation with supplier organizations more predictable.",
+    "reference": "56. 谅解备忘录和服务级协议有一大好处：既可巩固供应者组织之间的合作，又可使之更具可预测性。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "It is worth recalling that those relations must be relations of peace, of harmony, of fraternity and of shared prosperity — which they never should have ceased to be.",
+    "reference": "应当指出，这种关系必须是和平、和谐、兄弟友情和共同繁荣的关系，绝不应当停止成为这种关系。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Although the Master and Doctoral level students are divided equally between men and women, men have a much greater chance to reach the position of dissertation and thesis supervisor.",
+    "reference": "尽管在硕士和博士生中，男女各占一半，但男性将来担任论文导师的机会更大。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Between 1900 and 1945 hours an Israeli reconnaissance aircraft overflew the occupied Shab`a farmlands.",
+    "reference": "19时至19时45分，一架以色列侦察机飞越被占领的Shab'a农地。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Some preference was expressed in the Working Group for the provision on preliminary orders as contained in paragraph (5).",
+    "reference": "工作组中有人比较倾向于采用第(5)款中关于初步命令的条文。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "You've been focused so hard on making it, you forgot about one thing.",
+    "reference": "却忘记了最重要的东西 那东西叫音乐 我才不会放在心上呢 你们知道吗?",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "They've got remote-control window shade there's a TV in every room, but there's also a room just for watching TV.",
+    "reference": "-什么？ -对 没事的",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "I don't wanna deal with dead bodies anymore.",
+    "reference": "你知这里有多少个金鱼缸吗？",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "In the view of his delegation, the draft articles adopted on second reading were well balanced and took full account of State practice, case law and legal doctrine in the field.",
+    "reference": "俄罗斯代表团认为，二读通过的条款草案较为平衡，充分考虑到了这一领域的国家实践、判例法和法律学说。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "j. Maintenance and expansion of the Dag Hammarskjöld Library websites in all the official languages;",
+    "reference": "j. 维护并扩大达格·哈马舍尔德图书馆所有正式语文网站；",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Just a matter of keeping busy.",
+    "reference": "短短忙于工作。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The regional situation remains fragile, however, with continuing tensions in Guinea-Bissau, a rebellion in Liberia and poor relations between Liberia and her neighbours.",
+    "reference": "不过，本区域的局势仍然不稳，几内亚比绍的局势依然紧张、利比里亚仍有叛乱以及利比里亚与其相邻各国的关系还是不佳。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "All four alleged perpetrators were arrested between 3 and 4 September 1993 in relation to the crime.",
+    "reference": "所有4名指称的肇事者均因这一罪行于1993年9月3日至4日之间被捕。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Two panel discussions were held.",
+    "reference": "举行了两个专题小组讨论会。",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "Mr. Kuchinsky (Ukraine): Let me join previous speakers in congratulating the Pakistani presidency on the convening of today's open debate on this crucial issue.",
+    "reference": "库欣斯基先生（乌克兰）（以英语发言）：让我同先前的发言者一道祝贺巴基斯坦主席举行今天关于这一重要问题的公开辩论。",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "We also support international mediation to calm the situation.",
+    "reference": "我们还支持国际调解，以便平息该局势。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "The most important government clients and partners in 2008 were the Governments of Afghanistan, India, and Sri Lanka.",
+    "reference": "2008年，最重要的政府客户及合作伙伴是阿富汗、印度和斯里兰卡政府。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "So what you see, that precipice, that high precipice with the valley, is the 2008 financial crisis.",
+    "reference": "因此各位所看到的， 这悬崖，深沟险壑， 是2008年的金融危机。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
+  },
+  {
+    "source": "It was seven volumes, which had just been published, and there was a lot of interesting material relevant to that subject.",
+    "reference": "作为主要的资料来源，她向我提到了西奥多·罗斯福总统的一组信件：共有七卷，刚刚发表，有许多关于那一问题的有意义的资料。",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-zh:test"
   }
 ]

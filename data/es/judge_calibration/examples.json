@@ -1,42 +1,296 @@
 [
   {
-    "source": "¶ People wanna get on down and get down ¶",
-    "reference": "# People wanna get on down and get down #"
+    "source": "Therefore, it is essential to talk with your doctor about your personal risk factors and/or experience with Hodgkins disease.",
+    "reference": "Por lo tanto, es esencial que hable con su médico o profesional en el cuidado de la salud acerca de sus factores de riesgo personales y/o experiencia con la enfermedad de Hodgkin.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Lectures and practical exercises",
-    "reference": "Conferencias y ejercicios prácticos"
+    "source": "Stage from san francisco.",
+    "reference": "¡Diligencia de San Francisco!",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Pages such as the Home Page can be completely replaced with your own page, which you have already published to the Internet.",
-    "reference": "Las páginas como la Página Principal pueden ser completamente reemplazadas con su propia página, la cual ya ha sido publicada en Internet."
+    "source": "Sometimes this relativism becomes aggressive, when it opposes those who claim to know where the truth or meaning of life is to be found.",
+    "reference": "A veces, este relativismo llega a ser batallador, dirigiéndose contra quienes afirman saber dónde se encuentra la verdad o el sentido de la vida.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "For each action or measure envisaged under this Decision, the IDA work programme shall contain, as appropriate:",
-    "reference": "Para cada acción o medida que se contemple con arreglo a la presente Decisión, el programa de trabajo IDA deberá incluir, según corresponda:"
+    "source": "This created food shortage, which became a problem for the Anunnaki.",
+    "reference": "Esto creó escasez de alimentos, que se convirtió en un problema para los Anunnaki.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Formulation, modification and withdrawal of reservations and interpretative declarations (continued)",
-    "reference": "La formulación, la modificación y el retiro de las reservas y las declaraciones interpretativas (continuación)"
+    "source": "The Chuck Shurley story line -- probably one of my very favorite things about the show.",
+    "reference": "La trama de Chuck Shurley... es problamente una de mis favoritas sobre la serie.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "- That's not what that means Yes it is!",
-    "reference": "- No es lo que intento."
+    "source": "@YousifAlThawadi: funny how Gaddafi stressing on religion",
+    "reference": "@YousifAlThawadi: es gracioso cómo Gaddafi está enfatizando sobre religión",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "I mean, my dad does business with them, or he raised money for them.",
-    "reference": "Quiero decir, mi padre tiene negocios con ellos, o maneja dinero para ellos."
+    "source": "Ayasrah ( ; ), is a noble tribe living in Jordan, originally from the Arabian Peninsula.",
+    "reference": "Ayasrah (en árabe: عياصرة), es una noble tribu de Jordania, originaria de la península arábiga.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Autumn in my heart lingers too long.",
-    "reference": ":El otoño perdura demasiado en mi corazón."
+    "source": "Turning to emerging issues, the practice of farming marine species - mariculture - is spreading rapidly.",
+    "reference": "Con respecto a cuestiones emergentes, la práctica del cultivo de especies marinas, maricultura, se está difundiendo rápidamente.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Note 9 Balances relating to projects funded by donors",
-    "reference": "Nota 9 Saldos relativos a proyectos financiados por los donantes"
+    "source": "All ads by AutoLease",
+    "reference": "Todos los anuncios por María",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "State party: Russian Federation",
-    "reference": "Estado Parte: Federación de Rusia"
+    "source": "We do not have to live Holy. Silence that Prophet. Kill that Prophet!”",
+    "reference": "Nosotros no tenemos que vivir en Santidad. Silencien a esta Profeta.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "\"When Pharaoh saw that there was relief, he hardened his heart and would not listen to Moses and Aaron, just as the LORD had said.\"1",
+    "reference": "\"Pero en cuanto el faraón experimento alivio, endureció su corazón y, tal como el Señor lo había advertido, ya no quiso saber nada de Moisés ni de Aaron.\"1",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The press in Asunción reported that the operation included exercises such as occupying the Itaipú Dam and rescuing Brazilian citizens.",
+    "reference": "La prensa de Asunción informó que la operación incluye ejercicios como la ocupación de la represa de Itaipú y el rescate de ciudadanos brasileños.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "But what if someone asks me, “Can you tell me what happened before you were born? Can anybody tell me what happened before you were born?” I do not know! I see.",
+    "reference": "Mas, qué hay si alguien me pregunta, \"¿Puede decirme que sucedió antes que usted naciera? ¿Puede alguien decirme lo que sucediera antes de que nacieran?\" ¡No lo sé! Ya veo.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "If, for instance, three studies have been conducted using foliar application and at a later date soil application (such as seed treatment, granular or soil drench) is proposed, then at least one additional study reflecting soil application shall be conducted.",
+    "reference": "Si, por ejemplo, se han realizado tres estudios con aplicación foliar y más adelante se propone la aplicación en el suelo (como el tratamiento de las semillas, granulado o por inundación), deberá efectuarse por lo menos otro estudio en el que quede reflejada esta aplicación.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Then, I'll buy you clothes,",
+    "reference": "-Tiene que deshacerse de ese traje de gobernanta.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Any Party included in Annex I that has provided funding for the adaptation fund established in accordance with decision 10/CP.7 shall report on its financial contributions to this fund.",
+    "reference": "Toda Parte del anexo I que haya contribuido a la financiación del fondo de adaptación establecido de conformidad con la decisión 10/CP.7 informará acerca de sus contribuciones financieras a este fondo.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Technological research, constant attention to market demand, experience and capacity in applying these demands to production have led the company to achieve exciting goals which are the building blocks for FIMAR's development of new ideas and new models.",
+    "reference": "Búsqueda tecnológica, constante atención a los requerimientos del mercado, experiencia y capacidad para aplicar estos requerimientos a la producción han llevado a la empresa a metas estimulantes que para FIMAR no son otra cosa que el punto de partida para el desarrollo de nuevas ideas y la realización de nuevos modelos.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Welcomes the recent holding of peaceful municipal elections, which is a landmark in Kosovo's democratic development and in the implementation of Security Council resolution 1244 (1999), and commends in this regard the support by all parties of the Interim Administration Mission's efforts;",
+    "reference": "Acoge con agrado la reciente celebración de modo pacífico de elecciones municipales, que ha representado un hito en la evolución democrática de Kosovo y en la aplicación de la resolución 1244 (1999) del Consejo de Seguridad, y a ese respecto encomia el apoyo proporcionado por todas las partes a las iniciativas adoptadas por la Misión de Administración Provisional;",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "In view of the continuing serious market imbalance in the milk sector, the Commission does not envisage the introduction of provisions which would add any further obligations",
+    "reference": "En vista del serio y continuado desequilibrio del mercado en el sector de la leche, la Comisión no contempla la introducción de disposiciones que añadirían mayores obligaciones a los acuerdos nacionales o contractuales privados que cubren las relaciones propietarioarrendatario dentro de los Estados miembros.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I mean, I saved your life.",
+    "reference": "Salve tu vida.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Nobody was bothering about future historians, although a lot of trouble was being prepared for them right there.",
+    "reference": "Nadie se preocupaba de los historiadores del futuro, aunque se les estuviera preparando no pocos problemas.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The carrier shall beis liable for loss, damage [, delay] or injury caused by a breach of its obligations under article , unless [and to the extent] the carrier proves that neither its fault nor the fault of any person mentioned referred to in article 14 bis 19 caused [or contributed to] the loss, damage [, delay] or injury.",
+    "reference": "El porteador será responsable de toda pérdida, daño [, demora] o lesión corporal causada por un incumplimiento de sus obligaciones con arreglo al artículo , salvo [y en la medida en] que el porteador pruebe que no fue culpa suya ni de ninguna persona mencionadaa la que se haga referencia en el artículo bis, lo que causó [o contribuyó a causar] la pérdida, el daño [, la demora] o la lesión corporal.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "You acknowledge and understand that service outages due to suspension of your account as a result of billing issues will prevent ALL Service.",
+    "reference": "Usted reconoce y entiende que las interrupciones del servicio derivadas de la suspensión de su cuenta como resultado de asuntos relacionados a cobranza, interrumpirán TODO el Servicio.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "How come the Krauts knew about that stove, Security?",
+    "reference": "Oficial de seguridad, ¿cómo es que los nazis sabían lo de la estufa?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Mr President, I should like to thank you very much for this opportunity to take part here today in the debate, which I have found both interesting and very constructive.",
+    "reference": "Señor Presidente, quisiera darle las gracias por habernos brindado la posibilidad de participar hoy en este debate, que me parece interesante y muy constructivo.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "[Barking] Why do they always pick a damp day for me to inaugurate a bridge... or open a horticultural exhibition, or...",
+    "reference": "¿Por qué eligen siempre días húmedos para que inaugure puentes, exposiciones florales, o...?",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Sierra de Fuentes is a municipality located in the province of Cáceres, Extremadura, Spain.",
+    "reference": "Sierra de Fuentes es un municipio español de la provincia de Cáceres, Extremadura.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Referring in particular to countries in post-conflict situations, where the State was in a weak position and resources were scarce, the panellist stated that the greatest challenge was to counter the scepticism of the general population vis-à-vis the rule of law and to rebuild confidence in institutions.",
+    "reference": "Refiriéndose a países que emergían de un conflicto, en que el Estado era débil y los recursos escasos, el ponente dijo que el reto mayor consistía en contrarrestar el escepticismo de la población respecto del imperio de la ley y en restaurar la confianza en las instituciones.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Zimbabwe's President Robert Mugabe has angered Nigeria with comments made on March 15, 2014 during his 90th birthday luncheon that Nigeria and its citizens are corrupt.",
+    "reference": "El presidente de Zimbabue Robert Mugabe enfureció a los nigerianos con los comentarios que hizo el 15 de marzo de 2014, durante el banquete de su 90° aniversario, en los que afirmó que Nigeria y sus ciudadanos son corruptos.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Oh, that's sexual harassment, Chief.",
+    "reference": "Eso es acoso sexual, inspector.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "On the other hand, as referred to in the third report to the Counter-Terrorism Committee, Article 288 of the Brazilian Penal Code criminalises any association for the purposes of the commission of an offence, regardless the existence of any structure, job division, use of violence, intimidation, corruption or other similar means.",
+    "reference": "Por el otro, como se dice en el tercer informe al Comité contra el Terrorismo, el artículo 288 del Código Penal brasileño tipifica el delito de asociación destinada a la comisión de un delito con prescindencia de la existencia de estructura, división de funciones o empleo de violencia, intimidación, corrupción u otros medios similares.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "In a medium bowl, combine zucchini, tomatoes, scallions, and olive oil.",
+    "reference": "En un tazón mediano, mezcle el calabacín, los tomates, las cebolletas y el aceite de oliva.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "As sensible as this two-pronged approach – spend now, cut later – may be, it is made virtually impossible by the absence of any mechanism whereby President Barack Obama can credibly commit himself or future administrations to fiscal tightening.",
+    "reference": "Con todo lo sensato que pueda ser este enfoque de dos vías -gastar ahora, hacer recortes más tarde-, se ha vuelto prácticamente imposible por la falta de un mecanismo que permita al presidente Barack Obama comprometerse de manera fiable a sí mismo o a los gobiernos futuros al ajuste fiscal.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "- What's wrong, sweetie?",
+    "reference": "- ¿Qué pasa, cariño?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Examination of the notification and initiation of proceedings",
+    "reference": "Examen de la notificación e incoación del procedimiento",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Lindsay means or what he's trying to say is that a local radio station was broadcasting recordings of some of the old programs. They didn't have tape back in those days.",
+    "reference": "Creo que el Sr. Lindsay se refiere, o trata de decir que... una estación de radio local estuvo transmitiendo grabaciones... de algunos de los antiguos programas.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "His dealing with oil and oil products testifies his close relations with the regime, taking into account a state monopoly on the oil refining sector and the fact that only several individuals are entitled to operate in the oil sector.",
+    "reference": "Los negocios de Ternavsky con petróleo y productos del petróleo acreditan su estrecha relación con el régimen, teniendo en cuenta el monopolio estatal del sector de refinado de petróleo y el hecho de que pocas personas tienen derecho a operar en el sector petrolero.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Another necessity impels men, at the highest point of the struggle, to resort to the terror’s ravages.",
+    "reference": "En el paroxismo de la lucha, otra necesidad contribuye a extender los estragos del terror.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I thought, maybe with the prosecutor's influence... We might be able to go to the Mendham Township Police Department and check the files over the weekend instead of waiting till Monday.",
+    "reference": "Pensé que tal vez con la influencia del fiscal podríamos ir al Depto. de Policía de Mendham.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "As of 1 February 2008, 123 Iraqi army combat battalions are conducting operations — an increase of 6 battalions since the last quarter.",
+    "reference": "Desde el 1° de febrero de 2008 operan 123 batallones de combate iraquíes, es decir, 6 batallones más desde el último trimestre.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "So, who's gettin' laid at Muffler's graduation party tonight?",
+    "reference": "Entonces, ¿quién va a tener sexo en la fiesta de graduación de Muffler esta noche?",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "So then, where was your husband?",
+    "reference": "Dígame, esa mañana su marido...",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Our search engine is able to detect all the airlines operating direct flights from Madrid to Dublin thus showing all possible flights from Madrid to Dublin. Sometimes some connections may seem quite weird, and probably it would be better for you to reach an airport by train or car to avoid an unnecessary stopover: but the choice is yours!",
+    "reference": "Algunas veces, puede ser que algunas conexiones te parezcan raras, y quizás sería mejor llegar al aeropuerto en tren o en coche para evitar una escala inútil: eres tú lo que tiene que elegir!",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Notwithstanding the large number of rural women in Namibia, they are severely disadvantaged in terms of access to land, labour, agricultural services and assets, natural resources and employment.",
+    "reference": "Pese al gran número de mujeres en las zonas rurales de Namibia, están en situación muy desfavorecida en lo que respecta al acceso a la tierra, al trabajo, a los servicios y bienes agrícolas, a los recursos naturales y al empleo.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "It just seemed like a strange area to me.",
+    "reference": "Me pareció una zona extraña para mí.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The President (spoke in French): I shall now give the floor to those Council members who wish to take the floor.",
+    "reference": "El Presidente (habla en francés): Tienen ahora la palabra los miembros del Consejo que deseen hacer uso de la palabra.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "When it comes to car it would be surprising to note that what men think is relevant in choosing a car is not far from what women think is important for them in purchasing their own car.",
+    "reference": "Cuando se trata de coche sería sorprendente observar que los hombres lo que es pertinente pensar en la elección de un coche no está lejos de lo que las mujeres cree que es importante para ellos en la compra de su propio coche.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "07/11/2007 to 10/11/2007",
+    "reference": "Del 07 al 10 de noviembre de 2007",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Do not be concerned, these tips may help you properly improve your nutrients.",
+    "reference": "No se preocupe, estos consejos pueden ayudarle a mejorar adecuadamente sus nutrientes.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   }
 ]

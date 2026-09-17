@@ -1,42 +1,296 @@
 [
   {
-    "source": "Also, every winter he used to become frostbitten on the back of his hand, but he doesn't have that anymore.",
-    "reference": "AdemÃ¡s, cada invierno solÃ a sentir que la parte dorsal de su mano se congelaba, sin embargo, ya no siente esto."
+    "source": "The FAO global Forest Resources Assessment provides information at regular intervals on the world's forest resources, their management and uses, based largely on data provided by countries.",
+    "reference": "La Evaluación de los Recursos Forestales de la FAO proporciona información periódica sobre los recursos forestales mundiales, su gestión y sus usos, basada principalmente en datos facilitados por los países.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Now that you know the best ways to build a list, are you ready to send out your email marketing?",
-    "reference": "Ahora que sabe la mejor forma de crear una lista, está listo para enviar su email marketing?"
+    "source": "I have no idea why my house exploded.",
+    "reference": "No tengo ni idea por qué mi casa explotó.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "But it's pretty slow work without power.",
-    "reference": "Pero es un laborioso trabajo sin electricidad."
+    "source": "- Have you searched the entire house?",
+    "reference": "¿Registraron toda la ópera?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Caroline left it in the men's room.",
-    "reference": "Caroline se la ha dejado en el baño de hombres."
+    "source": "On the other hand, many experts also pointed out that obstacles to progress had included:",
+    "reference": "Por otra parte, muchos expertos también señalaron que los obstáculos a los progresos incluían:",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "That exemption falls within the scope of the Treaty and regulatory action at the level of the Union is therefore necessary in order to implement it.",
-    "reference": "Esta exención entra en el ámbito de aplicación del Tratado y requiere, por lo tanto, que se regule a escala de la Unión a efectos de su aplicación."
+    "source": "Kevin here is scanning the latest medical journals into his database.",
+    "reference": "Kevin aquí está escaneando en su base de datos Io ultimo de Ia revista médica:",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Everyone knows about our v.D. Now.",
-    "reference": "Ahora todos saben lo de tu venérea."
+    "source": "You've always told me it's quiet when we reopen the pools.",
+    "reference": "Siempre me has dicho es tranquila cuando abrimos de nuevo las piscinas.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Drop your weapon and get on the ground.",
-    "reference": "Tira el arma y tírate al suelo."
+    "source": "But he can't be held responsible for what he did if he was given GHB against his will.",
+    "reference": "Pero él no puede ser responsable por lo que hizo si le dieron GHB en contra de su voluntad.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "Whatever happens to them is on you!",
-    "reference": "- Déjeme ir, por favor."
+    "source": "I just,uh,didn't know that you were so...",
+    "reference": "Yo sólo, no sabía que era tan...",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "You're a time traveler, it hasn't happened to you yet.",
-    "reference": "Eres un viajero del tiempo, todavía no te ha pasado."
+    "source": "Thereafter, in June 2004, the Israeli Government revealed plans for Givat Yael, west of Bayt Jala (West Bank), entailing the confiscation of 411 hectares of Palestinian land.",
+    "reference": "Posteriormente, en junio de 2004, el Gobierno israelí reveló sus planes para el establecimiento de Givat Yael, al oeste de Bayt Yala (Ribera Occidental), que supondrían la confiscación de 411 hectáreas de tierras palestinas.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   },
   {
-    "source": "I am grateful to my speaking ... to Dr. Horace Lennart and the team of Thorax. For their help in fighting of the scourge.",
-    "reference": "Un brindis de agradecimiento por el Dr. Horace Lennart... y al equipo de Thorax Industries... por ayudarnos a derrotar la plaga de insectos."
+    "source": "But please tell me there's a microwave or Wi-fi.",
+    "reference": "Pero por favor dime que hay microondas o wi-fi.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I'm real sorry you and Daphne can't be at the show tonight, too, but I am glad you're having fun in California.",
+    "reference": "Realmente siento que tú y Daphne no podáis venir al espectáculo de esta noche, pero me alegro de que estéis pasándolo bien en California.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Then we win 'cause we get to have you in our backyard a little bit longer.",
+    "reference": "Entonces nosotras ganamos, porque te tendremos un poco más en nuestro patio.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I wouldn't have the job I do today if it wasn't for what I learned from being here.",
+    "reference": "Yo no tendría el trabajo que tengo hoy, si no fuera por lo que aprendí de estar aquí.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I didn't get into college. Like anywhere.",
+    "reference": "No ingresé a la universidad Es decir, a ninguna.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Welcomes additional contributions from foundations, individuals and other sources.",
+    "reference": "Acoge con beneplácito las contribuciones adicionales de fundaciones, particulares y otras fuentes.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "These four came all a-front, mainly thrust at me.",
+    "reference": "Esos cuatro me vinieron de frente y me atacaron al mismo tiempo.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The ICTR now has its own Prosecutor.",
+    "reference": "El Tribunal Penal Internacional para Rwanda tiene su propio Fiscal.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Decision 112 of 28 February 1980 concerning the model forms necessary for the application of Regulation (EEC) No 1408/71 and Regulation (EEC) No 574/72 (E 001; E 102-127; E 201-215; E 301-303; E 401-411).",
+    "reference": "Decisión n° 112, de 28 de febrero de 1980, relativa a los modelos de formularios necesarios para la aplicación de los Reglamentos (CEE) n° 1408/71 y (CEE) n° 574/72 (E 001 ; E 101-127; E 201-215; E 301303; E 401-411).",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "WHAT'SHERMAIDENNAME?",
+    "reference": "¿Cuálessu nombredesoltera?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The First Committee adopted draft resolution X without a vote.",
+    "reference": "La Primera Comisión aprobó el proyecto de resolución X sin someterlo a votación.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Plus, she's so excited for my engagement, which is great, because there's no way in hell I can tell my mom.",
+    "reference": "Aemás, está muy emocionada con mi compromiso, cosa que está genial, porque no hay manera alguna de que pueda contárselo a mi madre.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "When this tare-weight is excluded, the weight is gross weight.",
+    "reference": "Si de este peso se excluye la tara, tendremos el peso bruto.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The public health system’s problems have been heightened in recent years bythe growing inability to provide free or subsidized medicines for those who needthem.",
+    "reference": "Los problemas del sistema de salud pública han aumentado en los últimos añosa causa de su incapacidad para proveer de medicamentos gratuitos osubvencionados a quienes los necesitan.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Letter dated 21 December 2006 from the Secretary-General and High Representative for Common Foreign and Security Policy of the European Union addressed to the Secretary-General",
+    "reference": "Carta de fecha 21 de diciembre de 2006 dirigida al Secretario General por el Secretario General y Alto Representante de la Unión Europea para la Política Exterior y de Seguridad Común",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "An additional six inspections and two compliance missions are scheduled for the second half of 2009.",
+    "reference": "Para el segundo semestre de 2009 están previstas otras seis inspecciones y dos misiones de cumplimiento.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Yeah, I believe in sticking with your people through thick and thin, good and bad.",
+    "reference": "Sí, yo creo en mantenerse con tu gente a las duras y a las maduras, en lo bueno y en lo malo.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The delegation of the Syrian Arab Republic listened very closely to the statement made by the representative of the People's Republic of China, and we fully associate ourselves with it.",
+    "reference": "La delegación de la República Árabe Siria ha escuchado con mucha atención la declaración formulada por el representante de la República Popular China y nos adherimos plenamente a ella.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The couple is not in good health and due to their age, they have a right to due process while remaining free.",
+    "reference": "La pareja sufre trastornos de salud, y por razones de edad ambos tienen el derecho a ser procesados en libertad.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The Statute of the International Criminal Court, adopted in June 1998, specifically addresses gender-based crimes, as do the Criminal Tribunals for the Former Yugoslavia and Rwanda.",
+    "reference": "Al igual que los tribunales penales internacionales para la ex Yugoslavia y Rwanda, el estatuto de la Corte Penal Internacional, aprobado en junio de 1998, contiene disposiciones específicas relativas a los delitos basados en el género.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "In conclusion, we say no to inculturation as a source of spirituality; the danger",
+    "reference": "En conclusión: le estamos diciendo no a la inculturación, como fuente de espiritualidad, por",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Occupied by Israel since 1967, it's been a major roadblock in any peace accord with the Palestinians.",
+    "reference": "Ocupado por Israel desde 1967, ha sido un obstáculo en cualquier tratado de paz con los palestinos.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Which means that it was neither definitely arson nor clearly accidental.",
+    "reference": "Lo que significa que no era ni provocado ni claramente accidental.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "We therefore believe that hemp production ought not to be promoted through increased aid, and we are abstaining from voting on Mrs Schierhuber 's report.",
+    "reference": "Por estas razones opinamos que no se debe fomentar la producción de cáñamo mediante ayudas y nos abstenemos en la votación del informe Schierhuber.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "she discovered it somehow.",
+    "reference": "lo descubrió en algún lugar.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "She's gone missing. She was last seen around here...",
+    "reference": "La vieron por aquí la última vez...",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "The Advisory Committee noted from paragraph 7 of the report of the Secretary-General (A/C.5/54/52) that the estimated requirements for that period would amount to $2,723,300.",
+    "reference": "La Comisión Consultiva tomó nota de que, según el párrafo 7 del informe del Secretario General (A/C.5/54/52), para ese período se necesitarían 2.723.300 dólares.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "However, given the nature and scale of the present crisis, account will have to be taken of further specific factors related to the current market conditions.",
+    "reference": "Sin embargo, teniendo en cuenta las características y la magnitud de la actual crisis, habrá que tener en cuenta otros factores específicos relacionados con las actuales condiciones de mercado.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "HCT Bank is strategically aligned with Most Major Banks in Minnesota as well as throughout the United States as well as a large number of Minnesota mortgage lenders and mortgage lenders in other states.",
+    "reference": "El banco de HCT se alinea estratégico con la mayoría de los bancos importantes en Minnesota así como en los Estados Unidos así como una gran cantidad de prestamistas de hipoteca de Minnesota y prestamistas de hipoteca en otros estados.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Number of visits: 2000",
+    "reference": "Lugar de celebración:",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "I am not good in mathematics but it must have more than 100 years.",
+    "reference": "No soy bueno en matemáticas pero debe tener más de 100 años.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Stay here. Take time to get yourself together.",
+    "reference": "Tómate tu tiempo.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Then why do you keep checking your phone?",
+    "reference": "¿Por qué miras tu teléfono? ¿Pasa algo malo?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "¶ People wanna get on down and get down ¶",
+    "reference": "# People wanna get on down and get down #",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "These beaches don’t have a complete seafront promenade yet, although there are plans to build it and they have parking, showers, lifeguards, rubbish bins, beach bars and sea rescue, amongst other services.",
+    "reference": "Estas playas no tienen un paseo marítimo completo aún, aunque hay planes para construirlo y actualmente cuenta con aparcamientos, duchas, salvavidas, papeleras, chiringuitos y rescate marítimo entre otros servicios.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "** You can select only 2 Mots in a season.",
+    "reference": "** Sólo es posible seleccionar dos Mots en una temporada.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "Main Committees Rule 46",
+    "reference": "Comisiones Principales Artículo 46",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "You guys, it's still fucking night.",
+    "reference": "Chicos, todavia es de noche.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "One of the most remarkable gains achieved for Libyan women after the Beijing Conference in 1995 was the issuance by the General People's Congress of a document on women's rights and obligations in Jamahiriyan society, the society of the masses.",
+    "reference": "Uno de los más destacados logros conseguidos por la mujer libia después de la Conferencia de Beijing en 1995 fue la publicación por el Congreso General Popular de un documento sobre los derechos y obligaciones de la mujer en la sociedad de la Jamahiriya, la sociedad de las masas.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+  },
+  {
+    "source": "In such a situation, serving mankind by liberating them from the cycle of birth and death is the best service to God.",
+    "reference": "En tal situación, servir a la humanidad al liberarlos del ciclo del nacimiento y muerte es el mejor servicio a Dios.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test"
   }
 ]

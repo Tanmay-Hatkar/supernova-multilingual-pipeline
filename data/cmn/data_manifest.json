@@ -1,0 +1,35 @@
+{
+  "language_code": "cmn",
+  "built_at": "2026-09-17T06:38:25.961978+00:00",
+  "source": {
+    "dataset": "Helsinki-NLP/opus-100",
+    "config": "en-zh",
+    "target_key": "zh"
+  },
+  "total_examples": 249,
+  "pool_counts": {
+    "examples": 99,
+    "prompt_validation": 49,
+    "judge_calibration": 49,
+    "final_test": 49
+  },
+  "length_bands": {
+    "short": [
+      20,
+      60
+    ],
+    "medium": [
+      61,
+      140
+    ],
+    "long": [
+      141,
+      400
+    ]
+  },
+  "band_distribution": {
+    "short": 83,
+    "medium": 83,
+    "long": 83
+  }
+}
