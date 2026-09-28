@@ -176,6 +176,7 @@ def cmd_judge(args) -> int:
     """
     import dspy
 
+    from checks import run_checks
     from clients import DSPyClientAdapter, get_client
     from config import MAX_OUTPUT_TOKENS
     from dataset import load_examples
@@ -201,6 +202,21 @@ def cmd_judge(args) -> int:
     print(f"Source:      {source}")
     print(f"Translation: {translation}")
     print(f"Scoring method: {config.get('scoring_method')}\n")
+
+    # Deterministic checks first, exactly as the pipeline runs them. If
+    # one fails the judge is never consulted, because the answer is
+    # already certain and a judge's opinion cannot overturn it.
+    report = run_checks(translation, source, config)
+    print("Deterministic checks:")
+    for result in report.results:
+        status = "pass" if result.passed else "FAIL"
+        evidence = f"  {result.evidence}" if result.evidence else ""
+        print(f"  [{status}] {result.name:<22} {result.detail}{evidence}")
+    print()
+
+    if not report.passed:
+        print("Failed a deterministic check, so the judge is not consulted. Score: 0")
+        return 0
 
     verdict = judge_translation(source, translation, config, config_dir)
 

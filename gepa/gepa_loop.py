@@ -41,6 +41,7 @@ from datetime import datetime, timezone
 import dspy
 import yaml
 
+from checks import run_checks
 from clients import DSPyClientAdapter, get_client
 from config import MAX_OUTPUT_TOKENS
 from dataset import load_examples
@@ -82,6 +83,7 @@ class RunState:
     valid_scores: list[float] = field(default_factory=list)
     judge_failures: int = 0
     empty_translations: int = 0
+    check_failures: int = 0
     metric_calls: int = 0
 
     @property
@@ -193,6 +195,30 @@ def _build_metric(config: dict, config_dir: str, state: RunState):
             )
             return dspy.Prediction(score=0.0, feedback="Empty translation produced.")
 
+        # Deterministic checks run before the judge, for two reasons.
+        # They catch failures a semantic judge demonstrably misses — an
+        # untranslated output and a wrong-script one were both scored
+        # ten out of ten in the pod's real run — and a failure here is
+        # certain, so paying for three judge calls to confirm it would
+        # be spending money to get a worse answer.
+        report = run_checks(translation, gold.source, config)
+        if not report.passed:
+            state.check_failures += 1
+            reasons = "; ".join(f"{r.name}: {r.detail}" for r in report.failures)
+            state.per_example.append(
+                {
+                    "source": gold.source,
+                    "translation": translation,
+                    "judge_score": 0.0,
+                    "outcome": "check_failed",
+                    "checks": report.as_dict(),
+                }
+            )
+            return dspy.Prediction(
+                score=0.0,
+                feedback=f"Output failed a deterministic check before judging. {reasons}",
+            )
+
         verdict = judge_translation(gold.source, translation, config, config_dir)
         companion = compute_companion(companion_name, translation, getattr(gold, "reference", ""))
 
@@ -246,10 +272,13 @@ def _score_pool(program, examples, metric, state: RunState, label: str) -> PoolS
         record["pool"] = label
 
     usable = [r["judge_score"] for r in produced if r["outcome"] == "judged"]
-    empties = [r for r in produced if r["outcome"] == "empty_translation"]
+    # An empty output and a failed deterministic check are both real
+    # zeros the program earned, not measurement failures, so they
+    # belong in the mean rather than being excluded from it.
+    zeros = [r for r in produced if r["outcome"] in ("empty_translation", "check_failed")]
 
     # An empty translation is a genuine zero, so it belongs in the mean.
-    scores = [s / 10.0 for s in usable] + [0.0] * len(empties)
+    scores = [s / 10.0 for s in usable] + [0.0] * len(zeros)
     unjudged = sum(1 for r in produced if r["outcome"] == "judge_failed")
 
     return PoolScore(
@@ -406,6 +435,8 @@ def run_language(
             "metric_calls": state.metric_calls,
             "judge_failures": state.judge_failures,
             "empty_translations": state.empty_translations,
+            "check_failures": state.check_failures,
+            "output_checks": list(config.get("output_checks") or []),
             "judge_failure_rate": round(state.failure_rate, 4),
             "companion_mean": (
                 sum(companion_scores) / len(companion_scores) if companion_scores else None

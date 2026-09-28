@@ -34,6 +34,18 @@ reflection_model:
   provider: groq
   model: openai/gpt-oss-120b
 
+# Deterministic checks on the output, run before the judge ever sees it.
+# These catch what a semantic judge misses: in the pod's real evaluation
+# an untranslated output and a fully-Traditional one were both scored ten
+# out of ten, and both are caught here by a string comparison.
+#
+# not_empty and not_source_copy run for every language and don't need
+# listing. The three below are specific to Mandarin as a target.
+output_checks:
+  - simplified_script       # Traditional characters in a Simplified target
+  - no_cantonese_markers    # vernacular Cantonese written in Chinese characters
+  - no_residual_latin       # English words left inside otherwise-Chinese output
+
 scoring_method: flat
 
 companion_metric: chrf++

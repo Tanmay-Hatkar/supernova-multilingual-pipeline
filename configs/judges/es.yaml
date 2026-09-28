@@ -31,8 +31,17 @@ reflection_model:
   provider: groq
   model: openai/gpt-oss-120b
 
-scoring_method: flat   # severity weighting is the better approach, but it
-                        # needs a validated judge to tune against first
+# Deterministic checks on the output, run before the judge sees it.
+# not_empty and not_source_copy are universal and run regardless. The
+# script and variety checks are Chinese-specific and deliberately absent
+# here: Spanish shares Latin script with English, so a residual-Latin
+# check would flag every correct translation. Which checks apply is a
+# property of the target language, which is why this list lives in the
+# language config rather than in the pipeline.
+output_checks: []
+
+scoring_method: flat   # run `python run.py compare --language es` to see
+                        # what severity weighting does to the spread
 
 companion_metric: chrf++
 
