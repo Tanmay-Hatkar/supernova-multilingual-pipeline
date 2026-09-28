@@ -1,0 +1,413 @@
+[
+  {
+    "source": "The FAO global Forest Resources Assessment provides information at regular intervals on the world's forest resources, their management and uses, based largely on data provided by countries.",
+    "translation": "La Evaluación Global de los Recursos Forestales de la FAO proporciona información a intervalos regulares sobre los recursos forestales del mundo, su gestión y usos, basada en gran medida en datos proporcionados por los países.",
+    "judge_score": 9.681818181818182,
+    "companion_metric": "chrf++",
+    "companion_score": 71.5966,
+    "judge_disagreement": null,
+    "outcome": "judged",
+    "pool": "baseline_test"
+  },
+  {
+    "source": "I have no idea why my house exploded.",
+    "translation": "No tengo idea de por qué mi casa explotó.",
+    "judge_score": 9.818181818181818,
+    "companion_metric": "chrf++",
+    "companion_score": 77.2895,
+    "judge_disagreement": null,
+    "outcome": "judged",
+    "pool": "baseline_test"
+  },
+  {
+    "source": "- Have you searched the entire house?",
+    "translation": "- ¿Has buscado toda la casa?",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 25.569,
+    "judge_disagreement": null,
+    "outcome": "judged",
+    "pool": "baseline_test"
+  },
+  {
+    "source": "Caroline left it in the men's room.",
+    "translation": "Caroline lo dejó en el baño de los hombres.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 55.904,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "\"their anxieties are belittled\", and this \"dismissal of their anxieties by medical and governmental authorities only compounds their anxiety.\"",
+    "translation": "\"Sus ansiedades son minimizadas\", y esto \"el rechazo de sus ansiedades por parte de autoridades médicas y gubernamentales solo agrava su ansiedad.\"",
+    "judge_score": 7.454545454545454,
+    "companion_metric": "chrf++",
+    "companion_score": 69.2219,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "But that's how you keep them.",
+    "translation": "Pero así es como los mantienes.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 35.7669,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Debes mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 8.681818181818182,
+    "companion_metric": "chrf++",
+    "companion_score": 53.1105,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo al costado de la carretera y un camión lo golpeó sin detenerse.",
+    "judge_score": 9.545454545454545,
+    "companion_metric": "chrf++",
+    "companion_score": 53.7771,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... tal vez ella está teniendo suerte.",
+    "judge_score": 7.7272727272727275,
+    "companion_metric": "chrf++",
+    "companion_score": 42.2968,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo al costado de la carretera y un camión lo golpeó sin detenerse.",
+    "judge_score": 9.181818181818182,
+    "companion_metric": "chrf++",
+    "companion_score": 53.7771,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Debes mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 6.7727272727272725,
+    "companion_metric": "chrf++",
+    "companion_score": 53.1105,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... tal vez ella está teniendo suerte.",
+    "judge_score": 9.636363636363637,
+    "companion_metric": "chrf++",
+    "companion_score": 42.2968,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Tienes que mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 7.8181818181818175,
+    "companion_metric": "chrf++",
+    "companion_score": 65.7791,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo al costado de la carretera cuando un camión lo golpeó y no se detuvo.",
+    "judge_score": 9.90909090909091,
+    "companion_metric": "chrf++",
+    "companion_score": 63.0885,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... quizá esté de suerte.",
+    "judge_score": 9.818181818181818,
+    "companion_metric": "chrf++",
+    "companion_score": 42.127,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "But that's how you keep them.",
+    "translation": "Pero así es como los mantienes.",
+    "judge_score": 9.636363636363637,
+    "companion_metric": "chrf++",
+    "companion_score": 35.7669,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "\"their anxieties are belittled\", and this \"dismissal of their anxieties by medical and governmental authorities only compounds their anxiety.\"",
+    "translation": "Sus ansiedades son menospreciadas, y la desestimación de sus ansiedades por parte de las autoridades médicas y gubernamentales solo agrava su ansiedad.",
+    "judge_score": 9.90909090909091,
+    "companion_metric": "chrf++",
+    "companion_score": 71.3294,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "Caroline left it in the men's room.",
+    "translation": "Caroline lo dejó en el baño de los hombres.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 55.904,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo al costado de la carretera cuando un camión lo golpeó y no se detuvo.",
+    "judge_score": 9.636363636363637,
+    "companion_metric": "chrf++",
+    "companion_score": 63.0885,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... tal vez ella está teniendo suerte.",
+    "judge_score": 8.181818181818182,
+    "companion_metric": "chrf++",
+    "companion_score": 42.2968,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Debes mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 7.545454545454545,
+    "companion_metric": "chrf++",
+    "companion_score": 53.1105,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Debes mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 8.363636363636363,
+    "companion_metric": "chrf++",
+    "companion_score": 53.1105,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... tal vez ella está teniendo suerte.",
+    "judge_score": 9.545454545454545,
+    "companion_metric": "chrf++",
+    "companion_score": 42.2968,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo al costado de la carretera cuando un camión lo golpeó y no se detuvo.",
+    "judge_score": 9.818181818181818,
+    "companion_metric": "chrf++",
+    "companion_score": 63.0885,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Tienes que mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 8.909090909090908,
+    "companion_metric": "chrf++",
+    "companion_score": 65.7791,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero… quizá esté de suerte.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 34.0604,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo al costado de la carretera cuando un camión lo golpeó y no se detuvo.",
+    "judge_score": 9.772727272727273,
+    "companion_metric": "chrf++",
+    "companion_score": 63.0885,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "Caroline left it in the men's room.",
+    "translation": "Caroline lo dejó en el baño de los hombres.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 55.904,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "\"their anxieties are belittled\", and this \"dismissal of their anxieties by medical and governmental authorities only compounds their anxiety.\"",
+    "translation": "\"Sus ansiedades son minimizadas\", y este \"rechazo de sus ansiedades por parte de las autoridades médicas y gubernamentales solo agrava su ansiedad.\"",
+    "judge_score": 8.909090909090908,
+    "companion_metric": "chrf++",
+    "companion_score": 74.261,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "But that's how you keep them.",
+    "translation": "Pero así es como los mantienes.",
+    "judge_score": 9.90909090909091,
+    "companion_metric": "chrf++",
+    "companion_score": 35.7669,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... quizá esté de suerte.",
+    "judge_score": 9.90909090909091,
+    "companion_metric": "chrf++",
+    "companion_score": 42.127,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Tienes que mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 8.318181818181818,
+    "companion_metric": "chrf++",
+    "companion_score": 65.7791,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo en el costado de la carretera y un camión lo golpeó y no se detuvo.",
+    "judge_score": 8.636363636363637,
+    "companion_metric": "chrf++",
+    "companion_score": 69.8281,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Tienes que mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 7.954545454545454,
+    "companion_metric": "chrf++",
+    "companion_score": 65.7791,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo en el costado de la carretera y un camión lo golpeó y no se detuvo.",
+    "judge_score": 9.090909090909092,
+    "companion_metric": "chrf++",
+    "companion_score": 69.8281,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... quizá esté de suerte.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 42.127,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "I was with her earlier, but... maybe she's getting lucky.",
+    "translation": "Estuve con ella antes, pero... quizá esté teniendo suerte.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 44.1138,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "You gotta make things better, you can't just keep talking and hope for the best.",
+    "translation": "Debes mejorar las cosas, no puedes seguir hablando y esperar lo mejor.",
+    "judge_score": 7.545454545454546,
+    "companion_metric": "chrf++",
+    "companion_score": 53.1105,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "He was fixing a flat by the side of the road and a truck hit him and didn't stop.",
+    "translation": "Estaba arreglando un pinchazo al costado de la carretera cuando un camión lo golpeó y no se detuvo.",
+    "judge_score": 9.772727272727273,
+    "companion_metric": "chrf++",
+    "companion_score": 63.0885,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "But that's how you keep them.",
+    "translation": "Pero así es como los mantienes.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 35.7669,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "Caroline left it in the men's room.",
+    "translation": "Caroline lo dejó en el baño de los hombres.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 55.904,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "\"their anxieties are belittled\", and this \"dismissal of their anxieties by medical and governmental authorities only compounds their anxiety.\"",
+    "translation": "Sus ansiedades son trivializadas, y esto el desprecio de sus ansiedades por parte de las autoridades médicas y gubernamentales solo agrava su ansiedad.",
+    "judge_score": 7.40909090909091,
+    "companion_metric": "chrf++",
+    "companion_score": 67.042,
+    "judge_disagreement": null,
+    "outcome": "judged"
+  },
+  {
+    "source": "The FAO global Forest Resources Assessment provides information at regular intervals on the world's forest resources, their management and uses, based largely on data provided by countries.",
+    "translation": "La Evaluación Global de los Recursos Forestales de la FAO proporciona información a intervalos regulares sobre los recursos forestales del mundo, su gestión y usos, basada en gran medida en datos proporcionados por los países.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 71.5966,
+    "judge_disagreement": null,
+    "outcome": "judged",
+    "pool": "optimized_test"
+  },
+  {
+    "source": "I have no idea why my house exploded.",
+    "translation": "No tengo idea de por qué mi casa explotó.",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 77.2895,
+    "judge_disagreement": null,
+    "outcome": "judged",
+    "pool": "optimized_test"
+  },
+  {
+    "source": "- Have you searched the entire house?",
+    "translation": "¿Has buscado en toda la casa?",
+    "judge_score": 10.0,
+    "companion_metric": "chrf++",
+    "companion_score": 29.4379,
+    "judge_disagreement": null,
+    "outcome": "judged",
+    "pool": "optimized_test"
+  }
+]

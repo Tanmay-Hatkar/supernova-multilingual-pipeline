@@ -1,48 +1,8 @@
 {
   "language_code": "es",
-  "language_name": "Spanish",
   "run_at": "2026-09-28T15:57:55.609378+00:00",
-  "baseline_test": {
-    "mean": 0.9833333333333334,
-    "scored": 3,
-    "unjudged": 0,
-    "total": 3
-  },
-  "optimized_test": {
-    "mean": 1.0,
-    "scored": 3,
-    "unjudged": 0,
-    "total": 3
-  },
-  "improvement": 0.016666666666666607,
-  "manifest": {
-    "config_fingerprint": "b8f3326aada29fbf",
-    "task_model": "openai/gpt-oss-20b",
-    "judge_models": [
-      "qwen/qwen3.8-27b"
-    ],
-    "reflection_model": "openai/gpt-oss-120b",
-    "scoring_method": "flat",
-    "companion_metric": "chrf++",
-    "max_output_tokens": 900,
-    "pools": {
-      "train": 3,
-      "dev": 3,
-      "sealed_test": 3
-    },
-    "metric_calls": 45,
-    "judge_failures": 0,
-    "empty_translations": 0,
-    "judge_failure_rate": 0.0,
-    "companion_mean": 54.80847111111112
-  },
-  "baseline_prompt": {
-    "self": {
-      "instructions": "Translate the English source text into the target language.",
-      "demos": []
-    }
-  },
-  "optimized_prompt": {
+  "config_fingerprint": "b8f3326aada29fbf",
+  "prompt": {
     "self": {
       "instructions": "**Task Overview**  \nYou will be given a structured input containing two fields:\n\n1. **source** – a sentence or short paragraph in English.  \n2. **target_language** – the name of the language into which the text must be translated (e.g., Spanish, French, German, etc.).\n\nYour job is to produce a **single, fluent translation** of the *source* text in the specified *target_language*.\n\n**Output Format**  \nReturn the translation only, wrapped in a markdown heading exactly as shown below:\n\n```markdown\n### translation\n<your translated sentence here>\n```\n\nDo **not** include any additional commentary, explanations, or metadata.\n\n**Translation Requirements**\n\n1. **Meaning Preservation** – Convey the full semantic content of the source text accurately.  \n2. **Natural Fluency** – The translation must read as if a native speaker wrote it, with smooth, idiomatic phrasing.  \n3. **Register & Tone** – Detect the register (formal, informal, colloquial, urgent, narrative, etc.) and replicate it in the target language.  \n   - *Example*: “You gotta” → informal imperative (“Tienes que”, “Debes” is too formal).  \n4. **Idiomatic Equivalents** – Replace English idioms with their natural counterparts in the target language rather than translating word‑for‑word.  \n   - *Example*: “hope for the best” → “esperar que todo salga bien” (Spanish).  \n5. **Verb Aspect** – Use the appropriate progressive or habitual forms in the target language when the English source uses a continuous aspect.  \n   - *Example*: “is getting lucky” → “está teniendo suerte” (Spanish).  \n6. **Conciseness & Clarity** – Prefer concise, native‑sounding constructions (e.g., “sin detenerse” for “didn't stop”).  \n7. **Avoid Literalism** – Do not produce awkward literal translations; always favor the most natural expression in the target language.  \n\n**General Strategy (for the model)**\n\n1. **Parse Input** – Extract the `source` text and the `target_language`.  \n2. **Analyze Source**  \n   - Identify key lexical items, idioms, and any colloquial or informal markers.  \n   - Determine the overall tone/register.  \n   - Note any progressive aspects or temporal nuances.  \n3. **Generate Translation**  \n   - Search your internal multilingual knowledge for idiomatic equivalents in the target language.  \n   - Choose verb forms that match the aspect (continuous → progressive, simple past → simple past, etc.).  \n   - Adjust wording to reflect the identified register (use informal pronouns, slang, or formal constructions as appropriate).  \n   - Ensure the sentence flows naturally and sounds native.  \n4. **Validate**  \n   - Re‑read the translation to confirm meaning fidelity, idiomaticity, and correct register.  \n   - Check for any literal remnants that could be improved.  \n\n**Edge Cases**\n\n- If the `target_language` is not supported, respond with an error message in the same markdown format:",
       "demos": []

@@ -257,6 +257,17 @@ def cmd_results(args) -> int:
     with open(path, encoding="utf-8") as f:
         result = json.load(f)
 
+    if "manifest" not in result:
+        # Results written before the sealed-test split measured the
+        # optimized prompt on the same pool GEPA selected against, so
+        # their improvement figure is not comparable to a current run.
+        # Say that, rather than crashing on a missing key.
+        sys.exit(
+            f"results/{args.language}/result.json predates the sealed-test split, so its "
+            f"numbers are not trustworthy and cannot be read here.\n"
+            f"Re-run: python run.py optimize --language {args.language}"
+        )
+
     manifest = result["manifest"]
     baseline, optimized = result["baseline_test"], result["optimized_test"]
 
