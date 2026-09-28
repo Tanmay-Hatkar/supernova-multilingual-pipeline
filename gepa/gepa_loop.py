@@ -219,7 +219,9 @@ def _build_metric(config: dict, config_dir: str, state: RunState):
                 feedback=f"Output failed a deterministic check before judging. {reasons}",
             )
 
-        verdict = judge_translation(gold.source, translation, config, config_dir)
+        verdict = judge_translation(
+            gold.source, translation, config, config_dir, gold.target_language
+        )
         companion = compute_companion(companion_name, translation, getattr(gold, "reference", ""))
 
         record = {

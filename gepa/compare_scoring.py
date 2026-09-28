@@ -76,7 +76,11 @@ def _with_scoring_method(config: dict, method: str) -> dict:
 
 
 def score_both_ways(
-    examples: list[dict], translations: list[str], config: dict, config_dir: str
+    examples: list[dict],
+    translations: list[str],
+    config: dict,
+    config_dir: str,
+    target_language: str = "",
 ) -> list[ScoredExample]:
     """Judge each already-generated translation under both methods."""
     flat_config = _with_scoring_method(config, "flat")
@@ -88,8 +92,10 @@ def score_both_ways(
         source = example["source"]
         reference = example.get("reference", "")
 
-        flat = judge_translation(source, translation, flat_config, config_dir)
-        severity = judge_translation(source, translation, severity_config, config_dir)
+        flat = judge_translation(source, translation, flat_config, config_dir, target_language)
+        severity = judge_translation(
+            source, translation, severity_config, config_dir, target_language
+        )
         companion = compute_companion(companion_name, translation, reference)
 
         # The individual errors are the point of severity scoring, so

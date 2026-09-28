@@ -190,17 +190,21 @@ DEGRADATIONS = [
 
 
 def probe_example(
-    source: str, translation: str, config: dict, config_dir: str
+    source: str,
+    translation: str,
+    config: dict,
+    config_dir: str,
+    target_language: str = "",
 ) -> list[ProbeResult]:
     """Score one translation, then score each broken version of it."""
-    baseline = judge_translation(source, translation, config, config_dir)
+    baseline = judge_translation(source, translation, config, config_dir, target_language)
 
     results = []
     for degradation in DEGRADATIONS:
         broken = degradation.apply(translation)
         if broken is None or broken.strip() == translation.strip():
             continue  # not applicable to this sentence; skip rather than fake a pass
-        verdict = judge_translation(source, broken, config, config_dir)
+        verdict = judge_translation(source, broken, config, config_dir, target_language)
         results.append(
             ProbeResult(
                 source=source,
@@ -215,7 +219,7 @@ def probe_example(
     # The untranslated case is built from the source rather than from
     # the translation, so it does not fit the transform signature above.
     if source.strip() and source.strip() != translation.strip():
-        verdict = judge_translation(source, source, config, config_dir)
+        verdict = judge_translation(source, source, config, config_dir, target_language)
         results.append(
             ProbeResult(
                 source=source,

@@ -126,7 +126,13 @@ def validate(language_code: str) -> ValidationResult:
         # The pool stores a translation to be graded; fall back to the
         # reference where a dedicated hypothesis isn't provided.
         hypothesis = example.get("translation") or example.get("reference", "")
-        verdict = judge_translation(example["source"], hypothesis, config, config_dir)
+        verdict = judge_translation(
+            example["source"],
+            hypothesis,
+            config,
+            config_dir,
+            config.get("language_name", ""),
+        )
         if verdict.score is None:
             continue
         human_scores.append(float(example["human_score"]))

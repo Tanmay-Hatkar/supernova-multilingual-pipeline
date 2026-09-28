@@ -59,3 +59,41 @@ def test_raises_clearly_when_no_json_present():
 def test_raises_when_repaired_json_missing_expected_fields():
     with pytest.raises(ValueError):
         _parse_judge_response('{"rating": 8, "comment": "wrong field names entirely"}')
+
+
+# --- The judge must be told what language it is looking at -------------
+#
+# A sensitivity probe found the judge scoring untranslated English
+# output ten out of ten, six times out of six, with the mean score
+# rising when the Spanish was replaced by the original English. The
+# cause was in the prompt: it named neither the target language nor the
+# fact that the output was supposed to be in it. These tests pin that
+# shut, because the failure is invisible in any output the judge
+# produces — it looks like a confident, well-reasoned high score.
+
+from judge import _build_user_prompt
+
+
+def test_user_prompt_names_the_target_language():
+    prompt = _build_user_prompt("Hello there.", "Hola.", "Spanish")
+    assert prompt.count("Spanish") >= 2
+
+
+def test_user_prompt_says_wrong_language_is_a_failure():
+    prompt = _build_user_prompt("Hello there.", "Hola.", "Mandarin")
+    assert "critical failure" in prompt.lower()
+    assert "not in Mandarin" in prompt
+
+
+def test_user_prompt_still_works_without_a_language():
+    # Back-compatible, but deliberately does not pretend to name one.
+    prompt = _build_user_prompt("Hello there.", "Hola.", "")
+    assert "Hello there." in prompt and "Hola." in prompt
+    assert "critical failure" not in prompt.lower()
+
+
+def test_source_and_translation_are_labelled_distinctly():
+    # The judge has to be able to tell which text is which; a probe
+    # case that scored 10/10 was the source pasted in as the output.
+    prompt = _build_user_prompt("The cat sat.", "El gato se sentó.", "Spanish")
+    assert prompt.index("The cat sat.") < prompt.index("El gato se sentó.")

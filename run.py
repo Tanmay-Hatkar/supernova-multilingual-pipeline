@@ -218,7 +218,7 @@ def cmd_judge(args) -> int:
         print("Failed a deterministic check, so the judge is not consulted. Score: 0")
         return 0
 
-    verdict = judge_translation(source, translation, config, config_dir)
+    verdict = judge_translation(source, translation, config, config_dir, language.name)
 
     for model_result in verdict.per_model:
         print(f"Judge: {model_result.model}")
@@ -278,7 +278,7 @@ def cmd_compare(args) -> int:
     print(" " * 40, end="\r")
 
     print("Judging under both methods (this is the slow part)...\n")
-    scored = score_both_ways(examples, translations, config, config_dir)
+    scored = score_both_ways(examples, translations, config, config_dir, language.name)
 
     print(f"{'flat':>8}  {'severity':>9}  {'chrF++':>7}   source")
     for s in scored:
@@ -342,7 +342,11 @@ def cmd_probe(args) -> int:
             source=example["source"], target_language=language.name
         ).translation
         print(f"  probing {i}/{len(examples)}", end="\r")
-        results.extend(probe_example(example["source"], translation, config, config_dir))
+        results.extend(
+            probe_example(
+                example["source"], translation, config, config_dir, language.name
+            )
+        )
     print(" " * 40, end="\r")
 
     summary = summarize(results)

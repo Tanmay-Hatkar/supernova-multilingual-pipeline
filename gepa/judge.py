@@ -268,17 +268,41 @@ def _parse_severity_response(raw_text: str) -> JudgeCallResult:
     return JudgeCallResult(score=score_from_errors(errors), feedback=feedback, errors=errors)
 
 
+def _build_user_prompt(source: str, translation: str, target_language: str) -> str:
+    """
+    Name the target language explicitly.
+
+    Without it, a judge handed the English source back as the
+    "translation" sees perfect meaning preservation and says so. A
+    sensitivity probe on this pipeline found exactly that: six out of
+    six untranslated outputs scored ten out of ten, and the mean score
+    went *up* when the Spanish was replaced by the original English.
+    The judge was not being lenient — it was never told what language
+    it was supposed to be looking at.
+    """
+    if not target_language:
+        return f"Source: {source}\nTranslation: {translation}"
+    return (
+        f"Target language: {target_language}\n"
+        f"Source (English): {source}\n"
+        f"Translation (should be in {target_language}): {translation}\n\n"
+        f"If the translation is not in {target_language}, that is a critical failure "
+        f"regardless of how well it conveys the meaning."
+    )
+
+
 def judge_once(
     source: str,
     translation: str,
     judge_spec: dict,
     config_dir: str,
     scoring_method: str = "flat",
+    target_language: str = "",
 ) -> JudgeCallResult:
     client = get_client(judge_spec["provider"], judge_spec["model"])
     raw = client.complete(
         system=_build_system_prompt(judge_spec, config_dir, scoring_method),
-        user=f"Source: {source}\nTranslation: {translation}",
+        user=_build_user_prompt(source, translation, target_language),
         temperature=0.7,
     )
     if scoring_method == "severity":
@@ -313,6 +337,7 @@ def judge_with_model(
     judge_spec: dict,
     config_dir: str,
     scoring_method: str = "flat",
+    target_language: str = "",
 ) -> JudgeModelResult:
     """Run one judge model N times and aggregate its runs via RRWA."""
     n_runs = judge_spec.get("runs_per_example", 3)
@@ -321,7 +346,9 @@ def judge_with_model(
 
     for _ in range(n_runs):
         try:
-            result = judge_once(source, translation, judge_spec, config_dir, scoring_method)
+            result = judge_once(
+                source, translation, judge_spec, config_dir, scoring_method, target_language
+            )
         except Exception as e:
             invalid.append(f"{type(e).__name__}: {str(e)[:120]}")
             continue
@@ -359,7 +386,11 @@ def judge_with_model(
 
 
 def judge_translation(
-    source: str, translation: str, config: dict, config_dir: str
+    source: str,
+    translation: str,
+    config: dict,
+    config_dir: str,
+    target_language: str = "",
 ) -> JudgeVerdict:
     """
     Score a translation using however many judges the language config
@@ -374,8 +405,15 @@ def judge_translation(
     from reliability import iter_judges
 
     scoring_method = _resolve_scoring_method(config)
+    # Fall back to the language named in the config, so a caller that
+    # forgets to pass it still gets a judge that knows what language it
+    # is looking at. Silently omitting this is what made the judge score
+    # untranslated English output ten out of ten.
+    language = target_language or config.get("language_name", "")
     results = [
-        judge_with_model(source, translation, spec, config_dir, scoring_method)
+        judge_with_model(
+            source, translation, spec, config_dir, scoring_method, language
+        )
         for spec in iter_judges(config)
     ]
     usable = [r for r in results if r.score is not None]
