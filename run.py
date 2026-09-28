@@ -371,12 +371,101 @@ def cmd_probe(args) -> int:
     return 0
 
 
+def cmd_difficulty(args) -> int:
+    """
+    Show how hard each data pool actually is, and optionally check the
+    difficulty heuristic against scores the pipeline really observed.
+
+    The check matters more than the distribution. These features are
+    correlated with translation difficulty by argument, not by
+    measurement, and a heuristic nobody verified is just a preference
+    with arithmetic attached.
+    """
+    from dataset import load_examples
+    from difficulty import DIFFICULTY_BANDS, distribution, score_difficulty
+
+    language = _load_language(args.language)
+    pools = {
+        "train (examples.json)": "",
+        "prompt_validation": "prompt_validation",
+        "judge_calibration": "judge_calibration",
+        "final_test": "final_test",
+    }
+
+    print(f"=== Difficulty distribution — {language.name} ===\n")
+    print(f"{'pool':<26}{'easy':>8}{'medium':>8}{'hard':>8}{'  mean score':>14}")
+    for label, pool in pools.items():
+        sources = [e["source"] for e in load_examples(language.data_dir, pool=pool)]
+        counts = distribution(sources)
+        mean = sum(score_difficulty(s).total for s in sources) / len(sources)
+        row = "".join(f"{counts[b]:>8}" for b in DIFFICULTY_BANDS)
+        print(f"{label:<26}{row}{mean:>14.2f}")
+
+    if not args.validate:
+        print("\nAdd --validate N to check these predictions against real judge scores.")
+        return 0
+
+    import dspy
+
+    from clients import DSPyClientAdapter, get_client
+    from config import MAX_OUTPUT_TOKENS
+    from gepa_loop import Translate
+    from judge import judge_translation
+    from validate_judge import _spearman
+
+    config = _load_config(language)
+    config_dir = os.path.dirname(language.judge_config_path)
+    task_model = config["task_model"]
+    client = get_client(task_model["provider"], task_model["model"])
+    dspy.settings.configure(lm=DSPyClientAdapter(client, max_tokens=MAX_OUTPUT_TOKENS))
+    translator = dspy.Predict(Translate)
+
+    examples = load_examples(language.data_dir, pool="")[: args.validate]
+    print(f"\nTranslating and judging {len(examples)} examples to check the heuristic...\n")
+
+    predicted, observed = [], []
+    for i, example in enumerate(examples, 1):
+        translation = translator(
+            source=example["source"], target_language=language.name
+        ).translation
+        verdict = judge_translation(
+            example["source"], translation, config, config_dir, language.name
+        )
+        print(f"  {i}/{len(examples)}", end="\r")
+        if verdict.score is None:
+            continue
+        predicted.append(score_difficulty(example["source"]).total)
+        observed.append(verdict.score)
+    print(" " * 30, end="\r")
+
+    rho = _spearman(predicted, observed) if len(predicted) > 2 else None
+    print(f"Predicted difficulty vs observed judge score: Spearman {rho}")
+    if rho is None:
+        print("Not enough variation to correlate; try more examples.")
+    elif rho < -0.3:
+        print(
+            "Negative as expected: sentences the heuristic calls hard do score lower.\n"
+            "The heuristic is picking up something real."
+        )
+    elif rho > 0.3:
+        print(
+            "Positive, which is backwards: sentences the heuristic calls hard score HIGHER.\n"
+            "The features are wrong for this data and should not be used to select it."
+        )
+    else:
+        print(
+            "Close to zero: the heuristic does not predict difficulty on this data.\n"
+            "Selecting with it would be no better than selecting at random."
+        )
+    return 0
+
+
 def cmd_data(args) -> int:
     """Rebuild a language's four data pools from its public corpus."""
     from prepare_data import collect_stratified, write_pools
 
-    print(f"Building {args.total} stratified examples for '{args.language}'...")
-    examples = collect_stratified(args.language, args.total, args.seed)
+    print(f"Building {args.total} examples for '{args.language}', stratified by {args.stratify}...")
+    examples = collect_stratified(args.language, args.total, args.seed, args.stratify)
     counts = write_pools(args.language, examples)
     print(f"Collected {len(examples)} examples across length bands.")
     for pool, count in counts.items():
@@ -474,10 +563,18 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--show-cases", action="store_true", help="print the faults it missed")
     p.set_defaults(func=cmd_probe)
 
+    p = sub.add_parser("difficulty", help="how hard is each pool, and is the heuristic right?")
+    p.add_argument("--language", required=True)
+    p.add_argument("--validate", type=int, default=0, metavar="N",
+                   help="translate and judge N examples to check the heuristic")
+    p.set_defaults(func=cmd_difficulty)
+
     p = sub.add_parser("data", help="rebuild a language's four data pools")
     p.add_argument("--language", required=True)
     p.add_argument("--total", type=int, default=250)
     p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--stratify", choices=["length", "difficulty"], default="difficulty",
+                   help="difficulty is the default; length is what the pools were built with")
     p.set_defaults(func=cmd_data)
 
     p = sub.add_parser("optimize", help="the full GEPA run (slow)")

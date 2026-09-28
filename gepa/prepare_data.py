@@ -62,13 +62,28 @@ def _band_of(text: str) -> str | None:
     return None
 
 
-def collect_stratified(language_code: str, total: int, seed: int) -> list[dict]:
+def collect_stratified(
+    language_code: str, total: int, seed: int, stratify: str = "difficulty"
+) -> list[dict]:
+    """
+    Gather candidates, then take an even spread across bands.
+
+    `stratify="length"` is what the original pools were built with, and
+    it turned out to be the wrong axis: a long, plainly-worded sentence
+    is easier to translate than a six-word idiom, so length-stratified
+    pools came out 58% easy and left the optimizer almost no headroom.
+    `stratify="difficulty"` is the default for that reason. Length
+    remains selectable so the two can be compared rather than argued
+    about.
+    """
     from datasets import load_dataset
+
+    from difficulty import DIFFICULTY_BANDS, band_of, select_stratified
 
     source = SOURCES[language_code]
     dataset = load_dataset(source["dataset"], source["config"])["test"]
 
-    buckets: dict[str, list[dict]] = {name: [] for name, _, _ in LENGTH_BANDS}
+    candidates: list[dict] = []
     seen: set[str] = set()
 
     for row in dataset:
@@ -77,31 +92,40 @@ def collect_stratified(language_code: str, total: int, seed: int) -> list[dict]:
         if not english or not target or english in seen:
             continue
 
-        band = _band_of(english)
-        if band is None:
-            continue
+        length_band = _band_of(english)
+        if length_band is None:
+            continue  # still used as a sanity filter on absurdly short or long text
 
         seen.add(english)
-        buckets[band].append(
+        candidates.append(
             {
                 "source": english,
                 "reference": target,
-                "length_band": band,
+                "length_band": length_band,
                 "provenance": f"{source['dataset']}:{source['config']}:test",
             }
         )
 
     rng = random.Random(seed)
-    per_band = total // len(LENGTH_BANDS)
-    selected: list[dict] = []
 
-    for band, _, _ in LENGTH_BANDS:
-        available = buckets[band]
-        rng.shuffle(available)
-        take = available[:per_band]
-        if len(take) < per_band:
-            print(f"  note: only {len(take)} '{band}' examples available, wanted {per_band}")
-        selected.extend(take)
+    if stratify == "difficulty":
+        per_band = total // len(DIFFICULTY_BANDS)
+        selected = select_stratified(candidates, per_band, rng)
+    else:
+        buckets: dict[str, list[dict]] = {name: [] for name, _, _ in LENGTH_BANDS}
+        for candidate in candidates:
+            buckets[candidate["length_band"]].append(candidate)
+        per_band = total // len(LENGTH_BANDS)
+        selected = []
+        for band, _, _ in LENGTH_BANDS:
+            available = buckets[band]
+            rng.shuffle(available)
+            take = available[:per_band]
+            if len(take) < per_band:
+                print(f"  note: only {len(take)} '{band}' examples available, wanted {per_band}")
+            for candidate in take:
+                candidate["difficulty_band"] = band_of(candidate["source"])
+            selected.extend(take)
 
     rng.shuffle(selected)  # so pools don't end up band-segregated
     return selected
@@ -135,9 +159,16 @@ def write_pools(language_code: str, examples: list[dict]) -> dict[str, int]:
         "total_examples": len(examples),
         "pool_counts": counts,
         "length_bands": {name: [low, high] for name, low, high in LENGTH_BANDS},
-        "band_distribution": {
-            band: sum(1 for e in examples if e["length_band"] == band)
+        "length_distribution": {
+            band: sum(1 for e in examples if e.get("length_band") == band)
             for band, _, _ in LENGTH_BANDS
+        },
+        # The axis that actually matters for headroom. Length-stratified
+        # pools came out 58% easy, which is why difficulty is now the
+        # default and why this distribution is recorded alongside it.
+        "difficulty_distribution": {
+            band: sum(1 for e in examples if e.get("difficulty_band") == band)
+            for band in ("easy", "medium", "hard")
         },
     }
     with open(os.path.join(data_dir, "data_manifest.json"), "w", encoding="utf-8") as f:
@@ -151,10 +182,13 @@ def main():
     parser.add_argument("--language", required=True, choices=sorted(SOURCES))
     parser.add_argument("--total", type=int, default=250)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--stratify", choices=["length", "difficulty"], default="difficulty"
+    )
     args = parser.parse_args()
 
-    print(f"Building {args.total} stratified examples for '{args.language}'...")
-    examples = collect_stratified(args.language, args.total, args.seed)
+    print(f"Building {args.total} examples for '{args.language}', stratified by {args.stratify}...")
+    examples = collect_stratified(args.language, args.total, args.seed, args.stratify)
     counts = write_pools(args.language, examples)
 
     print(f"Collected {len(examples)} examples across length bands.")
