@@ -22,6 +22,15 @@ judge:
   runs_per_example: 3
   rubric_extension: null
 
+# The model GEPA uses to rewrite prompts. It reads a failing example plus
+# the judge's written feedback and proposes a better instruction, which is
+# a harder job than the translation itself — so it gets a stronger model
+# than the task model rather than silently inheriting it. Omit this key to
+# fall back to the task model.
+reflection_model:
+  provider: groq
+  model: openai/gpt-oss-120b
+
 scoring_method: flat   # severity weighting is the better approach, but it
                         # needs a validated judge to tune against first
 

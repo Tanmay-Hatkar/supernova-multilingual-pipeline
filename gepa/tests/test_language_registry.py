@@ -21,13 +21,14 @@ def test_loads_all_entries():
 
 
 def test_active_languages_excludes_planned():
-    # yue, cmn, and es are all "active" (es as a starter/unvalidated
-    # config for its first live smoke test) — this test just confirms
-    # the filter itself works, not any specific language's status.
+    # Asserts the property, not today's roster: whatever the registry
+    # says, the active set is exactly the entries marked active. Pinning
+    # this to a specific list of codes makes the test fail every time a
+    # language changes status, which is a status change, not a bug.
+    entries = load_registry()
     active = {e.code for e in get_active_languages()}
-    all_codes = {e.code for e in load_registry()}
-    assert active == all_codes  # true today; update if a language is
-    # ever added with status: planned to keep this test meaningful
+    assert active == {e.code for e in entries if e.status == "active"}
+    assert active.isdisjoint({e.code for e in entries if e.status == "planned"})
 
 
 def test_planned_status_is_actually_excluded(tmp_path):
