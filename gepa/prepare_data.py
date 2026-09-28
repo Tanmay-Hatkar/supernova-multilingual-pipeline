@@ -63,18 +63,31 @@ def _band_of(text: str) -> str | None:
 
 
 def collect_stratified(
-    language_code: str, total: int, seed: int, stratify: str = "difficulty"
+    language_code: str, total: int, seed: int, stratify: str = "length"
 ) -> list[dict]:
     """
     Gather candidates, then take an even spread across bands.
 
-    `stratify="length"` is what the original pools were built with, and
-    it turned out to be the wrong axis: a long, plainly-worded sentence
-    is easier to translate than a six-word idiom, so length-stratified
-    pools came out 58% easy and left the optimizer almost no headroom.
-    `stratify="difficulty"` is the default for that reason. Length
-    remains selectable so the two can be compared rather than argued
-    about.
+    Three axes, with very different amounts of evidence behind them:
+
+      * "length" — what the original pools were built with. Free, and
+        the wrong axis: a long plainly-worded sentence is easier than a
+        six-word idiom, and length-stratified pools came out 58% easy.
+        Still the default only because it costs nothing and surprises
+        nobody with an API bill during data preparation.
+      * "difficulty" — linguistic features. Free, and measured at
+        Spearman 0.065 against observed judge scores, which is random.
+        Do not use for real selection; see difficulty.py.
+      * "chrf" — translate each candidate and band it by chrF++ against
+        the reference. Costs one model call per candidate, and is the
+        only axis with evidence: chrF++ tracks judge scores at 0.49 on
+        this pipeline. Use this when you can afford it.
+
+    chrF++ is a proxy and a flawed one — a low score can mean a good
+    translation phrased differently from the reference, which the pod
+    found last sprint. For *selection* that is acceptable: a sentence
+    where the model's output diverges from a human reference is worth
+    having in the pool either way.
     """
     from datasets import load_dataset
 
@@ -108,7 +121,9 @@ def collect_stratified(
 
     rng = random.Random(seed)
 
-    if stratify == "difficulty":
+    if stratify == "chrf":
+        selected = _select_by_chrf(candidates, total, seed, language_code)
+    elif stratify == "difficulty":
         per_band = total // len(DIFFICULTY_BANDS)
         selected = select_stratified(candidates, per_band, rng)
     else:
@@ -128,6 +143,81 @@ def collect_stratified(
             selected.extend(take)
 
     rng.shuffle(selected)  # so pools don't end up band-segregated
+    return selected
+
+
+def _select_by_chrf(
+    candidates: list[dict], total: int, seed: int, language_code: str
+) -> list[dict]:
+    """
+    Band candidates by how far the model's own output lands from the
+    reference, then take an even spread across those bands.
+
+    This is the only selection axis on this pipeline with measured
+    predictive power. It is also the only one that costs money, so the
+    candidate pool is sampled down first: scoring every row of a corpus
+    to build 250 examples would be absurd.
+
+    An even spread again, not worst-first. A pool of only the examples
+    the model handles badly cannot show a prompt regressing on the ones
+    it handles well.
+    """
+    import dspy
+    import yaml
+
+    from clients import DSPyClientAdapter, get_client
+    from config import MAX_OUTPUT_TOKENS
+    from gepa_loop import Translate
+    from language_registry import get_active_languages
+    from metrics import compute_chrf_plus_plus
+
+    language = {lang.code: lang for lang in get_active_languages()}[language_code]
+    with open(language.judge_config_path, encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    task_model = config["task_model"]
+    client = get_client(task_model["provider"], task_model["model"])
+    dspy.settings.configure(lm=DSPyClientAdapter(client, max_tokens=MAX_OUTPUT_TOKENS))
+    translator = dspy.Predict(Translate)
+
+    rng = random.Random(seed)
+    # Three times the target, so each band has something to choose from
+    # without translating the entire corpus.
+    pool = candidates[:]
+    rng.shuffle(pool)
+    pool = pool[: total * 3]
+
+    print(f"  translating {len(pool)} candidates to measure difficulty (this costs API calls)...")
+    for i, candidate in enumerate(pool, 1):
+        translation = translator(
+            source=candidate["source"], target_language=language.name
+        ).translation
+        score = compute_chrf_plus_plus(translation, candidate["reference"]).score
+        candidate["baseline_chrf"] = score
+        candidate["baseline_translation"] = translation
+        if i % 25 == 0:
+            print(f"    {i}/{len(pool)}")
+
+    scored = [c for c in pool if c.get("baseline_chrf") is not None]
+    scored.sort(key=lambda c: c["baseline_chrf"])
+
+    # Terciles of the observed distribution rather than fixed
+    # thresholds, so the bands adapt to a language whose scores sit
+    # systematically higher or lower.
+    third = len(scored) // 3
+    for band, group in (("hard", scored[:third]), ("medium", scored[third : 2 * third]), ("easy", scored[2 * third :])):
+        for candidate in group:
+            candidate["difficulty_band"] = band
+
+    per_band = total // 3
+    selected: list[dict] = []
+    for band in ("easy", "medium", "hard"):
+        available = [c for c in scored if c["difficulty_band"] == band]
+        rng.shuffle(available)
+        take = available[:per_band]
+        if len(take) < per_band:
+            print(f"  note: only {len(take)} '{band}' examples available, wanted {per_band}")
+        selected.extend(take)
     return selected
 
 
@@ -183,7 +273,11 @@ def main():
     parser.add_argument("--total", type=int, default=250)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
-        "--stratify", choices=["length", "difficulty"], default="difficulty"
+        "--stratify",
+        choices=["length", "difficulty", "chrf"],
+        default="length",
+        help="chrf is the only axis with measured predictive power (0.49 vs 0.065), "
+             "but costs one model call per candidate",
     )
     args = parser.parse_args()
 

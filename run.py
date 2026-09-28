@@ -573,8 +573,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--language", required=True)
     p.add_argument("--total", type=int, default=250)
     p.add_argument("--seed", type=int, default=42)
-    p.add_argument("--stratify", choices=["length", "difficulty"], default="difficulty",
-                   help="difficulty is the default; length is what the pools were built with")
+    p.add_argument("--stratify", choices=["length", "difficulty", "chrf"], default="length",
+                   help="chrf is the validated axis (0.49) but costs a model call per "
+                        "candidate; difficulty measured 0.065 and should not be used")
     p.set_defaults(func=cmd_data)
 
     p = sub.add_parser("optimize", help="the full GEPA run (slow)")

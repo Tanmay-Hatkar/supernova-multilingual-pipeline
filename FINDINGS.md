@@ -97,9 +97,52 @@ the scores are high because the translations are good. The probe
 confirms the judge would notice if they were not.
 
 **Implication.** Harder data, not a different judge and not a different
-scale. Stratifying by sentence length, which this repo does, is not the
-same as stratifying by difficulty. Selecting on measured baseline score
-would be.
+scale. Stratifying by sentence length, which this repo did, is not the
+same as stratifying by difficulty. See finding 6 for what happened when
+that was acted on.
+
+---
+
+## 6. Predicting difficulty from the text does not work
+
+Following from finding 3, a difficulty heuristic was built to select
+harder examples: idioms and phrasal verbs, clause density, negation,
+named entities and numbers, rare vocabulary. All plausible, all known
+sources of translation error, none of them requiring a model call.
+
+Validated against judge scores actually observed on 20 Spanish
+examples, it correlates at **Spearman 0.065**. That is random.
+
+| selection signal | correlation with judge score | cost |
+|---|---|---|
+| linguistic difficulty features | 0.065 | free |
+| chrF++ against the reference | **0.49** | one model call per candidate |
+
+The features describe what is hard *in general*. They do not describe
+what is hard for this model, and only the second of those is useful
+for selection.
+
+**What replaced it.** `--stratify chrf` translates each candidate once
+and bands it by how far the output lands from the reference. Bands are
+terciles of the observed distribution rather than fixed thresholds, so
+they adapt to a language whose scores sit systematically higher or
+lower.
+
+chrF++ is a flawed proxy: a low score can mean a good translation
+phrased differently from the reference, which the pod documented last
+sprint. For *selection* that is acceptable — a sentence where the
+model's output diverges from a human reference is worth having in the
+pool either way. It would not be acceptable as a quality verdict.
+
+**What was kept and why.** The failed heuristic stays in the tree,
+documented as failed, along with the `--validate` command that killed
+it. The validation is the valuable part, and silently deleting a failed
+hypothesis invites the next person to retry it.
+
+**Selection takes an even spread, never worst-first.** A pool of only
+the examples the model handles badly cannot reveal a prompt that
+improves on those by regressing on simple ones, and an optimizer would
+select that trade happily.
 
 ---
 

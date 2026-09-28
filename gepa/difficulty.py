@@ -12,17 +12,28 @@ An optimizer learns nothing from examples every candidate prompt gets
 right. It needs headroom, which means examples that are hard for the
 *translator*, not merely long.
 
-The honest framing. Everything here is a heuristic correlated with
-translation difficulty, not a measurement of it. Idioms, rare words,
-dense clauses and named entities are known sources of translation
-error, but a sentence can score highly here and still be trivial, or
-score low and still defeat the model.
+## This heuristic failed its own validation. Read before using it.
 
-That is why this is a *shortlisting* tool, not an oracle:
-`run.py difficulty` compares the predicted difficulty of a pool against
-the baseline scores actually observed on it, so the heuristic can be
-checked rather than trusted. If the two do not correlate, the features
-below are wrong and should be changed.
+Measured against judge scores actually observed on 20 Spanish examples,
+the features below correlate at **Spearman 0.065** — indistinguishable
+from selecting at random. Idioms, clause density, named entities and
+rare vocabulary are genuine sources of translation error in general,
+and they do not predict what *this* model finds hard.
+
+chrF++ against the reference, by contrast, correlates with judge scores
+at 0.49 on the same pipeline. It costs one translation call per
+candidate, which is not free, but it predicts roughly seven times
+better than everything in this module.
+
+So: `--stratify chrf` is the option with evidence behind it.
+`--stratify difficulty` is kept because the code is written and tested
+and a better feature set may yet be found, but it should not be used
+for real selection until `run.py difficulty --validate N` reports a
+clearly negative correlation.
+
+Keeping this module rather than deleting it is deliberate. The
+validation command is the valuable part, and a repo that silently
+removes its failed hypotheses invites the next person to retry them.
 """
 
 from __future__ import annotations
