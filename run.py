@@ -226,6 +226,71 @@ def cmd_judge(args) -> int:
     return 0
 
 
+def cmd_compare(args) -> int:
+    """
+    Score the same translations under flat and severity-weighted
+    scoring, and report which one can actually tell them apart.
+    """
+    import dspy
+
+    from clients import DSPyClientAdapter, get_client
+    from compare_scoring import score_both_ways, summarize, verdict
+    from config import MAX_OUTPUT_TOKENS
+    from dataset import load_examples
+    from gepa_loop import Translate
+
+    language = _load_language(args.language)
+    config = _load_config(language)
+    config_dir = os.path.dirname(language.judge_config_path)
+    task_model = config["task_model"]
+
+    client = get_client(task_model["provider"], task_model["model"])
+    dspy.settings.configure(lm=DSPyClientAdapter(client, max_tokens=MAX_OUTPUT_TOKENS))
+    translator = dspy.Predict(Translate)
+
+    examples = load_examples(language.data_dir, pool="judge_calibration")[: args.n]
+
+    print(f"=== Scoring-method comparison — {language.name} ===")
+    print(f"Generating {len(examples)} translations once, then scoring each one twice.\n")
+
+    translations = []
+    for i, example in enumerate(examples, 1):
+        translations.append(
+            translator(source=example["source"], target_language=language.name).translation
+        )
+        print(f"  translated {i}/{len(examples)}", end="\r")
+    print(" " * 40, end="\r")
+
+    print("Judging under both methods (this is the slow part)...\n")
+    scored = score_both_ways(examples, translations, config, config_dir)
+
+    print(f"{'flat':>8}  {'severity':>9}  {'chrF++':>7}   source")
+    for s in scored:
+        flat = f"{s.flat_score:.2f}" if s.flat_score is not None else "  -  "
+        sev = f"{s.severity_score:.2f}" if s.severity_score is not None else "  -  "
+        chrf = f"{s.companion_score:.1f}" if s.companion_score is not None else "  -  "
+        print(f"{flat:>8}  {sev:>9}  {chrf:>7}   {s.source[:58]}")
+
+    summary = summarize(scored)
+    print("\n--- Distribution ---")
+    for method in ("flat", "severity"):
+        stats = summary[method]
+        if not stats:
+            print(f"{method}: no valid scores")
+            continue
+        print(
+            f"{method:>9}: mean {stats['mean']:<6} stdev {stats['stdev']:<6} "
+            f"range {stats['min']}-{stats['max']}   {stats['share_9_or_above']:.0%} at 9+"
+        )
+
+    print("\n--- Agreement with chrF++ (independent of both judges) ---")
+    print(f"     flat: {summary['flat_vs_companion_spearman']}")
+    print(f" severity: {summary['severity_vs_companion_spearman']}")
+
+    print(f"\n--- Verdict ---\n{verdict(summary)}")
+    return 0
+
+
 def cmd_data(args) -> int:
     """Rebuild a language's four data pools from its public corpus."""
     from prepare_data import collect_stratified, write_pools
@@ -317,6 +382,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--source", help="your own English sentence instead of one from the data")
     p.add_argument("--index", type=int, default=0, help="which example from the pool")
     p.set_defaults(func=cmd_judge)
+
+    p = sub.add_parser("compare", help="flat vs severity scoring on the same translations")
+    p.add_argument("--language", required=True)
+    p.add_argument("-n", type=int, default=12, help="how many examples")
+    p.set_defaults(func=cmd_compare)
 
     p = sub.add_parser("data", help="rebuild a language's four data pools")
     p.add_argument("--language", required=True)

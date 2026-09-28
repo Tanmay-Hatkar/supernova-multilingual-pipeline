@@ -42,11 +42,79 @@ Respond with ONLY a JSON object in this exact shape, no other text before or aft
 {"score": <number 0-10>, "feedback": "<your written explanation>"}
 """
 
+# --- Severity-weighted scoring (MQM) ------------------------------------
+#
+# Asking a model for one holistic number produces a score that barely
+# moves: in this pipeline's own runs the flat judge put almost every
+# translation between 9 and 10 while a reference metric on the same
+# sentences ranged from 26 to 77. A score with no spread gives an
+# optimizer nothing to optimize against.
+#
+# The fix is not to ask harder. It's to stop asking for a number at all:
+# the judge lists the errors it actually found and labels each one's
+# severity, and the score is computed from those labels. That makes the
+# scale mean something specific, and it makes one serious error cost
+# more than many trivial ones — which is the behavior we want an
+# optimizer to chase.
+#
+# Weights are the standard MQM ones used by GEMBA-MQM.
+
+SEVERITY_WEIGHTS = {"minor": 1, "major": 5, "critical": 25}
+
+# One critical error is enough to exhaust the budget, so a translation
+# whose meaning is destroyed scores zero regardless of what else is
+# right about it.
+MAX_PENALTY = 25
+
+SEVERITY_RUBRIC = """You are an expert translation quality judge. Do not give an
+overall score. Instead, identify every error in the translation and label how
+severe each one is.
+
+Severity levels:
+- "minor": awkward, unidiomatic, or stylistically off, but the meaning survives
+  intact. A reader would understand correctly.
+- "major": part of the meaning is wrong, missing, or added. A reader would be
+  misled about something, but not about the main point.
+- "critical": the meaning is destroyed, reversed, or replaced. This includes
+  wrong entities, numbers, or negation; output in the wrong language or script;
+  and text left untranslated.
+
+Judge the translation against the SOURCE. Different wording from a reference is
+not an error. Proper nouns and acronyms conventionally left in Latin script are
+not errors.
+
+If the translation is correct, return an empty errors list. Do not invent errors
+to appear thorough, and do not overlook real ones to appear generous.
+"""
+
+SEVERITY_OUTPUT_FORMAT = """
+Respond with ONLY a JSON object in this exact shape, no other text before or after it:
+{"errors": [{"severity": "minor|major|critical", "span": "<the problematic text>",
+"explanation": "<what is wrong with it>"}], "feedback": "<overall assessment>"}
+"""
+
+
+@dataclass
+class JudgeError:
+    """One error the judge reported, under severity-weighted scoring."""
+
+    severity: str
+    span: str
+    explanation: str
+
+    @property
+    def weight(self) -> int:
+        return SEVERITY_WEIGHTS[self.severity]
+
 
 @dataclass
 class JudgeCallResult:
     score: float
     feedback: str
+    # Empty under flat scoring, which reports no structure — only a
+    # number. Populated under severity scoring, where the errors are
+    # the actual judgment and the score is derived from them.
+    errors: list[JudgeError] = field(default_factory=list)
 
 
 @dataclass
@@ -83,12 +151,11 @@ def _load_rubric_extension(path: str | None, config_dir: str) -> str:
         return "\n" + f.read()
 
 
-def _build_system_prompt(judge_spec: dict, config_dir: str) -> str:
-    return (
-        BASE_RUBRIC
-        + _load_rubric_extension(judge_spec.get("rubric_extension"), config_dir)
-        + OUTPUT_FORMAT_INSTRUCTION
-    )
+def _build_system_prompt(judge_spec: dict, config_dir: str, scoring_method: str) -> str:
+    extension = _load_rubric_extension(judge_spec.get("rubric_extension"), config_dir)
+    if scoring_method == "severity":
+        return SEVERITY_RUBRIC + extension + SEVERITY_OUTPUT_FORMAT
+    return BASE_RUBRIC + extension + OUTPUT_FORMAT_INSTRUCTION
 
 
 def _parse_judge_response(raw_text: str) -> JudgeCallResult:
@@ -115,13 +182,107 @@ def _parse_judge_response(raw_text: str) -> JudgeCallResult:
     return JudgeCallResult(score=score, feedback=str(parsed["feedback"]))
 
 
-def judge_once(source: str, translation: str, judge_spec: dict, config_dir: str) -> JudgeCallResult:
+SCORING_METHODS = ("flat", "severity")
+
+
+def _resolve_scoring_method(config: dict) -> str:
+    """
+    Read `scoring_method` from a language config, rejecting anything
+    unrecognized. This key sat in every config file for weeks while
+    nothing read it, so a typo here should fail loudly rather than
+    silently fall back to the method it was written to replace.
+    """
+    method = str(config.get("scoring_method", "flat")).strip().lower()
+    if method not in SCORING_METHODS:
+        raise ValueError(
+            f"Unknown scoring_method {method!r} in language config; "
+            f"expected one of {list(SCORING_METHODS)}"
+        )
+    return method
+
+
+def score_from_errors(errors: list[JudgeError]) -> float:
+    """
+    Turn a list of labelled errors into a 0-10 score.
+
+    The penalty is the MQM weighted sum, capped so that one critical
+    error exhausts the budget on its own. Capping rather than letting
+    the penalty run away matters: without it, a translation with three
+    critical errors and one with one critical error both score zero
+    anyway, but the uncapped version makes the arithmetic look more
+    precise than the judgment behind it actually is.
+    """
+    penalty = min(sum(error.weight for error in errors), MAX_PENALTY)
+    return round(10.0 * (1.0 - penalty / MAX_PENALTY), 4)
+
+
+def _parse_severity_response(raw_text: str) -> JudgeCallResult:
+    """
+    Parse a severity-tagged judgment and compute its score here, rather
+    than trusting a number the judge supplies. The judge's job is to
+    find and label errors; converting that to a score is arithmetic and
+    belongs on our side, where it is consistent across models and runs.
+    """
+    match = re.search(r"\{.*\}", raw_text, re.DOTALL)
+    if not match:
+        raise ValueError(f"No JSON object found in judge response: {raw_text[:200]!r}")
+
+    parsed = json_repair.loads(match.group(0))
+    if not isinstance(parsed, dict) or "errors" not in parsed:
+        raise ValueError(f"Judge response missing an 'errors' list: {raw_text[:200]!r}")
+
+    raw_errors = parsed["errors"]
+    if not isinstance(raw_errors, list):
+        raise ValueError(f"Judge 'errors' was not a list: {raw_text[:200]!r}")
+
+    errors = []
+    for item in raw_errors:
+        if not isinstance(item, dict):
+            raise ValueError(f"Judge error entry was not an object: {item!r}")
+        severity = str(item.get("severity", "")).strip().lower()
+        if severity not in SEVERITY_WEIGHTS:
+            # An unrecognized severity can't be weighted, and guessing
+            # one would silently invent a number. Reject the whole
+            # judgment so it's excluded rather than quietly distorted.
+            raise ValueError(
+                f"Unknown severity {severity!r}; expected one of {sorted(SEVERITY_WEIGHTS)}"
+            )
+        errors.append(
+            JudgeError(
+                severity=severity,
+                span=str(item.get("span", "")),
+                explanation=str(item.get("explanation", "")),
+            )
+        )
+
+    feedback = str(parsed.get("feedback", "")).strip()
+    if not feedback:
+        # The written explanation is what GEPA revises prompts from, so
+        # a judgment without one is only half useful. Rebuild it from
+        # the errors rather than handing the optimizer an empty string.
+        feedback = (
+            "; ".join(f"[{e.severity}] {e.span}: {e.explanation}" for e in errors)
+            or "No errors found."
+        )
+
+    return JudgeCallResult(score=score_from_errors(errors), feedback=feedback, errors=errors)
+
+
+def judge_once(
+    source: str,
+    translation: str,
+    judge_spec: dict,
+    config_dir: str,
+    scoring_method: str = "flat",
+) -> JudgeCallResult:
     client = get_client(judge_spec["provider"], judge_spec["model"])
     raw = client.complete(
-        system=_build_system_prompt(judge_spec, config_dir),
+        system=_build_system_prompt(judge_spec, config_dir, scoring_method),
         user=f"Source: {source}\nTranslation: {translation}",
         temperature=0.7,
     )
+    if scoring_method == "severity":
+        return _parse_severity_response(raw)
     return _parse_judge_response(raw)
 
 
@@ -131,16 +292,27 @@ def _is_suspicious_zero(result: JudgeCallResult) -> bool:
     an internal contradiction — the number and the model's own reasoning
     disagree. Far more often a parsing or generation artifact than a
     genuine verdict, so it gets flagged rather than trusted.
+
+    Severity scoring makes this check nearly redundant by construction,
+    since a zero there is arithmetic over errors the judge listed
+    explicitly. The keyword heuristic is kept only for flat scoring,
+    where a bare number is all there is to sanity-check against.
     """
     if result.score != 0.0:
         return False
+    if result.errors:
+        return False  # severity scoring: the zero is backed by listed errors
     text = result.feedback.lower()
     negative_markers = ("error", "wrong", "incorrect", "missing", "poor", "bad", "fail", "omit")
     return not any(marker in text for marker in negative_markers)
 
 
 def judge_with_model(
-    source: str, translation: str, judge_spec: dict, config_dir: str
+    source: str,
+    translation: str,
+    judge_spec: dict,
+    config_dir: str,
+    scoring_method: str = "flat",
 ) -> JudgeModelResult:
     """Run one judge model N times and aggregate its runs via RRWA."""
     n_runs = judge_spec.get("runs_per_example", 3)
@@ -149,7 +321,7 @@ def judge_with_model(
 
     for _ in range(n_runs):
         try:
-            result = judge_once(source, translation, judge_spec, config_dir)
+            result = judge_once(source, translation, judge_spec, config_dir, scoring_method)
         except Exception as e:
             invalid.append(f"{type(e).__name__}: {str(e)[:120]}")
             continue
@@ -201,8 +373,10 @@ def judge_translation(
     """
     from reliability import iter_judges
 
+    scoring_method = _resolve_scoring_method(config)
     results = [
-        judge_with_model(source, translation, spec, config_dir) for spec in iter_judges(config)
+        judge_with_model(source, translation, spec, config_dir, scoring_method)
+        for spec in iter_judges(config)
     ]
     usable = [r for r in results if r.score is not None]
 
