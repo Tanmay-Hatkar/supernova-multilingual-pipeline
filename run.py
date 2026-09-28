@@ -307,6 +307,66 @@ def cmd_compare(args) -> int:
     return 0
 
 
+def cmd_probe(args) -> int:
+    """
+    Break good translations in known ways and see whether the judge
+    notices. Answers the question a scoring comparison cannot: is the
+    judge lenient, or are the translations actually good?
+    """
+    import dspy
+
+    from clients import DSPyClientAdapter, get_client
+    from config import MAX_OUTPUT_TOKENS
+    from dataset import load_examples
+    from gepa_loop import Translate
+    from judge_probe import probe_example, summarize, verdict
+
+    language = _load_language(args.language)
+    config = _load_config(language)
+    config_dir = os.path.dirname(language.judge_config_path)
+    task_model = config["task_model"]
+
+    client = get_client(task_model["provider"], task_model["model"])
+    dspy.settings.configure(lm=DSPyClientAdapter(client, max_tokens=MAX_OUTPUT_TOKENS))
+    translator = dspy.Predict(Translate)
+
+    examples = load_examples(language.data_dir, pool="judge_calibration")[: args.n]
+
+    print(f"=== Judge sensitivity probe — {language.name} ===")
+    print(f"Scoring method: {config.get('scoring_method')}")
+    print(f"{len(examples)} translations, each scored intact and then deliberately broken.\n")
+
+    results = []
+    for i, example in enumerate(examples, 1):
+        translation = translator(
+            source=example["source"], target_language=language.name
+        ).translation
+        print(f"  probing {i}/{len(examples)}", end="\r")
+        results.extend(probe_example(example["source"], translation, config, config_dir))
+    print(" " * 40, end="\r")
+
+    summary = summarize(results)
+    print(f"{'fault':<20}{'n':>4}{'mean drop':>12}{'expected':>10}{'detected':>11}")
+    for fault, stats in sorted(summary.items()):
+        rate = "n/a" if stats["detection_rate"] is None else f"{stats['detection_rate']:.0%}"
+        drop = "n/a" if stats["mean_drop"] is None else f"{stats['mean_drop']:.2f}"
+        print(
+            f"{fault:<20}{stats['n']:>4}{drop:>12}"
+            f"{stats['expected_min_drop']:>10.1f}{rate:>11}"
+        )
+
+    if args.show_cases:
+        print("\n--- Cases the judge missed ---")
+        missed = [r for r in results if r.detected is False and r.expected_drop > 0]
+        for r in missed[: args.n * 2]:
+            print(f"\n  fault:    {r.degradation}  (scored {r.original_score} -> {r.degraded_score})")
+            print(f"  original: {r.original[:90]}")
+            print(f"  broken:   {r.degraded[:90]}")
+
+    print(f"\n--- Verdict ---\n{verdict(summary)}")
+    return 0
+
+
 def cmd_data(args) -> int:
     """Rebuild a language's four data pools from its public corpus."""
     from prepare_data import collect_stratified, write_pools
@@ -403,6 +463,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--language", required=True)
     p.add_argument("-n", type=int, default=12, help="how many examples")
     p.set_defaults(func=cmd_compare)
+
+    p = sub.add_parser("probe", help="can the judge detect faults shown to it on purpose?")
+    p.add_argument("--language", required=True)
+    p.add_argument("-n", type=int, default=6, help="how many translations to break")
+    p.add_argument("--show-cases", action="store_true", help="print the faults it missed")
+    p.set_defaults(func=cmd_probe)
 
     p = sub.add_parser("data", help="rebuild a language's four data pools")
     p.add_argument("--language", required=True)
