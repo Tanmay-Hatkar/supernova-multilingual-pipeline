@@ -45,21 +45,56 @@ from dataclasses import dataclass, field
 # most target languages. Short and high-signal on purpose: the point is
 # to find sentences worth including, not to catalogue English.
 IDIOM_MARKERS = (
-    "goes without saying", "touch base", "knack for", "getting lucky",
-    "make things better", "hope for the best", "in the loop", "up to speed",
-    "get away with", "look forward to", "run into", "figure out", "come across",
-    "bring up", "put up with", "turn down", "call off", "break down",
-    "once and for all", "by and large", "at the end of the day",
-    "on the other hand", "no matter what", "as far as", "let alone",
-    "kill two birds", "piece of cake", "under the weather", "hit the road",
+    "goes without saying",
+    "touch base",
+    "knack for",
+    "getting lucky",
+    "make things better",
+    "hope for the best",
+    "in the loop",
+    "up to speed",
+    "get away with",
+    "look forward to",
+    "run into",
+    "figure out",
+    "come across",
+    "bring up",
+    "put up with",
+    "turn down",
+    "call off",
+    "break down",
+    "once and for all",
+    "by and large",
+    "at the end of the day",
+    "on the other hand",
+    "no matter what",
+    "as far as",
+    "let alone",
+    "kill two birds",
+    "piece of cake",
+    "under the weather",
+    "hit the road",
 )
 
 # Words that signal a subordinate or conditional structure, which force
 # clause reordering in most target languages.
 SUBORDINATORS = (
-    "although", "though", "whereas", "unless", "whilst", "despite",
-    "nevertheless", "however", "therefore", "moreover", "furthermore",
-    "which", "whose", "wherein", "thereby", "insofar",
+    "although",
+    "though",
+    "whereas",
+    "unless",
+    "whilst",
+    "despite",
+    "nevertheless",
+    "however",
+    "therefore",
+    "moreover",
+    "furthermore",
+    "which",
+    "whose",
+    "wherein",
+    "thereby",
+    "insofar",
 )
 
 NEGATIONS = ("not", "no", "never", "neither", "nor", "none", "n't", "without")
@@ -145,7 +180,7 @@ def band_of(source: str) -> str:
 
 
 def distribution(sources: list[str]) -> dict[str, int]:
-    counts = {band: 0 for band in DIFFICULTY_BANDS}
+    counts = dict.fromkeys(DIFFICULTY_BANDS, 0)
     for source in sources:
         counts[band_of(source)] += 1
     return counts
@@ -172,9 +207,7 @@ def select_stratified(
         rng.shuffle(available)
         taken = available[:per_band]
         if len(taken) < per_band:
-            print(
-                f"  note: only {len(taken)} '{band}' examples available, wanted {per_band}"
-            )
+            print(f"  note: only {len(taken)} '{band}' examples available, wanted {per_band}")
         for candidate in taken:
             candidate["difficulty_band"] = band
             candidate["difficulty_score"] = score_difficulty(candidate[key]).total

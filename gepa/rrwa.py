@@ -50,7 +50,7 @@ def compute_rrwa(scores: list[float]) -> RRWAResult:
 
     ranked = sorted(kept, reverse=True)
     weights = [1.0 / rank for rank in range(1, len(ranked) + 1)]
-    weighted_sum = sum(s * w for s, w in zip(ranked, weights))
+    weighted_sum = sum(s * w for s, w in zip(ranked, weights, strict=False))
     final_score = weighted_sum / sum(weights)
 
     # Stability index: how tightly the kept scores agree, scaled 0-1.

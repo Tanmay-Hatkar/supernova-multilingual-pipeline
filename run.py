@@ -130,7 +130,6 @@ def _model_roles(config: dict) -> list[tuple[str, dict]]:
 def cmd_demo(args) -> int:
     """Translate a few real examples and show them next to the reference."""
     import dspy
-
     from clients import DSPyClientAdapter, get_client
     from config import MAX_OUTPUT_TOKENS
     from dataset import load_examples
@@ -175,7 +174,6 @@ def cmd_judge(args) -> int:
     result.
     """
     import dspy
-
     from checks import run_checks
     from clients import DSPyClientAdapter, get_client
     from config import MAX_OUTPUT_TOKENS
@@ -248,7 +246,6 @@ def cmd_compare(args) -> int:
     scoring, and report which one can actually tell them apart.
     """
     import dspy
-
     from clients import DSPyClientAdapter, get_client
     from compare_scoring import score_both_ways, summarize, verdict
     from config import MAX_OUTPUT_TOKENS
@@ -314,7 +311,6 @@ def cmd_probe(args) -> int:
     judge lenient, or are the translations actually good?
     """
     import dspy
-
     from clients import DSPyClientAdapter, get_client
     from config import MAX_OUTPUT_TOKENS
     from dataset import load_examples
@@ -343,9 +339,7 @@ def cmd_probe(args) -> int:
         ).translation
         print(f"  probing {i}/{len(examples)}", end="\r")
         results.extend(
-            probe_example(
-                example["source"], translation, config, config_dir, language.name
-            )
+            probe_example(example["source"], translation, config, config_dir, language.name)
         )
     print(" " * 40, end="\r")
 
@@ -354,16 +348,15 @@ def cmd_probe(args) -> int:
     for fault, stats in sorted(summary.items()):
         rate = "n/a" if stats["detection_rate"] is None else f"{stats['detection_rate']:.0%}"
         drop = "n/a" if stats["mean_drop"] is None else f"{stats['mean_drop']:.2f}"
-        print(
-            f"{fault:<20}{stats['n']:>4}{drop:>12}"
-            f"{stats['expected_min_drop']:>10.1f}{rate:>11}"
-        )
+        print(f"{fault:<20}{stats['n']:>4}{drop:>12}{stats['expected_min_drop']:>10.1f}{rate:>11}")
 
     if args.show_cases:
         print("\n--- Cases the judge missed ---")
         missed = [r for r in results if r.detected is False and r.expected_drop > 0]
         for r in missed[: args.n * 2]:
-            print(f"\n  fault:    {r.degradation}  (scored {r.original_score} -> {r.degraded_score})")
+            print(
+                f"\n  fault:    {r.degradation}  (scored {r.original_score} -> {r.degraded_score})"
+            )
             print(f"  original: {r.original[:90]}")
             print(f"  broken:   {r.degraded[:90]}")
 
@@ -406,7 +399,6 @@ def cmd_difficulty(args) -> int:
         return 0
 
     import dspy
-
     from clients import DSPyClientAdapter, get_client
     from config import MAX_OUTPUT_TOKENS
     from gepa_loop import Translate
@@ -486,7 +478,9 @@ def cmd_results(args) -> int:
     """Read the last run back as a summary rather than as raw JSON."""
     path = os.path.join(REPO_ROOT, "results", args.language, "result.json")
     if not os.path.exists(path):
-        sys.exit(f"No results yet for '{args.language}'. Run: python run.py optimize --language {args.language}")
+        sys.exit(
+            f"No results yet for '{args.language}'. Run: python run.py optimize --language {args.language}"
+        )
 
     with open(path, encoding="utf-8") as f:
         result = json.load(f)
@@ -510,8 +504,12 @@ def cmd_results(args) -> int:
     print(f"Config fingerprint: {manifest['config_fingerprint']}\n")
 
     print("Scored on the sealed test pool, which the optimizer never saw:")
-    print(f"  baseline:    {baseline['mean']}  ({baseline['scored']} of {baseline['total']} scored)")
-    print(f"  optimized:   {optimized['mean']}  ({optimized['scored']} of {optimized['total']} scored)")
+    print(
+        f"  baseline:    {baseline['mean']}  ({baseline['scored']} of {baseline['total']} scored)"
+    )
+    print(
+        f"  optimized:   {optimized['mean']}  ({optimized['scored']} of {optimized['total']} scored)"
+    )
     print(f"  improvement: {result['improvement']}\n")
 
     print("Run:")
@@ -521,7 +519,9 @@ def cmd_results(args) -> int:
     print(f"  scoring method:   {manifest['scoring_method']}")
     print(f"  pools:            {manifest['pools']}")
     print(f"  metric calls:     {manifest['metric_calls']}")
-    print(f"  judge failures:   {manifest['judge_failures']} ({manifest['judge_failure_rate']:.1%})")
+    print(
+        f"  judge failures:   {manifest['judge_failures']} ({manifest['judge_failure_rate']:.1%})"
+    )
     print(f"  companion mean:   {manifest['companion_mean']}\n")
 
     print(f"Full files in results/{args.language}/")
@@ -565,17 +565,26 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("difficulty", help="how hard is each pool, and is the heuristic right?")
     p.add_argument("--language", required=True)
-    p.add_argument("--validate", type=int, default=0, metavar="N",
-                   help="translate and judge N examples to check the heuristic")
+    p.add_argument(
+        "--validate",
+        type=int,
+        default=0,
+        metavar="N",
+        help="translate and judge N examples to check the heuristic",
+    )
     p.set_defaults(func=cmd_difficulty)
 
     p = sub.add_parser("data", help="rebuild a language's four data pools")
     p.add_argument("--language", required=True)
     p.add_argument("--total", type=int, default=250)
     p.add_argument("--seed", type=int, default=42)
-    p.add_argument("--stratify", choices=["length", "difficulty", "chrf"], default="length",
-                   help="chrf is the validated axis (0.49) but costs a model call per "
-                        "candidate; difficulty measured 0.065 and should not be used")
+    p.add_argument(
+        "--stratify",
+        choices=["length", "difficulty", "chrf"],
+        default="length",
+        help="chrf is the validated axis (0.49) but costs a model call per "
+        "candidate; difficulty measured 0.065 and should not be used",
+    )
     p.set_defaults(func=cmd_data)
 
     p = sub.add_parser("optimize", help="the full GEPA run (slow)")

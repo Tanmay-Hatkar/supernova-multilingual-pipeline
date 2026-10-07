@@ -29,8 +29,8 @@ difference is that here we know exactly what we broke.
 from __future__ import annotations
 
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable
 
 from judge import judge_translation
 
@@ -39,11 +39,11 @@ from judge import judge_translation
 # pipeline enforces — the point is to see the shape of the response,
 # not to pass or fail a specific number.
 EXPECTED_MINIMUM_DROP = {
-    "negation_flip": 5.0,     # the meaning is now the opposite
-    "entity_swap": 4.0,       # a reader is misinformed about a fact
-    "clause_omission": 3.0,   # part of the meaning is simply gone
-    "untranslated": 7.0,      # not a translation at all
-    "truncation": 3.0,        # the second half is missing
+    "negation_flip": 5.0,  # the meaning is now the opposite
+    "entity_swap": 4.0,  # a reader is misinformed about a fact
+    "clause_omission": 3.0,  # part of the meaning is simply gone
+    "untranslated": 7.0,  # not a translation at all
+    "truncation": 3.0,  # the second half is missing
     "punctuation_only": 0.0,  # a control: should barely move
 }
 
@@ -263,7 +263,9 @@ def verdict(summary: dict) -> str:
     if not serious:
         return "No serious faults could be applied to these sentences; the probe is inconclusive."
 
-    rates = [summary[f]["detection_rate"] for f in serious if summary[f]["detection_rate"] is not None]
+    rates = [
+        summary[f]["detection_rate"] for f in serious if summary[f]["detection_rate"] is not None
+    ]
     if not rates:
         return "The judge produced no valid scores on the degraded outputs; fix that before reading anything into this."
 

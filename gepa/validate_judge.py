@@ -25,10 +25,9 @@ import json
 import os
 import statistics
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import yaml
-
 from dataset import load_examples
 from judge import judge_translation
 from language_registry import get_active_languages
@@ -75,7 +74,7 @@ def _pearson(xs: list[float], ys: list[float]) -> float | None:
     if len(xs) < 2:
         return None
     mean_x, mean_y = statistics.fmean(xs), statistics.fmean(ys)
-    numerator = sum((x - mean_x) * (y - mean_y) for x, y in zip(xs, ys))
+    numerator = sum((x - mean_x) * (y - mean_y) for x, y in zip(xs, ys, strict=False))
     denominator = (
         sum((x - mean_x) ** 2 for x in xs) ** 0.5 * sum((y - mean_y) ** 2 for y in ys) ** 0.5
     )
@@ -101,7 +100,7 @@ def validate(language_code: str) -> ValidationResult:
     examples = load_examples(language.data_dir, pool="judge_calibration")
     labeled = [ex for ex in examples if ex.get("human_score") is not None]
 
-    now = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(UTC).isoformat()
 
     if not labeled:
         return ValidationResult(
@@ -142,14 +141,12 @@ def validate(language_code: str) -> ValidationResult:
     spearman = _spearman(human_scores, judge_scores)
     pearson = _pearson(human_scores, judge_scores)
     mae = (
-        statistics.fmean(abs(h - j) for h, j in zip(human_scores, judge_scores))
+        statistics.fmean(abs(h - j) for h, j in zip(human_scores, judge_scores, strict=False))
         if judge_scores
         else None
     )
 
-    passed = bool(
-        coverage >= MIN_COVERAGE and spearman is not None and spearman >= MIN_SPEARMAN
-    )
+    passed = bool(coverage >= MIN_COVERAGE and spearman is not None and spearman >= MIN_SPEARMAN)
     reason = (
         f"coverage {coverage:.2f} and Spearman {spearman:.3f} meet the gates"
         if passed

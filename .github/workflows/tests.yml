@@ -14,5 +14,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
       - run: pip install -r requirements.txt
-      - run: cd gepa && python -m pytest -v
+      - name: Lint
+        run: ruff check .
+      - name: Format check
+        run: ruff format --check .
+      # No API key is configured here on purpose: the suite must not
+      # depend on the network. A test that needs a live model is a test
+      # that will fail for reasons unrelated to the change under review.
+      - name: Tests
+        run: python -m pytest

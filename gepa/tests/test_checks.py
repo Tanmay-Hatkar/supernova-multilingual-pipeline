@@ -24,8 +24,8 @@ from checks import (
     run_checks,
 )
 
-
 # --- Script -------------------------------------------------------------
+
 
 def test_simplified_output_passes_script_check():
     assert check_simplified_script("博物馆的新展览下个月开幕。").passed
@@ -55,6 +55,7 @@ def test_latin_text_is_unaffected_by_the_script_check():
 
 # --- Chinese variety ----------------------------------------------------
 
+
 def test_cantonese_vernacular_is_flagged():
     # Valid Chinese characters, wrong variety.
     result = check_no_cantonese_markers("我今日冇時間搞掂呢件事")
@@ -67,6 +68,7 @@ def test_standard_mandarin_passes_the_variety_check():
 
 
 # --- Residual Latin -----------------------------------------------------
+
 
 def test_english_noun_left_inside_chinese_is_flagged():
     # A single English noun inside Chinese: a ratio-based gate sees one
@@ -101,6 +103,7 @@ def test_non_cjk_output_skips_the_latin_check():
 
 # --- Source copy and empty ---------------------------------------------
 
+
 def test_untranslated_source_copy_is_flagged():
     source = "Please remember to water the plants while I'm away."
     assert not check_not_source_copy(source, source).passed
@@ -120,6 +123,7 @@ def test_empty_output_is_flagged():
 
 
 # --- Configuration ------------------------------------------------------
+
 
 def test_universal_checks_run_even_when_config_asks_for_nothing():
     report = run_checks("", "some source", {})

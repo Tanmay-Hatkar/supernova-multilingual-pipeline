@@ -33,7 +33,6 @@ import os
 from dataclasses import asdict, dataclass
 
 import requests
-
 from clients import StructuralLimitError, get_client
 from config import GROQ_API_KEY, MAX_OUTPUT_TOKENS
 
@@ -125,7 +124,9 @@ def _fetch_rate_limits(provider: str, model: str) -> dict:
         return {}
 
 
-def check_language_config(language_code: str, max_tokens: int = MAX_OUTPUT_TOKENS) -> list[ModelVerdict]:
+def check_language_config(
+    language_code: str, max_tokens: int = MAX_OUTPUT_TOKENS
+) -> list[ModelVerdict]:
     """
     Check every model a language's config depends on — task model and
     every judge — before a run commits to them.

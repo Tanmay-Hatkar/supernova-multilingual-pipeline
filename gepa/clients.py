@@ -27,9 +27,8 @@ from abc import ABC, abstractmethod
 from typing import Any
 
 import dspy
-from groq import APIStatusError, Groq, RateLimitError
-
 from config import GROQ_API_KEY, MAX_OUTPUT_TOKENS, RATE_LIMIT_MAX_RETRIES
+from groq import APIStatusError, Groq, RateLimitError
 
 _RETRY_AFTER_PATTERN = re.compile(r"try again in (?:(\d+)m)?([\d.]+)s")
 # Groq's phrasing when a request's own max_tokens exceeds a per-minute
@@ -163,7 +162,9 @@ class DSPyClientAdapter(dspy.BaseLM):
         if messages is None:
             messages = [{"role": "user", "content": prompt or ""}]
         call_kwargs = {
-            "max_tokens": kwargs.get("max_tokens", self.kwargs.get("max_tokens", MAX_OUTPUT_TOKENS)),
+            "max_tokens": kwargs.get(
+                "max_tokens", self.kwargs.get("max_tokens", MAX_OUTPUT_TOKENS)
+            ),
             "temperature": kwargs.get("temperature", self.kwargs.get("temperature", 0.3)),
         }
         return self.client.chat(messages, **call_kwargs)

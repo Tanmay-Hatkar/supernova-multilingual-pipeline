@@ -26,7 +26,7 @@ import argparse
 import json
 import os
 import random
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -90,7 +90,6 @@ def collect_stratified(
     having in the pool either way.
     """
     from datasets import load_dataset
-
     from difficulty import DIFFICULTY_BANDS, band_of, select_stratified
 
     source = SOURCES[language_code]
@@ -164,7 +163,6 @@ def _select_by_chrf(
     """
     import dspy
     import yaml
-
     from clients import DSPyClientAdapter, get_client
     from config import MAX_OUTPUT_TOKENS
     from gepa_loop import Translate
@@ -273,7 +271,7 @@ def write_pools(language_code: str, examples: list[dict]) -> dict[str, int]:
 
     manifest = {
         "language_code": language_code,
-        "built_at": datetime.now(timezone.utc).isoformat(),
+        "built_at": datetime.now(UTC).isoformat(),
         "source": SOURCES[language_code],
         "total_examples": len(examples),
         "pool_counts": counts,
@@ -306,7 +304,7 @@ def main():
         choices=["length", "difficulty", "chrf"],
         default="length",
         help="chrf is the only axis with measured predictive power (0.49 vs 0.065), "
-             "but costs one model call per candidate",
+        "but costs one model call per candidate",
     )
     args = parser.parse_args()
 

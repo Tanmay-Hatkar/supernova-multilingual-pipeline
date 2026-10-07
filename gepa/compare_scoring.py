@@ -88,7 +88,7 @@ def score_both_ways(
     companion_name = config.get("companion_metric")
 
     scored = []
-    for example, translation in zip(examples, translations):
+    for example, translation in zip(examples, translations, strict=False):
         source = example["source"]
         reference = example.get("reference", "")
 
@@ -199,9 +199,21 @@ def verdict(summary: dict) -> str:
     tracks_better = f_corr is not None and s_corr is not None and s_corr > f_corr
 
     if wider and less_ceilinged and tracks_better:
-        return caveat + "Severity scoring separates the examples better and tracks the independent metric more closely. Adopt it."
+        return (
+            caveat
+            + "Severity scoring separates the examples better and tracks the independent metric more closely. Adopt it."
+        )
     if wider and less_ceilinged:
-        return caveat + "Severity scoring separates the examples better, but does not track the independent metric more closely. Worth adopting for the added headroom, with the correlation rechecked on more examples."
+        return (
+            caveat
+            + "Severity scoring separates the examples better, but does not track the independent metric more closely. Worth adopting for the added headroom, with the correlation rechecked on more examples."
+        )
     if not wider and not less_ceilinged:
-        return caveat + "Severity scoring does not separate the examples any better than flat scoring here. The ceiling effect is not explained by the scoring method alone; look at the data and the judge model next."
-    return caveat + "Mixed result: the two methods differ but neither is clearly better on these examples. Re-run on a larger sample before deciding."
+        return (
+            caveat
+            + "Severity scoring does not separate the examples any better than flat scoring here. The ceiling effect is not explained by the scoring method alone; look at the data and the judge model next."
+        )
+    return (
+        caveat
+        + "Mixed result: the two methods differ but neither is clearly better on these examples. Re-run on a larger sample before deciding."
+    )

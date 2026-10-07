@@ -36,11 +36,10 @@ import json
 import os
 import sys
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import dspy
 import yaml
-
 from checks import run_checks
 from clients import DSPyClientAdapter, get_client
 from config import MAX_OUTPUT_TOKENS
@@ -415,7 +414,7 @@ def run_language(
     results = {
         "language_code": language.code,
         "language_name": language.name,
-        "run_at": datetime.now(timezone.utc).isoformat(),
+        "run_at": datetime.now(UTC).isoformat(),
         # The headline numbers, both measured on the sealed pool GEPA
         # never saw. This is the only honest before-and-after available.
         "baseline_test": baseline_test.as_dict(),
@@ -482,7 +481,9 @@ def _write_results(language_code: str, results: dict, state: RunState) -> None:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--language", required=True, help="language code from configs/languages.yaml")
+    parser.add_argument(
+        "--language", required=True, help="language code from configs/languages.yaml"
+    )
     parser.add_argument("--max-examples", type=int, default=None)
     parser.add_argument(
         "--skip-preflight",

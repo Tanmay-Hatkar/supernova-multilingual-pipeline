@@ -23,7 +23,6 @@ import statistics
 from dataclasses import dataclass, field
 
 import json_repair
-
 from clients import get_client
 from rrwa import RRWAResult, compute_rrwa
 
@@ -411,9 +410,7 @@ def judge_translation(
     # untranslated English output ten out of ten.
     language = target_language or config.get("language_name", "")
     results = [
-        judge_with_model(
-            source, translation, spec, config_dir, scoring_method, language
-        )
+        judge_with_model(source, translation, spec, config_dir, scoring_method, language)
         for spec in iter_judges(config)
     ]
     usable = [r for r in results if r.score is not None]

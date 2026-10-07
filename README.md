@@ -1,74 +1,143 @@
 # supernova-multilingual-pipeline
 
-A reference architecture for a translation optimization pipeline designed to scale
-from two languages to twenty (or more) without restructuring, worked out
-from real lessons learned building the Cantonese/Mandarin pipeline.
+A reference implementation of a prompt-optimization pipeline for machine
+translation, built so that adding a language is a config change rather
+than a rewrite.
 
-**This is a template, not a copy of any production codebase.** The
-actual judge models, rubric text, RRWA formula, and evaluation data
-used in production live in their own project. What lives here is the
-*pattern*: how to structure config, data, and code so that adding a
-new language is additive, not a rewrite.
+It translates with a frozen model, scores the output with an LLM judge,
+and uses [GEPA](https://dspy.ai) to search for better instructions to
+the translator. Nothing is fine tuned; the artifact a run produces is a
+prompt.
 
-## The problem this solves
+**This is a template, not a copy of any production codebase.** What
+lives here is the pattern, plus the measurements that shaped it.
 
-A pipeline built for one or two languages tends to make three
-assumptions that stop being true at scale:
+Read [FINDINGS.md](FINDINGS.md) first if you only read one thing. It
+records six measured results, including the two where the hypothesis
+being tested turned out to be wrong.
 
-1. **One global judge/model setting for everything.** In practice,
-   different languages have needed different judge models. A single
-   `JUDGE_MODEL` setting doesn't survive contact with a tenth language.
-2. **Language-specific logic hardcoded as `if language == "x"` branches.**
-   Fine for one exception, unmanageable as a growing pile of
-   conditionals.
-3. **Flat, per-direction files** (`en_x.json`, `en_y.json`, ...) instead
-   of a folder per language, which makes "add a new language" mean
-   "edit a shared list somewhere" instead of "add a folder."
+## Quick start
 
-## How this repo is structured instead
+```bash
+pip install -r requirements.txt
+cp gepa/.env.example gepa/.env   # then add your GROQ_API_KEY
+python run.py check
+```
+
+Every command goes through `run.py`, ordered by cost:
+
+| Command | What it does | Cost |
+|---|---|---|
+| `check` | Verifies the API key, every configured model, and the data pools | seconds |
+| `demo --language es` | Translates a few examples and shows them beside the reference | ~1 min |
+| `judge --language es` | Scores one translation, showing each run and anything excluded | ~1 min |
+| `probe --language es` | Breaks good translations in known ways; reports what the judge misses | ~15 min |
+| `compare --language es` | Scores identical translations flat vs severity-weighted | ~15 min |
+| `difficulty --language es` | Pool difficulty, and whether the heuristic predicts anything | free |
+| `data --language es` | Rebuilds the four data pools | varies |
+| `optimize --language es` | The full GEPA run | hours |
+| `results --language es` | Reads the last run back as a summary | free |
+
+`probe` is the one worth running first. It is how the judge's blind spot
+in finding 1 was discovered, and it costs nothing to be wrong about.
+
+## How a run is measured
+
+Four data pools per language, physically separate files, because the
+moment a pool has been used to make a decision it can no longer measure
+that decision:
+
+| Pool | Used for |
+|---|---|
+| `examples.json` | GEPA's training set |
+| `prompt_validation/` | GEPA's candidate selection |
+| `final_test/` | Sealed. Scored once, at the end. The reported result |
+| `judge_calibration/` | Validating the judge against human labels |
+
+The headline number comes from `final_test`, which the optimizer never
+sees. Reporting the score from the pool GEPA selected on measures how
+well it selected, not how good the prompt is.
+
+Two further rules the scoring follows:
+
+- **A judge failure is not a low score.** Malformed output, an
+  out-of-range value, or a zero contradicting its own feedback is
+  excluded and counted separately. Above a 10% failure rate the run
+  aborts rather than reporting a number that describes the judge's
+  reliability.
+- **Deterministic checks run before the judge**, and their verdict is
+  not negotiable. Wrong script, wrong Chinese variety, leftover source
+  language, source copying and empty output are all string comparisons.
+  An LLM judge will score an untranslated output 10/10; a string
+  comparison never will.
+
+## Adding a language
+
+Three additive steps, no code changes:
+
+1. Add an entry to `configs/languages.yaml`
+2. Add its judge config under `configs/judges/<code>.yaml`
+3. Add its data folder under `data/<code>/`
+
+Nothing in `gepa/` needs editing. The pipeline discovers languages from
+the registry at runtime. A language starts as `status: planned`, which
+scaffolds it visibly without the optimization loop picking it up, and
+becomes `active` once a judge has actually been validated for it.
+
+This matters because three assumptions that hold at two languages stop
+holding at twenty: that one global judge setting works for everything,
+that language quirks can live as `if language == "x"` branches, and
+that flat per-direction files are manageable. All three are the same
+mistake — language-specific knowledge in code rather than config.
+
+## Layout
 
 ```
 configs/
-  languages.yaml       # the one place that lists which languages exist
-  judges/
-    yue.yaml            # per-language judge + scoring configuration
-    cmn.yaml
-    es.yaml
-data/
-  <language_code>/
-    examples.json
-    judge_calibration/  # data used only to validate/select the judge
-    prompt_validation/  # data used only during prompt optimization
-    final_test/          # held out, touched by nothing else
+  languages.yaml        # the one place listing which languages exist
+  judges/<code>.yaml    # per-language task model, judge, checks, scoring
+data/<code>/            # the four pools, plus a manifest recording provenance
 gepa/
-  language_registry.py  # loads + validates configs/languages.yaml
+  clients.py            # one model-calling path: retries, rate limits, hard failures
+  judge.py              # GEMBA-style judge, flat and severity-weighted scoring
+  checks.py             # deterministic output checks
+  rrwa.py               # rank-reciprocal weighted aggregation across judge runs
+  metrics.py            # chrF++ as an independent companion signal
+  gepa_loop.py          # the optimization loop
+  judge_probe.py        # fault-injection probe for judge sensitivity
+  compare_scoring.py    # flat vs severity, on identical translations
+  difficulty.py         # a difficulty heuristic that failed its own validation
+  validate_judge.py     # judge vs human labels; refuses to pass without them
+  prepare_data.py       # pool construction and stratification
   tests/
+run.py                  # single entry point
+FINDINGS.md             # measured results, including the negative ones
 ```
 
-**Adding a new language means:** add an entry to `configs/languages.yaml`,
-add its judge config under `configs/judges/`, add its data folder under
-`data/`. Nothing in `gepa/` needs to be edited — the pipeline discovers
-languages from the registry at runtime, not from a hardcoded list.
+## Development
 
-A language starts as `status: planned` (scaffolded, not yet validated,
-excluded from runs) and moves to `status: active` once a real judge
-selection process has actually validated one for it, the same kind of
-human-labeled validation process used for the languages already active.
+```bash
+python -m pytest gepa/tests -q     # 86 tests, no API calls
+ruff check . && ruff format .
+```
 
-## Repo structure
+Tests never hit the network: model calls go through a fake client. CI
+runs the suite on every push and pull request. Dependencies are pinned,
+because an unpinned minor release turning CI red teaches nothing.
 
-| Folder | What lives here | Status |
-|---|---|---|
-| `gepa/` | Language registry, optimization loop pattern | Reference implementation |
-| `evaluation/` | Model comparison and judge validation pattern | Reference implementation |
-| `data/` | Per-language data, four pools kept separate | See `data/README.md` |
-| `configs/` | Language registry and per-language judge configs | Source of truth for what's active |
-| `finetuning/` | Fine tuning readiness pattern | Reference implementation |
-| `serving/` | Serving configuration pattern | Reference implementation |
-| `docs/` | Reference documentation | — |
+Changes go through a pull request into `main`. `CODEOWNERS`
+auto-requests a reviewer.
 
-## Contributing
+## Known gaps
 
-All changes go through a pull request into `main` with at least one
-approval before merging. `CODEOWNERS` auto-requests a reviewer, and CI
-runs the test suite on every PR.
+Stated rather than discovered later:
+
+- The judge is **not validated against human labels**. `validate_judge.py`
+  correctly refuses to pass without them, and none exist yet. Every
+  score here is a mechanics check, not a quality verdict.
+- No readiness gate. A run reports a score; it does not decide whether
+  to adopt the prompt.
+- `yue` (Cantonese) is scaffolded as `planned` with placeholder data and
+  has never been run.
+- Logging is `print`, which is adequate for a CLI and would not be for a
+  service.

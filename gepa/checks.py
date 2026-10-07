@@ -127,7 +127,7 @@ def check_simplified_script(text: str) -> CheckResult:
     if converted == text:
         return CheckResult("simplified_script", True, "no Traditional characters found")
 
-    differing = [orig for orig, conv in zip(text, converted) if orig != conv]
+    differing = [orig for orig, conv in zip(text, converted, strict=False) if orig != conv]
     return CheckResult(
         "simplified_script",
         False,

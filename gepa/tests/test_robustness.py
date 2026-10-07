@@ -17,8 +17,8 @@ from judge import JudgeCallResult, _is_suspicious_zero, _parse_judge_response
 from metrics import compute_chrf_plus_plus, compute_companion
 from reliability import iter_judges
 
-
 # --- retryable vs structural: the distinction that cost real debugging time ---
+
 
 def test_structural_rejection_is_recognized():
     message = (
@@ -49,6 +49,7 @@ def test_retry_after_falls_back_when_message_format_changes():
 
 # --- judge output validation: never invent a score from a failure ---
 
+
 def test_out_of_range_score_is_rejected():
     with pytest.raises(ValueError, match="outside the valid"):
         _parse_judge_response('{"score": 42, "feedback": "great"}')
@@ -75,6 +76,7 @@ def test_nonzero_score_is_never_suspicious():
 
 # --- single and multi judge configs travel the same path ---
 
+
 def test_single_judge_config_normalizes_to_a_list():
     config = {"judge": {"provider": "groq", "model": "a"}}
     assert iter_judges(config) == [{"provider": "groq", "model": "a"}]
@@ -92,8 +94,11 @@ def test_config_with_no_judge_raises_clearly():
 
 # --- companion metric: the config promised chrF++, now it delivers ---
 
+
 def test_chrf_scores_identical_text_highly():
-    result = compute_chrf_plus_plus("El planeta madre se está agotando.", "El planeta madre se está agotando.")
+    result = compute_chrf_plus_plus(
+        "El planeta madre se está agotando.", "El planeta madre se está agotando."
+    )
     assert result.score == pytest.approx(100.0, abs=0.01)
 
 
@@ -122,4 +127,6 @@ def test_companion_dispatch_handles_unknown_metric_gracefully():
 
 def test_companion_dispatch_accepts_chrf_aliases():
     for alias in ("chrf++", "CHRF++", "chrf_plus_plus"):
-        assert compute_companion(alias, "hola mundo", "hola mundo").score == pytest.approx(100.0, abs=0.01)
+        assert compute_companion(alias, "hola mundo", "hola mundo").score == pytest.approx(
+            100.0, abs=0.01
+        )

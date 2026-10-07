@@ -1,9 +1,18 @@
-pyyaml>=6.0
-pytest>=8.0.0
-dspy>=3.0.0
-groq>=0.11.0
-python-dotenv>=1.0.0
-json_repair>=0.30.0
-sacrebleu>=2.4.0
-requests>=2.31.0
-opencc-python-reimplemented>=0.1.7
+# Pinned exactly. An unpinned minor release turning CI red teaches
+# nothing about this code, and a result that cannot be reproduced
+# against known dependency versions is not a result.
+dspy==3.2.1
+groq==1.0.0
+pyyaml==6.0.1
+python-dotenv==1.0.1
+json_repair==0.61.7
+sacrebleu==2.3.1
+requests==2.32.3
+opencc-python-reimplemented==0.1.7
+
+# Data preparation only; not needed to run or test the pipeline.
+datasets==4.4.2
+
+# Development.
+pytest==9.0.3
+ruff==0.14.0
