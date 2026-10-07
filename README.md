@@ -20,9 +20,24 @@ being tested turned out to be wrong.
 
 ```bash
 pip install -r requirements.txt
-cp gepa/.env.example gepa/.env   # then add your GROQ_API_KEY
+cp gepa/.env.example gepa/.env   # then add your own GROQ_API_KEY
 python run.py check
 ```
+
+A free key from [console.groq.com](https://console.groq.com/keys) is
+enough to run everything here. `.env` is gitignored, so no key is ever
+committed, and `check` reports immediately if one is missing or a model
+is unreachable.
+
+The committed data means `demo`, `judge`, `probe` and `compare` all work
+without preparing anything first. Only `data` needs the HuggingFace
+`datasets` package.
+
+**Groq is currently the only provider.** Supporting another means adding
+one `ModelClient` subclass with `chat()` and `complete()` and
+registering it in `get_client` — about thirty lines. Nothing else in the
+pipeline changes, because every model call in it, task model and judge
+alike, goes through that one path.
 
 Every command goes through `run.py`, ordered by cost:
 
