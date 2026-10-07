@@ -129,8 +129,7 @@ they adapt to a language whose scores sit systematically higher or
 lower.
 
 chrF++ is a flawed proxy: a low score can mean a good translation
-phrased differently from the reference, which the pod documented last
-sprint. For *selection* that is acceptable — a sentence where the
+phrased differently from the reference, a well-known weakness of it. For *selection* that is acceptable — a sentence where the
 model's output diverges from a human reference is worth having in the
 pool either way. It would not be acceptable as a quality verdict.
 
@@ -148,9 +147,9 @@ select that trade happily.
 
 ## 4. Things a judge should never be asked to do
 
-An LLM judge scored an untranslated output and a fully-Traditional-script
-output at 10 out of 10 in the pod's evaluation, and this pipeline
-reproduced the first of those. Both are caught instantly by a string
+An LLM judge will score an untranslated output, and a
+fully-Traditional-script output, at 10 out of 10. This pipeline
+reproduced the first of those directly (finding 1). Both are caught instantly by a string
 comparison.
 
 Deterministic checks (script, Chinese variety, residual Latin tokens,

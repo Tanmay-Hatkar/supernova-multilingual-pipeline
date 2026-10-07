@@ -1,11 +1,10 @@
 """
 Tests for the deterministic output checks.
 
-The fixtures are the real failure cases from the pod's Sprint 52
-analysis, not invented ones. Each of these passed an automated gate
-that counted CJK characters, and several were scored ten out of ten by
-an LLM judge. If these tests pass, the gap that let a 2.5% reported
-wrong-language rate hide a 4.0% real one is closed for those patterns.
+The fixtures are failure patterns observed in real evaluation output,
+not invented ones. Each of these passes an automated gate that counts
+CJK characters, and several were scored ten out of ten by an LLM judge.
+If these tests pass, those patterns can no longer slip through.
 """
 
 import sys
@@ -33,16 +32,16 @@ def test_simplified_output_passes_script_check():
 
 
 def test_fully_traditional_output_is_flagged():
-    # Scored 10/10 by the judge in the real run. Fluent, grammatical,
-    # and entirely the wrong script.
+    # The kind of output a semantic judge scores 10/10: fluent,
+    # grammatical, and entirely the wrong script.
     result = check_simplified_script("博物館的新展覽下個月開幕。")
     assert not result.passed
     assert result.evidence
 
 
 def test_single_traditional_character_is_flagged():
-    # "你拿到錢了" — one Traditional character in otherwise Simplified
-    # output, which no ratio-based heuristic can see.
+    # One Traditional character in otherwise Simplified output, which no
+    # ratio-based heuristic can see.
     result = check_simplified_script("你拿到钱了")
     assert result.passed  # this one is already Simplified
     result = check_simplified_script("你拿到錢了")
@@ -57,7 +56,7 @@ def test_latin_text_is_unaffected_by_the_script_check():
 # --- Chinese variety ----------------------------------------------------
 
 def test_cantonese_vernacular_is_flagged():
-    # "我今日冇時間搞掂呢件事" — valid Chinese characters, wrong variety.
+    # Valid Chinese characters, wrong variety.
     result = check_no_cantonese_markers("我今日冇時間搞掂呢件事")
     assert not result.passed
     assert "冇" in result.evidence
@@ -70,8 +69,8 @@ def test_standard_mandarin_passes_the_variety_check():
 # --- Residual Latin -----------------------------------------------------
 
 def test_english_noun_left_inside_chinese_is_flagged():
-    # "你最好不要 obsession 在这件事上" — the gate saw latin_words=1 and
-    # passed it.
+    # A single English noun inside Chinese: a ratio-based gate sees one
+    # Latin word and passes it.
     result = check_no_residual_latin(
         "你最好不要 obsession 在这件事上", "You'd better not be so fixated on this."
     )

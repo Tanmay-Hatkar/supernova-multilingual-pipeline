@@ -6,3 +6,5 @@ logs/
 *.log
 .venv/
 venv/
+data/es_length_baseline/
+data/cmn_length_baseline/

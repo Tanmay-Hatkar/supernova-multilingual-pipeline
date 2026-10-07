@@ -36,8 +36,7 @@ def test_no_errors_scores_ten():
 
 
 def test_weights_match_published_mqm_values():
-    # minor 1, major 5, critical 25 — the GEMBA-MQM weights the pod's
-    # own scoring research converged on independently.
+    # minor 1, major 5, critical 25 — the standard GEMBA-MQM weights.
     assert SEVERITY_WEIGHTS == {"minor": 1, "major": 5, "critical": 25}
 
 

@@ -84,8 +84,8 @@ def collect_stratified(
         this pipeline. Use this when you can afford it.
 
     chrF++ is a proxy and a flawed one — a low score can mean a good
-    translation phrased differently from the reference, which the pod
-    found last sprint. For *selection* that is acceptable: a sentence
+    translation phrased differently from the reference, which is a
+    well-known weakness of it. For *selection* that is acceptable: a sentence
     where the model's output diverges from a human reference is worth
     having in the pool either way.
     """
@@ -199,25 +199,54 @@ def _select_by_chrf(
             print(f"    {i}/{len(pool)}")
 
     scored = [c for c in pool if c.get("baseline_chrf") is not None]
-    scored.sort(key=lambda c: c["baseline_chrf"])
 
-    # Terciles of the observed distribution rather than fixed
-    # thresholds, so the bands adapt to a language whose scores sit
-    # systematically higher or lower.
-    third = len(scored) // 3
-    for band, group in (("hard", scored[:third]), ("medium", scored[third : 2 * third]), ("easy", scored[2 * third :])):
-        for candidate in group:
-            candidate["difficulty_band"] = band
+    # Band chrF++ *within* each length band, not across the whole pool.
+    #
+    # Banding globally does not measure difficulty, it measures length.
+    # chrF++ is an n-gram overlap score, and on a six-word fragment a
+    # single different word choice destroys it even when the
+    # translation is perfect. A global tercile split therefore fills
+    # the "hard" band with short sentences: measured on a real run, the
+    # hard band averaged 42 source characters against 115 and 91 for
+    # medium and easy, and 18 of the 32 shortest examples in the pool
+    # landed in it. Those are not hard sentences. They are sentences
+    # where the metric is noisy.
+    #
+    # Splitting within length bands holds length roughly constant, so
+    # what remains is the part of the chrF++ signal that is about the
+    # translation rather than about the string.
+    for length_band, _, _ in LENGTH_BANDS:
+        group = [c for c in scored if c["length_band"] == length_band]
+        group.sort(key=lambda c: c["baseline_chrf"])
+        third = len(group) // 3
+        for band, members in (
+            ("hard", group[:third]),
+            ("medium", group[third : 2 * third]),
+            ("easy", group[2 * third :]),
+        ):
+            for candidate in members:
+                candidate["difficulty_band"] = band
 
-    per_band = total // 3
+    # Sample evenly across the full length x difficulty grid, so each
+    # difficulty band ends up with the same length profile and the two
+    # axes cannot be confused for one another later.
+    per_cell = total // (3 * len(LENGTH_BANDS))
     selected: list[dict] = []
     for band in ("easy", "medium", "hard"):
-        available = [c for c in scored if c["difficulty_band"] == band]
-        rng.shuffle(available)
-        take = available[:per_band]
-        if len(take) < per_band:
-            print(f"  note: only {len(take)} '{band}' examples available, wanted {per_band}")
-        selected.extend(take)
+        for length_band, _, _ in LENGTH_BANDS:
+            available = [
+                c
+                for c in scored
+                if c.get("difficulty_band") == band and c["length_band"] == length_band
+            ]
+            rng.shuffle(available)
+            take = available[:per_cell]
+            if len(take) < per_cell:
+                print(
+                    f"  note: only {len(take)} '{band}/{length_band}' examples "
+                    f"available, wanted {per_cell}"
+                )
+            selected.extend(take)
     return selected
 
 

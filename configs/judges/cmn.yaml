@@ -35,9 +35,9 @@ reflection_model:
   model: openai/gpt-oss-120b
 
 # Deterministic checks on the output, run before the judge ever sees it.
-# These catch what a semantic judge misses: in the pod's real evaluation
-# an untranslated output and a fully-Traditional one were both scored ten
-# out of ten, and both are caught here by a string comparison.
+# These catch what a semantic judge misses: in real evaluation runs an
+# untranslated output and a fully-Traditional one have both been scored
+# ten out of ten, and both are caught here by a string comparison.
 #
 # not_empty and not_source_copy run for every language and don't need
 # listing. The three below are specific to Mandarin as a target.

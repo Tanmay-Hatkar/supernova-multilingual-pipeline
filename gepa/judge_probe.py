@@ -21,9 +21,9 @@ the original is not strict or lenient — it is not measuring meaning at
 all. That is worth knowing before spending a single further run on
 prompt optimization.
 
-This is the same idea as the quality bands in the pod's human review
-sets, applied to the judge rather than to a human reviewer. The
-difference is that here we know what we broke.
+This is the same idea as the quality bands used when building a human
+review set, applied to the judge rather than to a human reviewer. The
+difference is that here we know exactly what we broke.
 """
 
 from __future__ import annotations

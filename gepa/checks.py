@@ -30,8 +30,8 @@ What these checks deliberately cannot do:
     full of them, and the count is reported for that reason.
 
 These limits are written down rather than discovered later, because a
-check whose blind spots are undocumented is how a gate ends up
-reporting 2.5% when the real figure is 4.0%.
+check whose blind spots are undocumented is how a gate ends up under-
+reporting its own failure rate while looking like it works.
 """
 
 from __future__ import annotations
@@ -155,9 +155,9 @@ def check_no_residual_latin(text: str, source: str) -> CheckResult:
 
     Tokens present in the source are exempt, since a proper noun kept
     from the source is correct behavior, not leakage. Acronyms are
-    exempt for the same reason. What remains is the pattern the pod
-    found repeatedly: an ordinary English noun sitting in a Chinese
-    sentence, which the automated gate passed because the output was
+    exempt for the same reason. What remains is the pattern that recurs
+    in real runs: an ordinary English noun sitting in a Chinese
+    sentence, which a ratio-based gate passes because the output is
     still overwhelmingly CJK.
     """
     if not _CJK.search(text):

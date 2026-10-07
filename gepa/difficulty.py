@@ -120,7 +120,7 @@ def score_difficulty(source: str) -> DifficultyScore:
     features["negation"] = min(negations, 3) * 0.7
 
     # Named entities and numbers: facts a translator can get
-    # confidently wrong, and the failure type the pod found repeatedly.
+    # confidently wrong, and a failure type that recurs in real runs.
     entities = len(set(_MID_CAPITAL.findall(text)))
     features["named_entities"] = min(entities, 4) * 0.8
     features["numbers"] = min(len(_NUMBER.findall(text)), 3) * 0.5

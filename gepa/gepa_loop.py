@@ -198,7 +198,7 @@ def _build_metric(config: dict, config_dir: str, state: RunState):
         # Deterministic checks run before the judge, for two reasons.
         # They catch failures a semantic judge demonstrably misses — an
         # untranslated output and a wrong-script one were both scored
-        # ten out of ten in the pod's real run — and a failure here is
+        # ten out of ten in real evaluation runs — and a failure here is
         # certain, so paying for three judge calls to confirm it would
         # be spending money to get a worse answer.
         report = run_checks(translation, gold.source, config)
