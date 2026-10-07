@@ -186,17 +186,51 @@ def _select_by_chrf(
     pool = pool[: total * 3]
 
     print(f"  translating {len(pool)} candidates to measure difficulty (this costs API calls)...")
+
+    # One candidate failing must not destroy the whole batch. An earlier
+    # version let an exception propagate, and a single empty model
+    # response ended a forty-minute run with nothing written to disk.
+    # Any long batch against a live provider will hit transient empty
+    # responses, parse failures and rate limits; the only sane policy is
+    # to skip the candidate, count it, and carry on.
+    skipped: dict[str, int] = {}
     for i, candidate in enumerate(pool, 1):
-        translation = translator(
-            source=candidate["source"], target_language=language.name
-        ).translation
-        score = compute_chrf_plus_plus(translation, candidate["reference"]).score
-        candidate["baseline_chrf"] = score
+        try:
+            translation = translator(
+                source=candidate["source"], target_language=language.name
+            ).translation
+        except Exception as e:  # noqa: BLE001 - any provider or parse failure is a skip
+            reason = type(e).__name__
+            skipped[reason] = skipped.get(reason, 0) + 1
+            continue
+
+        if not translation or not translation.strip():
+            skipped["EmptyTranslation"] = skipped.get("EmptyTranslation", 0) + 1
+            continue
+
+        candidate["baseline_chrf"] = compute_chrf_plus_plus(
+            translation, candidate["reference"]
+        ).score
         candidate["baseline_translation"] = translation
         if i % 25 == 0:
             print(f"    {i}/{len(pool)}")
 
     scored = [c for c in pool if c.get("baseline_chrf") is not None]
+
+    if skipped:
+        total_skipped = sum(skipped.values())
+        detail = ", ".join(f"{reason} x{count}" for reason, count in sorted(skipped.items()))
+        print(f"  skipped {total_skipped} of {len(pool)} candidates: {detail}")
+
+    # Refuse to build pools from too little data rather than quietly
+    # producing undersized bands. A selection run that lost most of its
+    # candidates has not measured difficulty, it has measured the
+    # provider's error rate.
+    if len(scored) < total:
+        raise RuntimeError(
+            f"Only {len(scored)} of {len(pool)} candidates were scored, which is fewer "
+            f"than the {total} examples requested. Re-run, or lower --total."
+        )
 
     # Band chrF++ *within* each length band, not across the whole pool.
     #
