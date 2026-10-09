@@ -1,296 +1,452 @@
 [
   {
-    "source": "The FAO global Forest Resources Assessment provides information at regular intervals on the world's forest resources, their management and uses, based largely on data provided by countries.",
-    "reference": "La Evaluación de los Recursos Forestales de la FAO proporciona información periódica sobre los recursos forestales mundiales, su gestión y sus usos, basada principalmente en datos facilitados por los países.",
+    "source": "The gun rested on a newspaper that was dated 1 march, 1986.",
+    "reference": "El arma estaba apoyada en un periódico del 1 de marzo de 1986.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 60.3113,
+    "baseline_translation": "El arma reposaba sobre un periódico fechado el 1 de marzo de 1986.",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "He was the first British monarch of the House of Windsor, which he created from the British branch of the German House of Saxe-Coburg and Gotha.",
+    "reference": "Era el segundo hijo del Rey Eduardo VII y la Reina Alejandra. Fue el primer monarca en pertenecer a la Casa de Windsor, que se creó de la Casa de Sajonia-Coburgo-Gotha.",
     "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 44.6449,
+    "baseline_translation": "Fue el primer monarca británico de la Casa de Windsor, que creó a partir de la rama británica de la Casa alemana de Saxe-Coburg y Gotha.",
+    "difficulty_band": "hard"
   },
   {
-    "source": "I have no idea why my house exploded.",
-    "reference": "No tengo ni idea por qué mi casa explotó.",
+    "source": "90% of our hotel customers are foreign tourists, and as soon as you opened the new section on your site, we placed our ad for the sale of our hotel. True enough, statistics show that the ad gets a lot of hits in all languages!",
+    "reference": "Nuestro hotel estÃ¡ frecuentado por un 90% de turistas, y en cuanto ustedes abrieron esta nueva rÃºbrica, pasamos nuestro anuncio para poner el hotel en venta. Â¡Y en efecto, las estadÃ sticas ponen de manifiesto que el anuncio estÃ¡ muy visitado en todos los idiomas!",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 45.5973,
+    "baseline_translation": "El 90 % de nuestros clientes de hotel son turistas extranjeros, y tan pronto como abriste la nueva sección en tu sitio, colocamos nuestro anuncio para la venta de nuestro hotel. Cierto, las estadísticas muestran que el anuncio recibe muchas visitas en todos los idiomas.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "You might want to try Titan Poker Bonus Code.",
+    "reference": "Es posible que desee para tratar de Código de Bono de Titan Poker .",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 42.0027,
+    "baseline_translation": "Podrías querer probar el Código de Bono Titan Poker.",
+    "difficulty_band": "medium"
   },
   {
-    "source": "- Have you searched the entire house?",
-    "reference": "¿Registraron toda la ópera?",
+    "source": "Oh, you know, so long.",
+    "reference": "Oh, ya sabe, mucho tiempo.",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 39.435,
+    "baseline_translation": "Oh, ya sabes, adiós.",
+    "difficulty_band": "hard"
   },
   {
-    "source": "On the other hand, many experts also pointed out that obstacles to progress had included:",
-    "reference": "Por otra parte, muchos expertos también señalaron que los obstáculos a los progresos incluían:",
+    "source": "I would like to add also that, in this general framework, we must make the best possible use of the Council of Europe convention on cybercrime throughout the Internet.",
+    "reference": "También desearía añadir que, en este marco general, debemos hacer el mejor uso posible del convenio del Consejo de Europa sobre el cibercrimen a través de Internet.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 55.2329,
+    "baseline_translation": "También me gustaría añadir que, en este marco general, debemos aprovechar al máximo la convención del Consejo de Europa sobre ciberdelincuencia en toda la red.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "The more man rebelled, the further away he went from harmony and family spirit.",
+    "reference": "Mientras más se rebelaba el hombre, más se alejaba de la armonía y el espíritu de familia.",
     "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 78.2136,
+    "baseline_translation": "Cuanto más se rebelaba el hombre, más se alejaba de la armonía y del espíritu familiar.",
+    "difficulty_band": "easy"
   },
   {
-    "source": "Kevin here is scanning the latest medical journals into his database.",
-    "reference": "Kevin aquí está escaneando en su base de datos Io ultimo de Ia revista médica:",
+    "source": "María is just one retiree with a distressing economic situation.",
+    "reference": "María es otra jubilada en precarias condiciones económicas.",
     "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 38.2339,
+    "baseline_translation": "María es simplemente una jubilada con una situación económica angustiante.",
+    "difficulty_band": "hard"
   },
   {
-    "source": "You've always told me it's quiet when we reopen the pools.",
-    "reference": "Siempre me has dicho es tranquila cuando abrimos de nuevo las piscinas.",
+    "source": "- we want to talk to you.",
+    "reference": "- Espera, queremos hablar contigo. - ¡Muévase!",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 49.6467,
+    "baseline_translation": "- Queremos hablar contigo.",
+    "difficulty_band": "medium"
   },
   {
-    "source": "But he can't be held responsible for what he did if he was given GHB against his will.",
-    "reference": "Pero él no puede ser responsable por lo que hizo si le dieron GHB en contra de su voluntad.",
+    "source": "\"These are essential assets to successfully tackle the pressing difficulties that the Spanish people are facing today,\" said Moreno. He added that Spain is a mature society that \"was and remains an example for those of us who are still traveling down the road to development.\"",
+    "reference": "“Éstos son activos esenciales para enfrentar con éxito las dificultades por las que hoy atraviesan los españoles”, dijo Moreno, quien agregó que España era una sociedad madura que “fue y seguirá siendo ejemplo para quienes todavía transitamos los caminos del desarrollo”.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 56.1812,
+    "baseline_translation": "Estos son activos esenciales para abordar con éxito las dificultades urgentes que el pueblo español enfrenta hoy,\" dijo Moreno. Añadió que España es una sociedad madura que \"fue y sigue siendo un ejemplo para los que todavía estamos recorriendo el camino hacia el desarrollo.\"",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Don't think I won't count it first chance I get.",
+    "reference": "Lo contaré en cuanto pueda.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 26.8247,
+    "baseline_translation": "No pienses que no lo contaré la primera oportunidad que tenga.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Pages such as the Home Page can be completely replaced with your own page, which you have already published to the Internet.",
+    "reference": "Las páginas como la Página Principal pueden ser completamente reemplazadas con su propia página, la cual ya ha sido publicada en Internet.",
     "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 67.4502,
+    "baseline_translation": "Páginas como la página de inicio pueden ser reemplazadas completamente con tu propia página, la cual ya has publicado en Internet.",
+    "difficulty_band": "easy"
   },
   {
-    "source": "I just,uh,didn't know that you were so...",
-    "reference": "Yo sólo, no sabía que era tan...",
+    "source": "Such aid has been used to buy fertilizers, procure food locally and pay for the construction of storage facilities.",
+    "reference": "Moviliza cerca de una quinta parte del total de los créditos comunitarios destinados a la ayuda al desarrollo.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 22.6071,
+    "baseline_translation": "Tal ayuda se ha utilizado para comprar fertilizantes, adquirir alimentos localmente y pagar la construcción de instalaciones de almacenamiento.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Whatever happens to them is on you!",
+    "reference": "- Déjeme ir, por favor.",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 3.7129,
+    "baseline_translation": "¡Lo que les pase depende de ti!",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "all units take position.",
+    "reference": "todas las unidades en posición.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 73.621,
+    "baseline_translation": "Todas las unidades toman posición.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "Reporting structure of the International Public Sector Accounting Standards Steering Committee",
+    "reference": "Estructura jerárquica del Comité Directivo para la Adopción de las IPSAS",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 34.5924,
+    "baseline_translation": "Estructura de reporte del Comité de Dirección de Normas Internacionales de Contabilidad del Sector Público",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Indeed, such policies might well go further and change the system that keeps bringing us these crises and breaking its defenders’ promises to prevent more crises. To the extent that they significantly alleviate the burdens of austerity, such policies might win the time and political space to achieve those larger goals.",
+    "reference": "En la medida en que alivian significativamente las cargas de la austeridad, tales políticas podrían ganar el tiempo y el espacio político para lograr esos objetivos más amplios.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 71.9005,
+    "baseline_translation": "De hecho, dichas políticas podrían ir más allá y cambiar el sistema que sigue trayéndonos estas crisis y rompiendo las promesas de sus defensores de prevenir más crisis. En la medida en que alivien significativamente las cargas de la austeridad, dichas políticas podrían ganar el tiempo y el espacio político necesarios para lograr esos objetivos mayores.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "Brenntag offers an unrivalled, extensive and state-of-the-art distribution network for industrial and specialty chemicals to its suppliers and customers alike, both in Europe and the Americas.",
+    "reference": "Asimismo, Brenntag ofrece a sus proveedores tanto en Europa como en Norteamérica y Latinoamérica una red de distribución extensa y altamente desarrollada, para productos químicos industriales y especiales.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 65.3543,
+    "baseline_translation": "Brenntag ofrece una red de distribución inigualable, extensa y de última generación para productos químicos industriales y especializados a sus proveedores y clientes por igual, tanto en Europa como en las Américas.",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "Total loans and advances for the same period were $593.1 million, with the domestic market accounting for $520.1 million (87 per cent).",
+    "reference": "El total de préstamos y adelantos en el mismo período fue de 593,1 millones de dólares, de los que 520,1 millones (el 87%) correspondían al mercado interno.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 59.2736,
+    "baseline_translation": "Los préstamos y adelantos totales para el mismo período fueron de 593,1 millones de dólares, con el mercado doméstico representando 520,1 millones de dólares (87 por ciento).",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "This testimony is not from a dialog in a gangster movie, but took place inside a police van after the Atenco Revolt, as the prisoners were transported to jail in a forty minute trip that, for some reason, lasted more than four nightmarish hours.",
+    "reference": "Este testimonio no es un diálogo en una película de gangsters, sino lo que ocurrió dentro de los camiones de la policía después de la Revuelta de Atenco, mientras trasladaban a los presos hacia la cárcel, en un viaje de cuarenta minutos que por alguna razón tomó más de cuatro horas.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 71.0344,
+    "baseline_translation": "Este testimonio no es de un diálogo de una película de gángsters, sino que ocurrió dentro de una furgoneta policial después de la Revuelta de Atenco, mientras los prisioneros eran transportados a la cárcel en un viaje de cuarenta minutos que, por alguna razón, duró más de cuatro horas de pesadilla.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "But I haven't told you the things I came here to say.",
+    "reference": "Pero no le dije las cosas que yo vine aquí a decirte.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 48.9356,
+    "baseline_translation": "Pero no te he dicho las cosas que vine a decir.",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "(a) fibres which separately account for less than 10 % of the total weight of a product may be collectively designated by the term 'other fibres`, followed by the total percentage by weight;",
+    "reference": "a) el conjunto de las fibras que por separado supongan menos del 10 % en la composición de un producto podrá designarse con la expresión «otras fibras» seguida de un porcentaje global;",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 50.5921,
+    "baseline_translation": "(a) las fibras que por separado representan menos del 10 % del peso total de un producto pueden designarse colectivamente con el término 'otras fibras', seguido del porcentaje total por peso;",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Targeting the ventral hyperdrive would be most effective.",
+    "reference": "Apunte a los generadores ventrales de hiperespacio, será lo más efectivo.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 26.8384,
+    "baseline_translation": "Apuntar al hiperimpulso ventral sería lo más eficaz.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "In stressing the need for speed in the deployment of the protection and logistic units of MONUC, we wish to emphasize the importance of the equipment and weapons that this force must have if it is to fulfil its mandate in the best possible conditions.",
+    "reference": "Al insistir en que es necesario actuar con rapidez en el despliegue de las unidades logísticas y de protección de la MONUC, queremos recalcar la importancia del equipo y las armas que tiene que tener esta fuerza para que pueda cumplir su mandato en las mejores condiciones posibles.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 64.8188,
+    "baseline_translation": "Al enfatizar la necesidad de rapidez en el despliegue de las unidades de protección y logística de MONUC, deseamos subrayar la importancia del equipo y las armas que esta fuerza debe contar si va a cumplir su mandato en las mejores condiciones posibles.",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "COMMON ACTION KEY TO NEW JOBS",
+    "reference": "LA ACTUACIÓN COMÚN, CLAVE PARA CREAR EMPLEO",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 0.3397,
+    "baseline_translation": "Clave de acción común para nuevos trabajos",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Human rights defenders need new strategies that are inspired by a theory of security and human rights, of dignity, freedom and justice.",
+    "reference": "Los defensores y las defensoras de los derechos humanos necesitan nuevas estrategias, inspiradas por una teoría de seguridad y derechos humanos, de dignidad, libertad y justicia.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 84.3036,
+    "baseline_translation": "Los defensores de los derechos humanos necesitan nuevas estrategias inspiradas en una teoría de seguridad y derechos humanos, de dignidad, libertad y justicia.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "How are such matters as the theft of the White House in 2000 and 2004, via voter fraud, arranged? Diebold, with a paperless trail, was developed long before, and states were forced to implement this electronic voting by statute, under the gist of helping the disabled to vote.",
+    "reference": "Cómo se organiza asuntos tales como el robo de la Casa Blanca en el 2000 y el 2004 a través del fraude electoral ? Diebold , sin dejar registros escritos , fue desarrollada mucho antes , y los estados fueron obligados a implementar este sistema de voto electrónico , bajo la fachada de ayudar a votar a los impedidos",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 60.769,
+    "baseline_translation": "¿Cómo se organizan asuntos como el robo de la Casa Blanca en 2000 y 2004, mediante fraude electoral? Diebold, con un rastro sin papel, fue desarrollado mucho antes, y los estados se vieron obligados a implementar esta votación electrónica por ley, bajo el argumento de ayudar a las personas con discapacidad a votar.",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "It was assumed that the rules established by the draft convention would constitute the domestic law of the Contracting State and as such would be applicable pursuant to conflict of law rules.",
+    "reference": "Se supone que las normas establecidas en virtud del proyecto de convención pasarán a formar parte de la legislación nacional del Estado Contratante y, como tales, serán aplicables en caso de conflicto entre las disposiciones jurídicas.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 48.0572,
+    "baseline_translation": "Se asumió que las normas establecidas por el borrador de la convención constituirían la ley interna del Estado Contratante y, como tal, serían aplicables de acuerdo con las normas de conflicto de leyes.",
+    "difficulty_band": "hard"
   },
   {
     "source": "Thereafter, in June 2004, the Israeli Government revealed plans for Givat Yael, west of Bayt Jala (West Bank), entailing the confiscation of 411 hectares of Palestinian land.",
     "reference": "Posteriormente, en junio de 2004, el Gobierno israelí reveló sus planes para el establecimiento de Givat Yael, al oeste de Bayt Yala (Ribera Occidental), que supondrían la confiscación de 411 hectáreas de tierras palestinas.",
     "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 68.4636,
+    "baseline_translation": "Posteriormente, en junio de 2004, el Gobierno israelí reveló planes para Givat Yael, al oeste de Bayt Jala (Cisjordania), que implicaba la confiscación de 411 hectáreas de tierra palestina.",
+    "difficulty_band": "medium"
   },
   {
-    "source": "But please tell me there's a microwave or Wi-fi.",
-    "reference": "Pero por favor dime que hay microondas o wi-fi.",
+    "source": "(b) Relevant programmes of the proposed strategic framework for the period 2006-2007 (relevant fascicles of A/59/6);",
+    "reference": "b) Programas pertinentes del proyecto de marco estratégico para el bienio 2006-2007 (fascículos pertinentes de A/59/6);",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 62.135,
+    "baseline_translation": "(b) Programas relevantes del marco estratégico propuesto para el período 2006-2007 (fascículos relevantes de A/59/6);",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "The most important measures for confronting climate change on agricultural land consist in reorienting production for national and local markets, reducing the cycle that pushes the grazing cattle into the forests and producing food under agro ecological conditions of low-carbon emission.",
+    "reference": "Las medidas más importantes para enfrentar el cambio climático en el campo consisten en reorientar la producción a los mercados nacionales y locales, reducir el ciclo que empuja la llegada de ganaderos a los bosques y producir alimentos bajo condiciones agroecológicas y de baja emisión de carbono.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 83.3213,
+    "baseline_translation": "Las medidas más importantes para enfrentar el cambio climático en la tierra agrícola consisten en reorientar la producción hacia los mercados nacionales y locales, reducir el ciclo que lleva al ganado de pastoreo a los bosques y producir alimentos bajo condiciones agroecológicas de baja emisión de carbono.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "We've suspected for a long while that the cartel has stationed him here in Arizona.",
+    "reference": "Sospechamos durante mucho tiempo que el cartel lo había ubicado aquí en Arizona.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 70.283,
+    "baseline_translation": "Hemos sospechado durante mucho tiempo que el cartel lo ha puesto aquí, en Arizona.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "Why didn't you just stop at \"Pawnee\"?",
+    "reference": "¿Por qué no paraste en \"Pawnee\"?",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 63.2807,
+    "baseline_translation": "¿Por qué no te detuviste solo en \"Pawnee\"?",
+    "difficulty_band": "easy"
   },
   {
-    "source": "I'm real sorry you and Daphne can't be at the show tonight, too, but I am glad you're having fun in California.",
-    "reference": "Realmente siento que tú y Daphne no podáis venir al espectáculo de esta noche, pero me alegro de que estéis pasándolo bien en California.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Then we win 'cause we get to have you in our backyard a little bit longer.",
-    "reference": "Entonces nosotras ganamos, porque te tendremos un poco más en nuestro patio.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "I wouldn't have the job I do today if it wasn't for what I learned from being here.",
-    "reference": "Yo no tendría el trabajo que tengo hoy, si no fuera por lo que aprendí de estar aquí.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "I didn't get into college. Like anywhere.",
-    "reference": "No ingresé a la universidad Es decir, a ninguna.",
+    "source": "If he doesn't look at me, I get jealous",
+    "reference": "Si no, me pongo celoso.",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 74.1589,
+    "baseline_translation": "Si no me mira, me pongo celoso",
+    "difficulty_band": "easy"
   },
   {
-    "source": "Welcomes additional contributions from foundations, individuals and other sources.",
-    "reference": "Acoge con beneplácito las contribuciones adicionales de fundaciones, particulares y otras fuentes.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "These four came all a-front, mainly thrust at me.",
-    "reference": "Esos cuatro me vinieron de frente y me atacaron al mismo tiempo.",
+    "source": "You will not have a brain when it is complete.",
+    "reference": "No tendrás cerebro cuando termine.",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "The ICTR now has its own Prosecutor.",
-    "reference": "El Tribunal Penal Internacional para Rwanda tiene su propio Fiscal.",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Decision 112 of 28 February 1980 concerning the model forms necessary for the application of Regulation (EEC) No 1408/71 and Regulation (EEC) No 574/72 (E 001; E 102-127; E 201-215; E 301-303; E 401-411).",
-    "reference": "Decisión n° 112, de 28 de febrero de 1980, relativa a los modelos de formularios necesarios para la aplicación de los Reglamentos (CEE) n° 1408/71 y (CEE) n° 574/72 (E 001 ; E 101-127; E 201-215; E 301303; E 401-411).",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "WHAT'SHERMAIDENNAME?",
-    "reference": "¿Cuálessu nombredesoltera?",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "The First Committee adopted draft resolution X without a vote.",
-    "reference": "La Primera Comisión aprobó el proyecto de resolución X sin someterlo a votación.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Plus, she's so excited for my engagement, which is great, because there's no way in hell I can tell my mom.",
-    "reference": "Aemás, está muy emocionada con mi compromiso, cosa que está genial, porque no hay manera alguna de que pueda contárselo a mi madre.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "When this tare-weight is excluded, the weight is gross weight.",
-    "reference": "Si de este peso se excluye la tara, tendremos el peso bruto.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "The public health system’s problems have been heightened in recent years bythe growing inability to provide free or subsidized medicines for those who needthem.",
-    "reference": "Los problemas del sistema de salud pública han aumentado en los últimos añosa causa de su incapacidad para proveer de medicamentos gratuitos osubvencionados a quienes los necesitan.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Letter dated 21 December 2006 from the Secretary-General and High Representative for Common Foreign and Security Policy of the European Union addressed to the Secretary-General",
-    "reference": "Carta de fecha 21 de diciembre de 2006 dirigida al Secretario General por el Secretario General y Alto Representante de la Unión Europea para la Política Exterior y de Seguridad Común",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "An additional six inspections and two compliance missions are scheduled for the second half of 2009.",
-    "reference": "Para el segundo semestre de 2009 están previstas otras seis inspecciones y dos misiones de cumplimiento.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Yeah, I believe in sticking with your people through thick and thin, good and bad.",
-    "reference": "Sí, yo creo en mantenerse con tu gente a las duras y a las maduras, en lo bueno y en lo malo.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "The delegation of the Syrian Arab Republic listened very closely to the statement made by the representative of the People's Republic of China, and we fully associate ourselves with it.",
-    "reference": "La delegación de la República Árabe Siria ha escuchado con mucha atención la declaración formulada por el representante de la República Popular China y nos adherimos plenamente a ella.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "The couple is not in good health and due to their age, they have a right to due process while remaining free.",
-    "reference": "La pareja sufre trastornos de salud, y por razones de edad ambos tienen el derecho a ser procesados en libertad.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "The Statute of the International Criminal Court, adopted in June 1998, specifically addresses gender-based crimes, as do the Criminal Tribunals for the Former Yugoslavia and Rwanda.",
-    "reference": "Al igual que los tribunales penales internacionales para la ex Yugoslavia y Rwanda, el estatuto de la Corte Penal Internacional, aprobado en junio de 1998, contiene disposiciones específicas relativas a los delitos basados en el género.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "In conclusion, we say no to inculturation as a source of spirituality; the danger",
-    "reference": "En conclusión: le estamos diciendo no a la inculturación, como fuente de espiritualidad, por",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Occupied by Israel since 1967, it's been a major roadblock in any peace accord with the Palestinians.",
-    "reference": "Ocupado por Israel desde 1967, ha sido un obstáculo en cualquier tratado de paz con los palestinos.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Which means that it was neither definitely arson nor clearly accidental.",
-    "reference": "Lo que significa que no era ni provocado ni claramente accidental.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "We therefore believe that hemp production ought not to be promoted through increased aid, and we are abstaining from voting on Mrs Schierhuber 's report.",
-    "reference": "Por estas razones opinamos que no se debe fomentar la producción de cáñamo mediante ayudas y nos abstenemos en la votación del informe Schierhuber.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "she discovered it somehow.",
-    "reference": "lo descubrió en algún lugar.",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "She's gone missing. She was last seen around here...",
-    "reference": "La vieron por aquí la última vez...",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "The Advisory Committee noted from paragraph 7 of the report of the Secretary-General (A/C.5/54/52) that the estimated requirements for that period would amount to $2,723,300.",
-    "reference": "La Comisión Consultiva tomó nota de que, según el párrafo 7 del informe del Secretario General (A/C.5/54/52), para ese período se necesitarían 2.723.300 dólares.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "However, given the nature and scale of the present crisis, account will have to be taken of further specific factors related to the current market conditions.",
-    "reference": "Sin embargo, teniendo en cuenta las características y la magnitud de la actual crisis, habrá que tener en cuenta otros factores específicos relacionados con las actuales condiciones de mercado.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "HCT Bank is strategically aligned with Most Major Banks in Minnesota as well as throughout the United States as well as a large number of Minnesota mortgage lenders and mortgage lenders in other states.",
-    "reference": "El banco de HCT se alinea estratégico con la mayoría de los bancos importantes en Minnesota así como en los Estados Unidos así como una gran cantidad de prestamistas de hipoteca de Minnesota y prestamistas de hipoteca en otros estados.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "Number of visits: 2000",
-    "reference": "Lugar de celebración:",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "I am not good in mathematics but it must have more than 100 years.",
-    "reference": "No soy bueno en matemáticas pero debe tener más de 100 años.",
-    "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 70.54,
+    "baseline_translation": "No tendrás cerebro cuando esté completo.",
+    "difficulty_band": "easy"
   },
   {
     "source": "Stay here. Take time to get yourself together.",
     "reference": "Tómate tu tiempo.",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 62.112,
+    "baseline_translation": "Quédate aquí. Tómate tu tiempo para ponerte en orden.",
+    "difficulty_band": "medium"
   },
   {
-    "source": "Then why do you keep checking your phone?",
-    "reference": "¿Por qué miras tu teléfono? ¿Pasa algo malo?",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "¶ People wanna get on down and get down ¶",
-    "reference": "# People wanna get on down and get down #",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "These beaches don’t have a complete seafront promenade yet, although there are plans to build it and they have parking, showers, lifeguards, rubbish bins, beach bars and sea rescue, amongst other services.",
-    "reference": "Estas playas no tienen un paseo marítimo completo aún, aunque hay planes para construirlo y actualmente cuenta con aparcamientos, duchas, salvavidas, papeleras, chiringuitos y rescate marítimo entre otros servicios.",
+    "source": "This Document was done in the city of Doha on 3 Rabi` II A.H. 1430 (30 March A.H. 2009) in one original kept at the Secretariat-General of the League of Arab States, with a true copy of the original transmitted to each signatory State.",
+    "reference": "Este documento se redactó en la ciudad de Doha con fecha 3 Rabi` II A.H. 1430 (30 de marzo de 2009 A.D. ) en un único original que quedó en poder del Secretario General de la Liga de los Estados Árabes, transmitiéndose una copia auténtica del original a cada uno de los Estados signatarios.",
     "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 60.2305,
+    "baseline_translation": "Este documento se elaboró en la ciudad de Doha el 3 de Rabi` II A.H. 1430 (30 de marzo A.H. 2009) en un original que se conserva en la Secretaría General de la Liga de Estados Árabes, con una copia fiel del original transmitida a cada Estado signatario.",
+    "difficulty_band": "medium"
   },
   {
-    "source": "** You can select only 2 Mots in a season.",
-    "reference": "** Sólo es posible seleccionar dos Mots en una temporada.",
+    "source": "the operation in question is a small investment;",
+    "reference": "la operación en cuestión es una pequeña inversión;",
     "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 100.0,
+    "baseline_translation": "la operación en cuestión es una pequeña inversión;",
+    "difficulty_band": "easy"
   },
   {
-    "source": "Main Committees Rule 46",
-    "reference": "Comisiones Principales Artículo 46",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "You guys, it's still fucking night.",
-    "reference": "Chicos, todavia es de noche.",
-    "length_band": "short",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "One of the most remarkable gains achieved for Libyan women after the Beijing Conference in 1995 was the issuance by the General People's Congress of a document on women's rights and obligations in Jamahiriyan society, the society of the masses.",
-    "reference": "Uno de los más destacados logros conseguidos por la mujer libia después de la Conferencia de Beijing en 1995 fue la publicación por el Congreso General Popular de un documento sobre los derechos y obligaciones de la mujer en la sociedad de la Jamahiriya, la sociedad de las masas.",
-    "length_band": "long",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
-  },
-  {
-    "source": "In such a situation, serving mankind by liberating them from the cycle of birth and death is the best service to God.",
-    "reference": "En tal situación, servir a la humanidad al liberarlos del ciclo del nacimiento y muerte es el mejor servicio a Dios.",
+    "source": "Well, he's still recovering from his last interrogation, so if you're here to brutalize him again, I won't be party to it.",
+    "reference": "Bueno, él aún se está recuperando de su último interrogatorio así que si están aquí para tratarlo brutalmente de vuelta, no participaré.",
     "length_band": "medium",
-    "provenance": "Helsinki-NLP/opus-100:en-es:test"
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 59.6154,
+    "baseline_translation": "Bueno, todavía se está recuperando de su última interrogación, así que si estás aquí para brutalizarlo de nuevo, no participaré en eso.",
+    "difficulty_band": "medium"
+  },
+  {
+    "source": "He is the Public Relations person of the Peruvian Musical Corner. Recently, Isabel Gálvez known as \"Chavi\" decided to join our group by obtaining the lyrics of the melodies and offered to translate into english the sections of the Peruvian Musical Corner.",
+    "reference": "El nos va a ayudar en promocionar nuestra página musical a través de Relaciones Públicas. Y seguimos recibiendo e-mails de peruanos y aficionados a la música peruana que tienen el deseo de unirse a nosotros.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 32.4419,
+    "baseline_translation": "Él es la persona de Relaciones Públicas del Rincón Musical Peruano. Recientemente, Isabel Gálvez, conocida como “Chavi”, decidió unirse a nuestro grupo obteniendo las letras de las melodías y ofreció traducir al inglés las secciones del Rincón Musical Peruano.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "a call for two new KICs in 2016 in the themes of Food4Future and Added-value manufacturing and a call for one new KIC in 2018 in the theme of Urban Mobility.",
+    "reference": "una convocatoria de dos nuevas CCI en 2016, para los temas de Alimentos para el futuro y de Fabricación con valor añadido, y una convocatoria de una nueva CCI en 2018, para el tema de Movilidad urbana;",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 55.8769,
+    "baseline_translation": "una convocatoria para dos nuevos KICs en 2016 en los temas de Food4Future y fabricación de valor añadido, y una convocatoria para un nuevo KIC en 2018 en el tema de Movilidad Urbana.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Mandate of Advisers on Biotechnology",
+    "reference": "Mandato del Grupo de consejeros para la ética dela biotecnología (GCEB)",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 28.9641,
+    "baseline_translation": "Mandato de los Asesores sobre Biotecnología",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "United International wants to buy the tabloid?",
+    "reference": "¿United International quiere comprar el tabloide?",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 100.0,
+    "baseline_translation": "¿United International quiere comprar el tabloide?",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "I marveled at the fact that she was not afraid.",
+    "reference": "Me maravillaba el hecho de que no tuviera miedo.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 39.0007,
+    "baseline_translation": "Me maravillé al notar que ella no tenía miedo.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "I'm going to authorize the military operation in Sangala as planned.",
+    "reference": "Voy a utilizar la operación militar en Sangala como se planeó.",
+    "length_band": "medium",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 65.4069,
+    "baseline_translation": "Voy a autorizar la operación militar en Sangala según lo planeado.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "Nearly two-thirds of all respondents - including 51 percent of Republicans - said it was more important to reduce deficits than to cut taxes, a central element of Mr. Bush's economic agenda.",
+    "reference": "Casi dos tercios de todos los encuestados incluso el 51% de republicanos- dijo que era más importante reducir el déficit que recortar los impuestos, un elemento central de la agenda económica de Bush.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 79.1821,
+    "baseline_translation": "Casi dos tercios de todos los encuestados —incluidos el 51 % de los republicanos— dijeron que era más importante reducir los déficits que recortar impuestos, un elemento central de la agenda económica del señor Bush.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "The apartment building is located in the centre of Salou, just 700 metres from the beach. It is surrounded by numerous services including supermarkets, restaurants and shops.",
+    "reference": "Este edificio de apartamentos se encuentra en el centro de Salou, a solo 700 m de la playa. Está rodeado de numerosos servicios, como supermercados, restaurantes y tiendas.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 82.2101,
+    "baseline_translation": "El edificio de apartamentos está ubicado en el centro de Salou, a solo 700 metros de la playa. Está rodeado de numerosos servicios, incluidos supermercados, restaurantes y tiendas.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "Recently, Nepal made a request to the Secretary-General in the hope that UNMIN would be reduced in size, that its mandate would be extended for six months and that it would continue to facilitate the monitoring of the management of arms and armed personnel.",
+    "reference": "Recientemente, Nepal hizo una solicitud al Secretario General con la esperanza de que la UNMIN vaya reduciendo su tamaño, que su mandato se prorrogue por seis meses y que siga facilitando la supervisión de la gestión de las armas y del personal armado.",
+    "length_band": "long",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 77.921,
+    "baseline_translation": "Recientemente, Nepal hizo una solicitud al Secretario General con la esperanza de que UNMIN se redujera en tamaño, que su mandato se extendiera por seis meses y que continuara facilitando la supervisión de la gestión de armas y personal armado.",
+    "difficulty_band": "easy"
+  },
+  {
+    "source": "I mean, I saved your life.",
+    "reference": "Salve tu vida.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 30.4487,
+    "baseline_translation": "Quiero decir, te salvé la vida.",
+    "difficulty_band": "hard"
+  },
+  {
+    "source": "Who does that to my favorite crown?",
+    "reference": "¿Quién hace eso? Es mi corona favorita.",
+    "length_band": "short",
+    "provenance": "Helsinki-NLP/opus-100:en-es:test",
+    "baseline_chrf": 67.1147,
+    "baseline_translation": "¿Quién le hace eso a mi corona favorita?",
+    "difficulty_band": "easy"
   }
 ]

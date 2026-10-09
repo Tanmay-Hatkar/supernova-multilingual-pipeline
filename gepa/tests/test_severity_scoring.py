@@ -135,3 +135,43 @@ def test_scoring_method_must_be_recognized():
     assert _resolve_scoring_method({}) == "flat"
     with pytest.raises(ValueError, match="Unknown scoring_method"):
         _resolve_scoring_method({"scoring_method": "sevrity"})
+
+
+# --- A non-answer must not score full marks ---------------------------
+#
+# Severity scoring derives the score from the error list, so an empty
+# list and a flawless translation are arithmetically identical: both
+# land on 10.0. That makes a disengaged or truncated judge response the
+# most expensive possible failure, because it awards the top score to
+# anything. Research on LLM judges reports exactly this pattern, an
+# empty response being read as "no errors found" and becoming a perfect
+# score, so these pin it shut.
+
+
+def test_empty_errors_with_no_explanation_is_rejected():
+    with pytest.raises(ValueError, match="non-answer"):
+        _parse_severity_response('{"errors": []}')
+
+
+def test_empty_errors_with_blank_explanation_is_rejected():
+    with pytest.raises(ValueError, match="non-answer"):
+        _parse_severity_response('{"errors": [], "feedback": "   "}')
+
+
+def test_a_genuine_perfect_score_still_requires_a_stated_reason():
+    # The distinction that makes the check safe: a judge that actually
+    # looked says why it found nothing wrong.
+    result = _parse_severity_response(
+        '{"errors": [], "feedback": "Meaning and register both preserved."}'
+    )
+    assert result.score == 10.0
+
+
+def test_errors_without_explanation_are_still_accepted():
+    # A judge that listed errors has demonstrably engaged, so the
+    # overall feedback can be rebuilt from them.
+    result = _parse_severity_response(
+        '{"errors": [{"severity": "minor", "span": "x", "explanation": "awkward"}]}'
+    )
+    assert result.score == 9.6
+    assert "awkward" in result.feedback

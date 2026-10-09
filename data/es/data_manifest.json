@@ -1,17 +1,17 @@
 {
   "language_code": "es",
-  "built_at": "2026-09-17T06:38:21.380800+00:00",
+  "built_at": "2026-10-09T12:55:37.232379+00:00",
   "source": {
     "dataset": "Helsinki-NLP/opus-100",
     "config": "en-es",
     "target_key": "es"
   },
-  "total_examples": 249,
+  "total_examples": 252,
   "pool_counts": {
-    "examples": 99,
-    "prompt_validation": 49,
-    "judge_calibration": 49,
-    "final_test": 49
+    "examples": 100,
+    "prompt_validation": 50,
+    "judge_calibration": 50,
+    "final_test": 50
   },
   "length_bands": {
     "short": [
@@ -27,9 +27,14 @@
       400
     ]
   },
-  "band_distribution": {
-    "short": 83,
-    "medium": 83,
-    "long": 83
+  "length_distribution": {
+    "short": 84,
+    "medium": 84,
+    "long": 84
+  },
+  "difficulty_distribution": {
+    "easy": 84,
+    "medium": 84,
+    "hard": 84
   }
 }

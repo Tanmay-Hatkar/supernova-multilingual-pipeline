@@ -255,13 +255,27 @@ def _parse_severity_response(raw_text: str) -> JudgeCallResult:
         )
 
     feedback = str(parsed.get("feedback", "")).strip()
-    if not feedback:
+    if not feedback and errors:
         # The written explanation is what GEPA revises prompts from, so
         # a judgment without one is only half useful. Rebuild it from
         # the errors rather than handing the optimizer an empty string.
-        feedback = (
-            "; ".join(f"[{e.severity}] {e.span}: {e.explanation}" for e in errors)
-            or "No errors found."
+        feedback = "; ".join(f"[{e.severity}] {e.span}: {e.explanation}" for e in errors)
+
+    if not feedback and not errors:
+        # An empty error list with no written justification is a
+        # non-answer, not a perfect translation — but under severity
+        # scoring the two are arithmetically identical, both landing on
+        # 10.0. A disengaged or truncated judge response would therefore
+        # score full marks, which is the single most expensive way for a
+        # judge to fail: it awards the top score to anything.
+        #
+        # Rejecting it sends the example down the judge-failure path,
+        # where it is excluded and counted rather than silently trusted.
+        # The flat path cannot hit this, because it requires a score
+        # field to be present at all.
+        raise ValueError(
+            "Judge reported no errors and gave no explanation; treating as a "
+            "non-answer rather than a perfect score"
         )
 
     return JudgeCallResult(score=score_from_errors(errors), feedback=feedback, errors=errors)
