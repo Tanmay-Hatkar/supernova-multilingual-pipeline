@@ -1,20 +1,17 @@
 # supernova-multilingual-pipeline
 
-A reference implementation of a prompt-optimization pipeline for machine
-translation, built so that adding a language is a config change rather
-than a rewrite.
+A prompt-optimization pipeline for machine translation, built so that
+adding a language is a config change rather than a rewrite.
 
 It translates with a frozen model, scores the output with an LLM judge,
 and uses [GEPA](https://dspy.ai) to search for better instructions to
 the translator. Nothing is fine tuned; the artifact a run produces is a
 prompt.
 
-**This is a template, not a copy of any production codebase.** What
-lives here is the pattern, plus the measurements that shaped it.
-
-Read [FINDINGS.md](FINDINGS.md) first if you only read one thing. It
-records six measured results, including the two where the hypothesis
-being tested turned out to be wrong.
+[FINDINGS.md](FINDINGS.md) records the measured results behind the
+current design, including the two cases where the hypothesis under test
+was not supported. Read it before changing the judge or the data
+selection.
 
 ## Quick start
 
@@ -132,7 +129,7 @@ FINDINGS.md             # measured results, including the negative ones
 ## Development
 
 ```bash
-python -m pytest gepa/tests -q     # 86 tests, no API calls
+python -m pytest gepa/tests -q     # 104 tests, no API calls
 ruff check . && ruff format .
 ```
 
@@ -143,16 +140,15 @@ because an unpinned minor release turning CI red teaches nothing.
 Changes go through a pull request into `main`. `CODEOWNERS`
 auto-requests a reviewer.
 
-## Known gaps
+## Current limitations
 
-Stated rather than discovered later:
+Tracked as open issues rather than left to be discovered:
 
 - The judge is **not validated against human labels**. `validate_judge.py`
-  correctly refuses to pass without them, and none exist yet. Every
-  score here is a mechanics check, not a quality verdict.
+  refuses to pass without them, and none exist yet. Until they do, every
+  score is a mechanics check rather than a quality verdict.
 - No readiness gate. A run reports a score; it does not decide whether
   to adopt the prompt.
-- `yue` (Cantonese) is scaffolded as `planned` with placeholder data and
-  has never been run.
-- Logging is `print`, which is adequate for a CLI and would not be for a
-  service.
+- `yue` (Cantonese) is registered as `planned` with placeholder data and
+  has not been run.
+- Logging is `print`, which is adequate for a CLI and not for a service.

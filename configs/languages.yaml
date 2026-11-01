@@ -7,7 +7,7 @@
 # file at runtime.
 #
 # status: active   -> judge validated, ready to run in the optimization loop
-# status: planned   -> scaffolded, not yet validated, excluded from runs
+# status: planned   -> registered, not yet validated, excluded from runs
 
 languages:
   - code: yue
@@ -15,8 +15,8 @@ languages:
     direction: en_yue
     judge_config: configs/judges/yue.yaml
     data_dir: data/yue
-    status: planned   # scaffolded only: placeholder data, never run, models
-                       # never probed. Flip to active once data/yue/ holds real
+    status: planned   # registered only: empty pools, never run, models never
+                       # probed. Flip to active once data/yue/ holds real
                        # examples and the judge has been validated.
 
   - code: cmn

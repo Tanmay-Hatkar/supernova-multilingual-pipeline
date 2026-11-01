@@ -2,15 +2,13 @@
 """
 One entry point for the whole pipeline.
 
-Before this existed you had to know which of six scripts to run, in what
-order, from which directory. That is fine for the person who wrote them
-and hostile to everyone else, including the person who wrote them three
-weeks later. Every command below is self-contained and says what it is
-about to do before it does it.
+Every command is self-contained and reports what it is about to do
+before it does it, so no command depends on knowing which script to run
+first or from which directory.
 
-    python run.py check                 # does my setup work?
-    python run.py demo --language es    # show me translations
-    python run.py judge --language es   # show me the judge thinking
+    python run.py check                 # verify setup and connectivity
+    python run.py demo --language es    # translate a few examples
+    python run.py judge --language es   # score one translation, run by run
     python run.py data --language es    # rebuild the data pools
     python run.py optimize --language es  # the full GEPA run (slow)
     python run.py results --language es   # read the last run back
