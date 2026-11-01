@@ -1,9 +1,10 @@
 # Findings
 
 Measured results from this pipeline, with the reasoning that produced
-them. Recorded because two of the conclusions here contradict what the
-code was originally built to assume, and a repo that only records its
-successes teaches the next person the wrong lessons.
+them. Two of the conclusions below contradict what the code was
+originally built to assume, and both are recorded in full: a record
+that keeps only its confirmed hypotheses cannot be used to decide what
+to try next.
 
 Every number below came from a run in this repository. Where a sample
 is too small to support a conclusion, that is stated rather than
@@ -133,10 +134,10 @@ phrased differently from the reference, a well-known weakness of it. For *select
 model's output diverges from a human reference is worth having in the
 pool either way. It would not be acceptable as a quality verdict.
 
-**What was kept and why.** The failed heuristic stays in the tree,
-documented as failed, along with the `--validate` command that killed
-it. The validation is the valuable part, and silently deleting a failed
-hypothesis invites the next person to retry it.
+**What was kept and why.** The heuristic stays in the tree, documented
+as unsupported, along with the `--validate` command that measured it.
+The validation is the reusable part, and removing the negative result
+would leave the hypothesis open to being retried unknowingly.
 
 **Selection takes an even spread, never worst-first.** A pool of only
 the examples the model handles badly cannot reveal a prompt that

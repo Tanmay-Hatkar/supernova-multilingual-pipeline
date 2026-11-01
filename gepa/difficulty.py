@@ -12,7 +12,7 @@ An optimizer learns nothing from examples every candidate prompt gets
 right. It needs headroom, which means examples that are hard for the
 *translator*, not merely long.
 
-## This heuristic failed its own validation. Read before using it.
+## Validation status: not supported by measurement. Read before using.
 
 Measured against judge scores actually observed on 20 Spanish examples,
 the features below correlate at **Spearman 0.065** — indistinguishable
@@ -31,9 +31,9 @@ and a better feature set may yet be found, but it should not be used
 for real selection until `run.py difficulty --validate N` reports a
 clearly negative correlation.
 
-Keeping this module rather than deleting it is deliberate. The
-validation command is the valuable part, and a repo that silently
-removes its failed hypotheses invites the next person to retry them.
+The module is retained for its validation command, which is reusable
+against any future feature set, and so that the negative result stays
+attached to the code that produced it.
 """
 
 from __future__ import annotations

@@ -1,9 +1,9 @@
 # Judge and scoring configuration for Cantonese (yue).
 #
-# SCAFFOLDED, NOT RUN. This language has placeholder data only and has
-# never been executed. It is marked `planned` in languages.yaml so runs
-# and reliability probes skip it. The config exists so the folder shape
-# is ready, not to imply this language is wired up.
+# REGISTERED, NOT RUN. The example pools for this language are empty and
+# it has never been executed. It is marked `planned` in languages.yaml so
+# runs and reliability probes skip it. This config fixes the folder shape
+# ahead of the data; it does not imply the language is wired up.
 #
 # Before flipping this to active: add real data to data/yue/, pick and
 # probe actual models (python reliability.py), and validate the judge
@@ -30,5 +30,5 @@ scoring_method: flat
 companion_metric: chrf++
 
 notes: >
-  Placeholder configuration for a scaffolded, unrun language. Nothing
-  here has been probed or validated.
+  Provisional configuration for a registered but unrun language. No
+  model here has been probed and no setting has been validated.
