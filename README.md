@@ -90,9 +90,16 @@ Two further rules the scoring follows:
   reliability.
 - **Deterministic checks run before the judge**, and their verdict is
   not negotiable. Wrong script, wrong Chinese variety, leftover source
-  language, source copying and empty output are all string comparisons.
-  An LLM judge will score an untranslated output 10/10; a string
-  comparison never will.
+  language, source copying, empty output, dropped numerals, truncation,
+  looping output and halfwidth punctuation in Chinese are all string
+  comparisons. An LLM judge will score an untranslated output 10/10; a
+  string comparison never will.
+
+  Every check errs toward passing, because a false positive scores a
+  correct translation zero and hands the optimizer a written reason
+  that is not true. Each one was measured against the human reference
+  translations in `data/` before being enabled, and narrowed until what
+  remained was either a real defect or a documented limit.
 
 ## Adding a language
 
@@ -141,7 +148,7 @@ FINDINGS.md             # measured results, including the negative ones
 ## Development
 
 ```bash
-python -m pytest gepa/tests -q     # 123 tests, no API calls
+python -m pytest gepa/tests -q     # 178 tests, no API calls
 ruff check . && ruff format .
 ```
 
