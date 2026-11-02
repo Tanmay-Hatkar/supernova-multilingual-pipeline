@@ -38,7 +38,10 @@ reflection_model:
 # check would flag every correct translation. Which checks apply is a
 # property of the target language, which is why this list lives in the
 # language config rather than in the pipeline.
-output_checks: []
+output_checks:
+  - numbers_preserved       # a numeral changed, vanished, or was invented
+  - not_truncated           # output stops on a comma or an unclosed bracket
+  - no_degeneration         # the same fragment emitted three or more times
 
 scoring_method: flat   # run `python run.py compare --language es` to see
                         # what severity weighting does to the spread

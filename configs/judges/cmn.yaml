@@ -45,6 +45,10 @@ output_checks:
   - simplified_script       # Traditional characters in a Simplified target
   - no_cantonese_markers    # vernacular Cantonese written in Chinese characters
   - no_residual_latin       # English words left inside otherwise-Chinese output
+  - numbers_preserved       # a numeral changed, vanished, or was invented
+  - not_truncated           # output stops on a comma or an unclosed bracket
+  - no_degeneration         # the same fragment emitted three or more times
+  - cjk_punctuation         # halfwidth marks where Chinese needs fullwidth
 
 scoring_method: flat
 
