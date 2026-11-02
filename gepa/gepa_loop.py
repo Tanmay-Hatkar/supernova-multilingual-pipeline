@@ -40,9 +40,10 @@ from datetime import UTC, datetime
 
 import dspy
 import yaml
+from cache import ResponseCache
 from checks import run_checks
-from clients import DSPyClientAdapter, get_client
-from config import MAX_OUTPUT_TOKENS
+from clients import CachedClient, DSPyClientAdapter, get_client
+from config import MAX_OUTPUT_TOKENS, TASK_CACHE_DIR, TASK_CACHE_ENABLED
 from dataset import load_examples
 from judge import judge_translation
 from language_registry import LanguageEntry, get_active_languages
@@ -123,16 +124,23 @@ class PoolScore:
         }
 
 
-def _configure_task_lm(config: dict) -> dspy.BaseLM:
+def _configure_task_lm(config: dict, cache: ResponseCache | None = None) -> dspy.BaseLM:
     """
     Route the task model through the same client the judge uses. This is
     the unification that matters: one retry strategy and one error
     taxonomy for every model call in the pipeline, rather than the task
     model quietly going through a second framework's own wrapper with
     different behavior.
+
+    The cache, when present, wraps the task model and nothing else. Every
+    candidate prompt is evaluated against the same pool, so the same
+    (prompt, example) pair is translated repeatedly within one run and
+    again across runs. The judge is deliberately left uncached.
     """
     task_model = config["task_model"]
     client = get_client(task_model["provider"], task_model["model"])
+    if cache is not None and cache.enabled:
+        client = CachedClient(client, cache)
     lm = DSPyClientAdapter(client, max_tokens=MAX_OUTPUT_TOKENS)
     dspy.settings.configure(lm=lm)
     return lm
@@ -340,7 +348,10 @@ def _abort_if_judge_unreliable(state: RunState) -> None:
 
 
 def run_language(
-    language: LanguageEntry, max_examples: int | None = None, skip_preflight: bool = False
+    language: LanguageEntry,
+    max_examples: int | None = None,
+    skip_preflight: bool = False,
+    use_cache: bool = TASK_CACHE_ENABLED,
 ) -> dict:
     print(f"=== GEPA run: {language.name} ({language.code}) ===")
 
@@ -355,7 +366,10 @@ def run_language(
         config = yaml.safe_load(f)
     config_dir = os.path.dirname(language.judge_config_path)
 
-    task_lm = _configure_task_lm(config)
+    task_cache = ResponseCache(
+        os.path.join(REPO_ROOT, TASK_CACHE_DIR, language.code), enabled=use_cache
+    )
+    task_lm = _configure_task_lm(config, task_cache)
     reflection_lm = _build_reflection_lm(config, fallback=task_lm)
     task_program = dspy.Predict(Translate)
 
@@ -439,6 +453,7 @@ def run_language(
             "check_failures": state.check_failures,
             "output_checks": list(config.get("output_checks") or []),
             "judge_failure_rate": round(state.failure_rate, 4),
+            "task_cache": task_cache.stats(),
             "companion_mean": (
                 sum(companion_scores) / len(companion_scores) if companion_scores else None
             ),
@@ -486,6 +501,11 @@ def main():
     )
     parser.add_argument("--max-examples", type=int, default=None)
     parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="translate everything fresh instead of reusing cached task-model responses",
+    )
+    parser.add_argument(
         "--skip-preflight",
         action="store_true",
         help="skip the model viability check (not recommended)",
@@ -497,7 +517,12 @@ def main():
         print(f"'{args.language}' is not active. Active: {sorted(active)}", file=sys.stderr)
         sys.exit(1)
 
-    run_language(active[args.language], args.max_examples, args.skip_preflight)
+    run_language(
+        active[args.language],
+        args.max_examples,
+        args.skip_preflight,
+        use_cache=TASK_CACHE_ENABLED and not args.no_cache,
+    )
 
 
 if __name__ == "__main__":

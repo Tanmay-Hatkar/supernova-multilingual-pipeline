@@ -465,10 +465,16 @@ def cmd_data(args) -> int:
 
 def cmd_optimize(args) -> int:
     """The full GEPA run. Slow and rate-limited; expect tens of minutes."""
+    from config import TASK_CACHE_ENABLED
     from gepa_loop import run_language
 
     language = _load_language(args.language)
-    run_language(language, args.max_examples, args.skip_preflight)
+    run_language(
+        language,
+        args.max_examples,
+        args.skip_preflight,
+        use_cache=TASK_CACHE_ENABLED and not args.no_cache,
+    )
     return 0
 
 
@@ -520,7 +526,17 @@ def cmd_results(args) -> int:
     print(
         f"  judge failures:   {manifest['judge_failures']} ({manifest['judge_failure_rate']:.1%})"
     )
-    print(f"  companion mean:   {manifest['companion_mean']}\n")
+    print(f"  companion mean:   {manifest['companion_mean']}")
+
+    cache = manifest.get("task_cache")
+    if cache and cache.get("enabled"):
+        print(
+            f"  task cache:       {cache['hits']} reused, {cache['misses']} translated "
+            f"({cache['hit_rate']:.1%} reused)"
+        )
+    elif cache:
+        print("  task cache:       disabled for this run")
+    print()
 
     print(f"Full files in results/{args.language}/")
     return 0
@@ -589,6 +605,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--language", required=True)
     p.add_argument("--max-examples", type=int, default=None)
     p.add_argument("--skip-preflight", action="store_true")
+    p.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="translate everything fresh instead of reusing cached task-model responses",
+    )
     p.set_defaults(func=cmd_optimize)
 
     p = sub.add_parser("results", help="read the last run back")

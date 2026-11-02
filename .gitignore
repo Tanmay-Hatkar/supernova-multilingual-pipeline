@@ -8,3 +8,6 @@ logs/
 venv/
 data/es_length_baseline/
 data/cmn_length_baseline/
+
+# Task-model response cache
+.cache/
