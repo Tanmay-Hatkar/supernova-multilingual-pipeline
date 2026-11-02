@@ -46,6 +46,7 @@ Every command goes through `run.py`, ordered by cost:
 | `probe --language es` | Breaks good translations in known ways; reports what the judge misses | ~15 min |
 | `compare --language es` | Scores identical translations flat vs severity-weighted | ~15 min |
 | `difficulty --language es` | Pool difficulty, and whether the heuristic predicts anything | free |
+| `audit --language es` | Reports defective references in the pools on disk | free |
 | `data --language es` | Rebuilds the four data pools | varies |
 | `optimize --language es` | The full GEPA run | hours |
 | `results --language es` | Reads the last run back as a summary | free |
@@ -69,6 +70,15 @@ that decision:
 The headline number comes from `final_test`, which the optimizer never
 sees. Reporting the score from the pool GEPA selected on measures how
 well it selected, not how good the prompt is.
+
+The same deterministic checks that gate model output also filter the
+reference data when pools are built, because a human reference that
+fails the gate is not a translation worth training on. A defective
+reference does damage twice over: it is scored as ground truth by the
+companion metric, where it penalises a correct translation, and it is
+handed to the judge, which reports a real error belonging to the data
+rather than to the model. `python run.py audit --language <code>`
+reports the rate on the pools already on disk, and costs nothing.
 
 Task-model responses are cached on disk between and within runs, keyed
 on the model, the full message list, the temperature and the token
@@ -139,7 +149,7 @@ gepa/
   compare_scoring.py    # flat vs severity, on identical translations
   difficulty.py         # a difficulty heuristic that failed its own validation
   validate_judge.py     # judge vs human labels; refuses to pass without them
-  prepare_data.py       # pool construction and stratification
+  prepare_data.py       # pool construction, stratification, reference filtering
   tests/
 run.py                  # single entry point
 FINDINGS.md             # measured results, including the negative ones
@@ -148,7 +158,7 @@ FINDINGS.md             # measured results, including the negative ones
 ## Development
 
 ```bash
-python -m pytest gepa/tests -q     # 178 tests, no API calls
+python -m pytest gepa/tests -q     # 191 tests, no API calls
 ruff check . && ruff format .
 ```
 

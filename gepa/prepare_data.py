@@ -28,7 +28,20 @@ import os
 import random
 from datetime import UTC, datetime
 
+import yaml
+from checks import run_checks
+from dataset import load_examples
+from language_registry import load_registry
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+POOLS = ("examples", "prompt_validation", "judge_calibration", "final_test")
+
+# Filled by the most recent collect_stratified call so the manifest can
+# record what was removed. A module-level record rather than a return
+# value because every caller wants the examples and only the manifest
+# wants the accounting.
+_LAST_FILTER_REPORT: dict = {}
 
 # Which public corpus config backs each language. Kept here rather than
 # in the language config, since this is a data-sourcing concern, not a
@@ -54,6 +67,110 @@ POOL_SPLIT = {
 }
 
 
+def checks_for(language_code: str) -> list[str]:
+    """
+    The deterministic checks a language's config asks for.
+
+    Read here so that filtering reference data and judging model output
+    apply the same rules. A reference that would fail the gate is not a
+    translation the pipeline should be learning from or measured
+    against.
+    """
+    for entry in load_registry():
+        if entry.code != language_code:
+            continue
+        with open(entry.judge_config_path, encoding="utf-8") as f:
+            config = yaml.safe_load(f) or {}
+        return list(config.get("output_checks") or [])
+    return []
+
+
+def filter_references(candidates: list[dict], checks: list[str]) -> tuple[list[dict], dict]:
+    """
+    Drop candidates whose *reference* fails the checks, and say why.
+
+    The references are human translations, so most of them pass. The
+    ones that do not are corpus defects: a reference carrying different
+    numbers from its source, a pair whose two halves are unrelated
+    sentences, a line left in the source language. Measured on the
+    existing pools, these run at a few percent per language.
+
+    Removing them matters in two places at once. They are scored as
+    ground truth by the companion metric, where a defective reference
+    penalises a correct translation. And they are handed to the judge,
+    which then reports errors that are real but belong to the data
+    rather than to the model.
+    """
+    config = {"output_checks": checks}
+    kept, dropped = [], {}
+
+    for candidate in candidates:
+        report = run_checks(candidate["reference"], candidate["source"], config)
+        if report.passed:
+            kept.append(candidate)
+            continue
+        for failure in report.failures:
+            dropped[failure.name] = dropped.get(failure.name, 0) + 1
+
+    return kept, dropped
+
+
+def audit_pools(language_code: str) -> dict:
+    """
+    Report defective references in the pools already on disk.
+
+    Separate from building because a rebuild costs model calls and an
+    audit costs nothing. It answers whether existing data is worth
+    rebuilding before any is spent finding out.
+    """
+    checks = checks_for(language_code)
+    data_dir = os.path.join(REPO_ROOT, "data", language_code)
+    config = {"output_checks": checks}
+
+    summary: dict = {"language_code": language_code, "checks": checks, "pools": {}}
+    for pool in POOLS:
+        try:
+            rows = load_examples(data_dir, pool="" if pool == "examples" else pool)
+        except FileNotFoundError:
+            continue
+
+        failures: dict[str, int] = {}
+        offenders = []
+        for row in rows:
+            reference = row.get("reference", "")
+            if not reference:
+                continue
+            report = run_checks(reference, row["source"], config)
+            if report.passed:
+                continue
+            for failure in report.failures:
+                failures[failure.name] = failures.get(failure.name, 0) + 1
+            offenders.append(
+                {
+                    "source": row["source"],
+                    "reference": reference,
+                    "failed": [f.name for f in report.failures],
+                    "detail": "; ".join(f.detail for f in report.failures),
+                }
+            )
+
+        summary["pools"][pool] = {
+            "total": len(rows),
+            "defective": len(offenders),
+            "rate": round(len(offenders) / len(rows), 4) if rows else 0.0,
+            "by_check": failures,
+            "examples": offenders[:10],
+        }
+
+    totals = list(summary["pools"].values())
+    rows_total = sum(p["total"] for p in totals)
+    bad_total = sum(p["defective"] for p in totals)
+    summary["total"] = rows_total
+    summary["defective"] = bad_total
+    summary["rate"] = round(bad_total / rows_total, 4) if rows_total else 0.0
+    return summary
+
+
 def _band_of(text: str) -> str | None:
     length = len(text)
     for name, low, high in LENGTH_BANDS:
@@ -63,7 +180,11 @@ def _band_of(text: str) -> str | None:
 
 
 def collect_stratified(
-    language_code: str, total: int, seed: int, stratify: str = "length"
+    language_code: str,
+    total: int,
+    seed: int,
+    stratify: str = "length",
+    filter_references_first: bool = True,
 ) -> list[dict]:
     """
     Gather candidates, then take an even spread across bands.
@@ -116,6 +237,22 @@ def collect_stratified(
                 "length_band": length_band,
                 "provenance": f"{source['dataset']}:{source['config']}:test",
             }
+        )
+
+    if filter_references_first:
+        # Before stratification, so a defective reference is never
+        # selected into a band and never counted toward a band's quota.
+        before = len(candidates)
+        candidates, dropped = filter_references(candidates, checks_for(language_code))
+        if dropped:
+            print(
+                f"  dropped {before - len(candidates)} of {before} candidates on reference checks:"
+            )
+            for name, count in sorted(dropped.items(), key=lambda kv: -kv[1]):
+                print(f"    {name}: {count}")
+        _LAST_FILTER_REPORT.clear()
+        _LAST_FILTER_REPORT.update(
+            {"checked": before, "kept": len(candidates), "dropped_by_check": dropped}
         )
 
     rng = random.Random(seed)
@@ -321,6 +458,9 @@ def write_pools(language_code: str, examples: list[dict]) -> dict[str, int]:
             band: sum(1 for e in examples if e.get("difficulty_band") == band)
             for band in ("easy", "medium", "hard")
         },
+        # What the reference filter removed, so a pool's size can be
+        # traced to a decision rather than looking like data loss.
+        "reference_filter": dict(_LAST_FILTER_REPORT) or None,
     }
     with open(os.path.join(data_dir, "data_manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)

@@ -450,12 +450,63 @@ def cmd_difficulty(args) -> int:
     return 0
 
 
+def cmd_audit(args) -> int:
+    """
+    Report defective references in the pools already on disk.
+
+    Free, and separate from rebuilding on purpose: a rebuild costs
+    model calls, and this answers whether one is worth paying for.
+    """
+    from prepare_data import audit_pools
+
+    summary = audit_pools(args.language)
+    if not summary["pools"]:
+        sys.exit(f"No data pools found for '{args.language}'.")
+
+    applied = ", ".join(summary["checks"]) or "universal only"
+    print(f"=== Reference audit: {args.language} ===")
+    print(f"Checks applied: {applied}")
+    print()
+
+    for pool, stats in summary["pools"].items():
+        print(f"  {pool:20s} {stats['defective']:3d} of {stats['total']:3d}  ({stats['rate']:.1%})")
+        for name, count in sorted(stats["by_check"].items(), key=lambda kv: -kv[1]):
+            print(f"      {name}: {count}")
+
+    print()
+    print(
+        f"  {'total':20s} {summary['defective']:3d} of "
+        f"{summary['total']:3d}  ({summary['rate']:.1%})"
+    )
+
+    if args.show:
+        print()
+        print("Examples:")
+        for pool, stats in summary["pools"].items():
+            for row in stats["examples"][: args.show]:
+                print()
+                print(f"  [{pool}] {', '.join(row['failed'])}")
+                print(f"    source:    {row['source'][:100]}")
+                print(f"    reference: {row['reference'][:100]}")
+                print(f"    -> {row['detail']}")
+
+    if summary["defective"]:
+        print()
+        print(
+            "These are corpus defects, not model output. Rebuild with "
+            f"`python run.py data --language {args.language}` to exclude them."
+        )
+    return 0
+
+
 def cmd_data(args) -> int:
     """Rebuild a language's four data pools from its public corpus."""
     from prepare_data import collect_stratified, write_pools
 
     print(f"Building {args.total} examples for '{args.language}', stratified by {args.stratify}...")
-    examples = collect_stratified(args.language, args.total, args.seed, args.stratify)
+    examples = collect_stratified(
+        args.language, args.total, args.seed, args.stratify, not args.keep_defective
+    )
     counts = write_pools(args.language, examples)
     print(f"Collected {len(examples)} examples across length bands.")
     for pool, count in counts.items():
@@ -599,7 +650,17 @@ def build_parser() -> argparse.ArgumentParser:
         help="chrf is the validated axis (0.49) but costs a model call per "
         "candidate; difficulty measured 0.065 and should not be used",
     )
+    p.add_argument(
+        "--keep-defective",
+        action="store_true",
+        help="skip the reference filter and keep candidates whose reference fails a check",
+    )
     p.set_defaults(func=cmd_data)
+
+    p = sub.add_parser("audit", help="report defective references in the pools on disk")
+    p.add_argument("--language", required=True)
+    p.add_argument("--show", type=int, default=0, help="print up to N offending examples per pool")
+    p.set_defaults(func=cmd_audit)
 
     p = sub.add_parser("optimize", help="the full GEPA run (slow)")
     p.add_argument("--language", required=True)
