@@ -70,6 +70,17 @@ The headline number comes from `final_test`, which the optimizer never
 sees. Reporting the score from the pool GEPA selected on measures how
 well it selected, not how good the prompt is.
 
+Task-model responses are cached on disk between and within runs, keyed
+on the model, the full message list, the temperature and the token
+budget. Every candidate prompt is evaluated against the same pool, so
+the same translation is otherwise paid for many times over. Pass
+`--no-cache` to translate everything fresh.
+
+The judge is deliberately never cached. It is called three times at
+temperature 0.7 and the spread between those answers is how the
+pipeline measures its own noise floor; replaying one stored answer
+three times would report that noise as zero.
+
 Two further rules the scoring follows:
 
 - **A judge failure is not a low score.** Malformed output, an
@@ -111,6 +122,7 @@ configs/
 data/<code>/            # the four pools, plus a manifest recording provenance
 gepa/
   clients.py            # one model-calling path: retries, rate limits, hard failures
+  cache.py              # on-disk reuse of task-model responses; never the judge
   judge.py              # GEMBA-style judge, flat and severity-weighted scoring
   checks.py             # deterministic output checks
   rrwa.py               # rank-reciprocal weighted aggregation across judge runs
@@ -129,7 +141,7 @@ FINDINGS.md             # measured results, including the negative ones
 ## Development
 
 ```bash
-python -m pytest gepa/tests -q     # 104 tests, no API calls
+python -m pytest gepa/tests -q     # 123 tests, no API calls
 ruff check . && ruff format .
 ```
 

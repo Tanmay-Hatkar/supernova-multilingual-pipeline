@@ -27,6 +27,7 @@ from abc import ABC, abstractmethod
 from typing import Any
 
 import dspy
+from cache import ResponseCache, cache_key
 from config import GROQ_API_KEY, MAX_OUTPUT_TOKENS, RATE_LIMIT_MAX_RETRIES
 from groq import APIStatusError, Groq, RateLimitError
 
@@ -124,6 +125,42 @@ class GroqClient(ModelClient):
             f"Groq rate limit not cleared after {RATE_LIMIT_MAX_RETRIES} retries "
             f"for model '{self.model}'. Last error: {last_transient}"
         )
+
+
+class CachedClient(ModelClient):
+    """
+    A ModelClient that replays identical requests from disk.
+
+    Wraps another client rather than being built into one, so that
+    caching is a decision made per call site. That distinction is the
+    whole safety argument: the task model is wrapped and the judge is
+    not, because the judge's three runs at temperature 0.7 are sampled
+    on purpose and their spread is the pipeline's noise measurement.
+
+    Retries, rate-limit handling and the structural/transient split all
+    stay in the wrapped client, so a cache miss behaves exactly as an
+    uncached call does.
+    """
+
+    def __init__(self, inner: ModelClient, cache: ResponseCache):
+        super().__init__(inner.model)
+        self.inner = inner
+        self.cache = cache
+
+    def chat(self, messages: list[dict[str, str]], **kwargs) -> Any:
+        kwargs.setdefault("max_tokens", MAX_OUTPUT_TOKENS)
+        kwargs.setdefault("temperature", 0.3)
+
+        key = cache_key(
+            self.model, messages, float(kwargs["temperature"]), int(kwargs["max_tokens"])
+        )
+        hit = self.cache.get(key)
+        if hit is not None:
+            return hit
+
+        response = self.inner.chat(messages, **kwargs)
+        self.cache.put(key, response)
+        return response
 
 
 _PROVIDERS: dict[str, type[ModelClient]] = {"groq": GroqClient}
